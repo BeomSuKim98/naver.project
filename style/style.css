@@ -1,0 +1,19 @@
+.wrap {
+  min-width: 1340px;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+}
+
+.header {
+  width: 1280px;
+  margin: 0 auto;
+}
+.header .topSearchWrap {
+  z-index: 10;
+  position: relative;
+  height: 150px;
+  padding: 52px 0 8px;
+}

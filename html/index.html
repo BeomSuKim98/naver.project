@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAVER</title>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 테일윈드 불러오기 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- 폰트어썸 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div class="topSearchWrap">
+          <div id="special_logo"></div>
+          <div class="search_area">
+            <div class="search_group">
+              <div class="search_group_inner">
+                <h1 class="search_logo">
+                  <a href="#" class="link_naver type_motion_hat is_fadout"></a>
+                  <a href="#" class="link_naver type_motion_n is_fadein">
+                    <!-- <span class="ico_n_logo_svg">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.273 12.845 7.376 
+                        0H0v24h7.727V11.155L16.
+                         24H24V0h-7.727v12.845z">
+                        </path>
+                        viewBox란 svg 요소의 크기를 확대 또는 축소, 위치를 조정해 주는 속성이다.
+                         화면에 크기에 따라 svg요소 크기를 조절해준다.
+                      </svg>
+                    </span> -->
+                    <span class="blind">NAVER</span>
+                  </a>
+                </h1>
+                <form
+                  id="sform"
+                  name="search"
+                  role="search"
+                  action="https://search.naver.com/search.naver"
+                >
+                  <!-- form은 입력 받은 데이터를 웹 서버로 보내는 태그, 처리 결과에 의한 데이터를 서버에서 반환한다. -->
+                  <!-- name 속성은 해당 form과 연관 지을 이름을 말한다. -->
+                  <fieldset>
+                    <!-- fieldset은 특정한 그룹을 만들 때 사용 -->
+
+                    <legend class="blind">검색</legend>
+                    <!-- legend는 fieldset이 무엇인지 설명하기 위한 태그 -->
+
+                    <div class="search_input_box">
+                      <input
+                        type="search"
+                        name="query"
+                        id="query"
+                        title="검색어를 입력해주세요."
+                        placeholder="검색어를 입력해주세요"
+                        maxlength="255"
+                        class="search_input"
+                        autocomlete="off"
+                      />
+                    </div>
+
+                    <button type="submit" class="btn_search">
+                      <span class="ico_btn_search_svg">
+                        <svg>
+                          <path
+                            d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0
+                   4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41
+                    0 0 1-1.706 4.115 2.412 2.412 0 0 1-1.706-.705L33.31
+                     35.719a2.41 2.41 0 0 1 0-3.41 15.71 15.71 0 0 0
+                      4.628-11.178c0-8.718-7.09-15.808-15.807-15.808-8.718
+                       0-15.808 7.09-15.808 15.808 0 7.15 4.817 13.43 11.714
+                        15.273a2.41 2.41 0 0 1 1.705 2.954 2.41 2.41 0 0 1-2.95
+                         1.705C7.788 38.658 1.5 30.46 1.5 21.131 1.5 9.756
+                          10.756.5 22.13.5zm4.716 34.746a3.483 3.483 0 1 1 0
+                           6.966 3.483 3.483 0 0 1 0-6.966z"
+                          ></path>
+                          <!--백터로 아이콘 그리는 태그 svg와 직접 그리는 태그 path-->
+                        </svg>
+                      </span>
+                    </button>
+                  </fieldset>
+                </form>
+                <div class="search_box">
+                  <button class="btn_keyboard">
+                    <span class="keyboard_text">
+                      <span class="blind">입력도구</span>
+                    </span>
+                  </button>
+                  <button class="btn_arrow fold">
+                    <span class="blind">자동완성/최근검색어 펼치기</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 여기까지 검색 상자 -->
+
+        <div id="search_right_first"></div>
+        <div id="search_right_second">
+          <a href="#" class="link_headline">
+            <img src="https://ssl.pstatic.net/melona/libs/1519/1519687/e9b5b12a93f764eee181_20250107170245148_1.png" 
+            w-[244px] h-[108px]
+            alt="[광고]오직 삼세페에서만! AI 패키지 더블혜택">
+          </a>
+        </div>
+        <div class="shortcut_area">
+          <ul class="shortcut_list">
+            <!-- li.shortcut_item*12>a[herf="#"]link_service>span.service_icon+span.service_name -->
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
+          </ul>
+        </div>
+        <div class="topAsideArea"></div>
+        <div class="topPayArea"></div>
+        <div class="topTalkArea"></div>
+        <div class="topNotiArea"></div>
+        <div class="topShoppingArea"></div>
+      </div>
+      <section class="container"></section>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
