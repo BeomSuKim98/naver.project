@@ -13,7 +13,7 @@
 
     <!-- 서로 다른 컴퓨터에서 세팅이 달라, 각자 저장이 따로 됌. scss에서 작업하면 문제없음 추후 고치기 -->
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../style/style.css" />
+    <!-- <link rel="stylesheet" href="../style/style.css" /> -->
 
     <!-- 폰트어썸 불러오기 -->
     <link
@@ -219,6 +219,9 @@
                     </span>
                   </span>
                   <span class="service_name seoul_name">서울사이버대학</span>
+                  <i class="ico_ad">
+                    <span class="blind">AD</span>
+                  </i>
                 </a>
               </li>
             </ul>
@@ -227,13 +230,66 @@
           <!-- 여기까지 숏컷 아이콘 -->
         </div>
 
-        <div class="topAsideArea"></div>
-        <div class="topPayArea"></div>
-        <div class="topTalkArea"></div>
-        <div class="topNotiArea"></div>
-        <div class="topShoppingArea"></div>
+        <div class="topAsideArea">
+          <button class="btn_menu" type="button" aria-haspopup="menu" aria-expanded="false">
+            <!-- aria 속성은 사용자에게, 요소가 메뉴나 팝업같은 하위 항목을 가지고 있음을 나타내는 속성이다.  -->
+             <!-- 비슷한 속성은 role이 있다.  -->
+              <!-- https://velog.io/@kym123123/ARIA%EC%9D%98%EC%86%8D%EC%84%B1%EC%83%81%ED%83%9C%EC%97%AD%ED%95%A0%EB%B0%8F%EC%82%AC%EC%9A%A9-%EC%98%88%EC%8B%9C%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD -->
+            <span class="blind">확장 영역</span>
+            <!-- 이렇게 설계하는 이유가 blind로 사각형 구조 잡고  -->
+             <!-- 확장 영역이라는 텍스트는 개발자에게 알려주는 //같은 역활이네 -->
+              <!-- 진짜 넣을 값은 after나 before로 넣는다. -->
+          </button>
+        </div>
+        <div class="topPayArea">
+          <a href="#" class="link_pay"></a>
+          <span class="blind">페이 바로가기</span>
+        </div>
+        <div class="topTalkArea">
+          <button type="button" class="btn_talk" aria-haspopup="menu" aria-expanded="false">
+            <span class="blind">톡</span>
+          </button>
+        </div>
+        <div class="topNotiArea">
+          <button type="button" class="btn_notyfy" aria-haspopup="menu" aria-expanded="false">
+            <span class="blind">알림</span>
+          </button>
+        </div>
+        <div class="topShoppingArea">
+          <a href="#" class="link_shopping">
+            <span class="blind">장바구니</span>
+            <span class="blind">알림</span>
+          </a>
+        </div>
       </div>
-      <section class="container"></section>
+
+      <section class="con">
+        <div class="top_root">
+          <div class="rayout_left">
+            <div class="banner_area">
+              <div class="timeboard">
+                <div class="outframe">
+                  <iframe src="" frameborder="0" class="inframe"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="newsstand">
+              <div class="contentHeaderView_header">
+                <div class="contentHeaderView_top">
+                  <!-- 여기까지 하다 말음 -->
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="rayout_right"></div>
+          <div class="settingView"></div>
+          <a href="#"></a>
+        </div>
+      </section>
       <footer class="footer"></footer>
     </div>
   </body>

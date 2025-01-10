@@ -60,15 +60,100 @@ body {
       }
     }
 
-    .topAsideArea {
+    @mixin AsideAfter($background_position_x, $background_position_y){
+      span{
+        &::after{
+      content: "";
+      display: block;
+      background-image: url(../img/sp_main.eae24523.png);
+      background-size: 452px 436px;
+      background-position: $background_position_x ,$background_position_y;
+      background-repeat: no-repeat;
+      width: 32px;
+      height: 32px;
+      position: relative;
+        }
+      }
     }
+
+    @mixin topArea($t: 0,$l: 0,$r: 0,$w: 0){
+      top: $t;
+      left: $l;
+      width: $w;
+      right: $r;
+      position: absolute;
+    }
+
+    button[class^="_menu"]{
+      overflow: visible;
+      position: relative;
+    }
+
+    a[class^="link_"]{
+      position: relative;
+      display: block;
+      padding: 8px;
+    }
+    // a 적용 잘 되는지 확인 해 볼 것 10일자 내용
+
+    .topAsideArea {
+      @include topArea($t: 5px,$l: -12px,$w: 48px);
+
+
+      .btn_menu{
+        // after나 before에게 앱솔 줄 때 쓰는 방법
+        // relative 같은 경우 사용의 제한은 없지만 이런 식으로
+        // 구조가 겹쳐 있을 경우 작업하기 힘들다고 함.
+
+        @include AsideAfter(
+          $background_position_x: -311px,
+          $background_position_y: -166px
+         )
+      }
+    }
+
     .topPayArea {
+      @include topArea($t: 5px, $l: 41px);
+
+      .link_pay{
+        @include AsideAfter(
+          $background_position_x: -248px,
+          $background_position_y: -260px 
+          );
+      }
     }
     .topTalkArea {
+      @include topArea($t: 5px, $r: 94px, $w: 48px);
+
+      .btn_talk{
+        @include AsideAfter(
+          $background_position_x: -99px,
+          $background_position_y: -316px 
+          );
+      }
     }
     .topNotiArea {
+      @include topArea($t: 5px, $r: 42px, $w: 48px);
+
+      .btn_notify{      
+        @include AsideAfter(
+        $background_position_x: -311px,
+        $background_position_y: -232px 
+        );
+      }
     }
+
     .topShoppingArea {
+      @include topArea($t: 5px, $r: -10px);
+
+      .link_shopping{
+        &:last-child{
+        @include AsideAfter(
+        $background_position_x: -33px,
+        $background_position_y: -316px 
+        );
+        }
+      }
     }
 
     // 여기까지 상단 바 Aside
@@ -447,6 +532,18 @@ body {
     margin-left: -25px;
     margin-right: -25px;
     font-size: 13.65px !important;
+  }
+
+  .ico_ad{
+    position: absolute;
+    top: -5px;
+    right: 13px;
+    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -93px -376px;
+    background-repeat: no-repeat;
+    width: 26px;
+    height: 22px;
   }
 }
 // 검색창밑 아이콘 숏컷에어리어 끝
