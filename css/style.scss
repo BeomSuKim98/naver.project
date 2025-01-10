@@ -2,13 +2,21 @@
 .fold {
 }
 
-:root{
+:root {
   --color_title: #080808;
   --color_search: #000;
 }
 
-button[class^=btn_]{
+button[class^="btn_"] {
   cursor: pointer;
+}
+
+svg {
+  fill: #03c75a;
+}
+
+img {
+  vertical-align: top;
 }
 
 .blind {
@@ -38,60 +46,17 @@ body {
   .topSearchWrap {
     z-index: 10;
     position: relative;
-    height: 150px;
+    height: 156px;
     padding: 52px 0 8px;
 
-    #search_right_first {
+    .search_right_first {
     }
 
-    #search_right_second {
-      .link_headline{
+    .search_right_second {
+      .link_headline {
         position: absolute;
         top: 86px;
         right: 0;
-      }
-    }
-
-    .shortcut_area {
-      position: relative;
-
-      .shortcut_list{
-        display: flex;
-
-        .shortcut_item{
-          position: relative;
-
-          .service_icon{
-            width: 44px;
-            height: 44px;
-            position: relative;
-            display: block;
-            margin: 0 auto;
-
-            &::before{
-              content: "";
-              display: block;
-              position: absolute;
-              top: -1px;
-              left: -3px;
-              background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-              background-size: 452px 436px;
-              background-position: -153px -142px;
-              background-repeat: no-repeat;
-              width: 50px;
-              height: 50px;
-
-              &::after{
-                background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-                background-size: 452px 436px;
-                background-position: -205px -219px;
-                background-repeat: no-repeat;
-                width: 40px;
-                height: 40px;
-              }
-            }
-          }
-        }
       }
     }
 
@@ -105,17 +70,17 @@ body {
     }
     .topShoppingArea {
     }
+
+    // 여기까지 상단 바 Aside
   }
 }
 
-// 여기까지 상단 바 Aside
-
 // 검색 상자
-
 .search_area {
   position: absolute;
-  top: 53px;
+  top: 52px;
   left: 50%;
+  // height: 58px;
   transform: translateX(-50%);
   z-index: 9;
   width: 706px;
@@ -124,39 +89,30 @@ body {
   background-color: #fff;
 
   .search_group {
-
-
     .search_group_inner {
       position: relative;
       padding-left: 67px;
-      
+
       .search_logo {
         top: 0px;
         left: 0px;
-        position: relative;
+        position: absolute;
 
-
-        .link_naver{
-          position: relative;
+        .link_naver {
           display: block;
           padding: 17px 16px 17px 27px;
+          position: absolute;
 
-          .ico_n_logo_svg{
+          .ico_n_logo_svg {
             opacity: 1;
             transform: scale(1);
-            transition: opacity .3s 3.2s;
+            transition: opacity 0.3s 3.2s;
+            width: 24px;
+            height: 24px;
+            display: block;
 
-            .ico_btn_search_svg {
-              
-
-              svg{
-                fill: #03c75a;
-                path{
-                  display: none;
-                }
-              }
-
-
+            & > svg {
+              fill: #03c75a;
             }
           }
         }
@@ -164,109 +120,336 @@ body {
     }
   }
 
-      form{
-        margin: 0;
+  form {
+    margin: 0;
+    padding: 0;
+
+    fieldset {
+      border: 0;
+
+      legend {
         padding: 0;
+        // display: block;
+        // padding-inline: 2px;
+      }
 
-        fieldset{
-          border: 0;
+      .search_input_box {
+        width: 480px;
+        background-color: #fff;
 
-          legend{
-            padding: 0;
-            // display: block;
-            // padding-inline: 2px;
-          }
-
-            .search_input_box{
-              width: 480px;
-              background-color: #fff;
-
-              .search_input{
-                width: 100%;
-                height: 58%;
-                color: var(--color_search);
-                z-index: 10;
-                position: relative;
-                padding: 17px 0;
-                background-color: rgba(0, 0, 0, 0,);
-                box-sizing: border-box;
-                font-size: 2rem;
-                line-height: 2rem;
-                line-height: 24px;
-                font-weight: bold;
-                outline: 0;
-              }
-            }
-
-            .btn_search{
-              position: absolute;
-              top: 0;
-              right: 0;
-              padding: 17px 27px 16px 10px;
-              cursor: pointer;
-            }
+        .search_input {
+          width: 100%;
+          height: 55px;
+          color: var(--color_search);
+          z-index: 10;
+          position: relative;
+          padding: 17px 0;
+          background-color: rgba(0, 0, 0, 0);
+          box-sizing: border-box;
+          font-size: 2rem;
+          line-height: 2rem;
+          line-height: 24px;
+          font-weight: bold;
+          outline: 0;
         }
       }
 
-      .search_box {
+      .btn_search {
         position: absolute;
         top: 0;
-        right: 61px;
-        bottom: 0;
-        z-index: 11;
-        width: 56px;
+        right: 0;
+        padding: 17px 27px 16px 10px;
+        cursor: pointer;
 
-        .btn_keyboard {
-          overflow: visible;
-          position: relative;
-          padding: 22px 3px;
-
-          &::before{
-            content: "";
-            display: block;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-            background-size: 452px 436px;
-            background-position: -148px -301px;
-            background-repeat: no-repeat;
-            width: 24px;
-            height: 14px;
-
-          }
-
-          .keyboard_text {
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-            background-size: 452px 436px;
-            background-position: -152px 0px;
-            background-repeat: no-repeat;
-            width: 68px;
-            height: 37px;
-            position: absolute;
-            top: 44px;
-            left: -19px;
-            display: none;
-          }
-        }
-
-        .btn_arrow {
-          position: absolute;
-          top: 0;
-          right: 1px;
-          padding: 26px 6px;
-
-          &::before{
-            content: "";
-            display: block;
-            background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-            background-size: 452px 436px;
-            background-position: -154px -211px;
-            background-repeat: no-repeat;
-            width: 10px;
-            height: 6px;
-          }
+        .ico_btn_search_svg {
+          width: 25px;
+          height: 25px;
+          display: block;
         }
       }
     }
-  
+  }
+
+  .search_box {
+    position: absolute;
+    top: 0;
+    right: 61px;
+    bottom: 0;
+    z-index: 11;
+    width: 56px;
+
+    .btn_keyboard {
+      overflow: visible;
+      position: relative;
+      padding: 22px 3px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: -148px -301px;
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 14px;
+      }
+
+      .keyboard_text {
+        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: -152px 0px;
+        background-repeat: no-repeat;
+        width: 68px;
+        height: 37px;
+        position: absolute;
+        top: 44px;
+        left: -19px;
+        display: none;
+      }
+    }
+
+    .btn_arrow {
+      position: absolute;
+      top: 0;
+      right: 1px;
+      padding: 26px 6px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: -154px -211px;
+        background-repeat: no-repeat;
+        width: 10px;
+        height: 6px;
+      }
+    }
+  }
+}
+// 검색창 끝
+
+// 검색창밑 아이콘 숏컷에어리어 // type_^ 클래스는 더 아래에 따로 명시한다.
+
+.shortcut_area {
+  position: relative;
+  width: 676px;
+  margin: 68px auto 0;
+
+  .shortcut_list {
+    display: flex;
+
+    .shortcut_item {
+      position: relative;
+      padding-left: 14px;
+
+      &:last-child {
+        left: 16px;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 12px;
+          left: 10px;
+          width: 1px;
+          height: 20px;
+          background-color: rgba(227, 229, 232, 0.8);
+        }
+      }
+
+      & + .shortcut_item {
+        margin-left: -20.5px;
+      }
+
+      .link_service {
+        position: relative;
+        display: block;
+        width: 64px;
+
+        .service_icon {
+          width: 44px;
+          height: 44px;
+          position: relative;
+          display: block;
+          margin: 0 auto;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+          }
+        }
+      }
+
+      .service_name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        margin-top: 4px;
+        font-size: 0.9rem;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// type_^ 클래스 명시 부분.
+
+@mixin type_vari($background_position_x, $background_position_y) {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -3px;
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -153px -142px;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+  }
+
+  &::after {
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: $background_position_x $background_position_y;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+}
+
+.shortcut_item {
+  .type {
+    &_mail {
+      @include type_vari(
+        $background_position_x: -205px,
+        $background_position_y: -219px
+      );
+    }
+
+    &_cafe {
+      @include type_vari(
+        $background_position_x: -41px,
+        $background_position_y: -219px
+      );
+    }
+
+    &_blog {
+      @include type_vari(
+        $background_position_x: 0px,
+        $background_position_y: -219px
+      );
+    }
+
+    &_shopping {
+      @include type_vari(
+        $background_position_x: -41px,
+        $background_position_y: -260px
+      );
+    }
+
+    &_news {
+      @include type_vari(
+        $background_position_x: -270px,
+        $background_position_y: -205px
+      );
+    }
+
+    &_stock {
+      @include type_vari(
+        $background_position_x: -123px,
+        $background_position_y: -260px
+      );
+    }
+
+    &_real {
+      @include type_vari(
+        $background_position_x: -0px,
+        $background_position_y: -260px
+      );
+    }
+
+    &_map {
+      @include type_vari(
+        $background_position_x: -270px,
+        $background_position_y: 0px
+      );
+    }
+
+    &_webtoon {
+      @include type_vari(
+        $background_position_x: -164px,
+        $background_position_y: -260px
+      );
+    }
+
+    &_zzz {
+      @include type_vari(
+        $background_position_x: 0px,
+        $background_position_y: 0px
+      );
+
+      &::after {
+        width: 0;
+        height: 0;
+      }
+
+      .service_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+
+    &_more {
+      @include type_vari(
+        $background_position_x: -270px,
+        $background_position_y: -164px
+      );
+    }
+
+    &_webtoon {
+      @include type_vari(
+        $background_position_x: -164px,
+        $background_position_y: -260px
+      );
+    }
+  }
+
+  .service_ad {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    margin: auto;
+    // -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
+    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .seoul_name {
+    margin-left: -25px;
+    margin-right: -25px;
+    font-size: 13.65px !important;
+  }
+}
+// 검색창밑 아이콘 숏컷에어리어 끝
 
 // 여기까지 상단바
 

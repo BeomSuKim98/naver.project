@@ -11,36 +11,44 @@
     <!-- 테일윈드 불러오기 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- 서로 다른 컴퓨터에서 세팅이 달라, 각자 저장이 따로 됌. scss에서 작업하면 문제없음 추후 고치기 -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../style/style.css" />
 
     <!-- 폰트어썸 불러오기 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- 숏컷 아이콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="#" />
   </head>
-  
+
   <body>
     <div id="wrap">
-      <div id="header">
+      <div class="header">
         <div class="topSearchWrap">
-          <div id="special_logo"></div>
+          <!-- <div class="special_logo"></div> -->
           <div class="search_area">
             <div class="search_group">
               <div class="search_group_inner">
                 <h1 class="search_logo">
-                  <a href="#" class="link_naver type_motion_hat is_fadout"></a>
+                  <!-- <a href="#" class="link_naver type_motion_hat is_fadout"></a> -->
                   <a href="#" class="link_naver type_motion_n is_fadein">
-                    <!-- <span class="ico_n_logo_svg">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16.273 12.845 7.376 
-                        0H0v24h7.727V11.155L16.
-                         24H24V0h-7.727v12.845z">
-                        </path>
-                        viewBox란 svg 요소의 크기를 확대 또는 축소, 위치를 조정해 주는 속성이다.
-                         화면에 크기에 따라 svg요소 크기를 조절해준다.
+                    <span class="ico_n_logo_svg">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"
+                        ></path>
                       </svg>
-                    </span> -->
+                    </span>
+                    <!-- viewBox란 svg 요소의 크기를 확대 또는 축소, 위치를 조정해 주는 속성이다.
+                    화면에 크기에 따라 svg요소 크기를 조절해준다. -->
                     <span class="blind">NAVER</span>
                   </a>
                 </h1>
@@ -73,7 +81,11 @@
 
                     <button type="submit" class="btn_search">
                       <span class="ico_btn_search_svg">
-                        <svg>
+                        <svg
+                          id="search-btn"
+                          viewBox="0 0 50 50"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <path
                             d="M22.13.5c11.378 0 20.632 9.256 20.632 20.63 0
                    4.699-1.566 9.155-4.439 12.782l10.164 10.165a2.41 2.41
@@ -105,35 +117,116 @@
               </div>
             </div>
           </div>
+          <!-- 여기까지 검색 상자 -->
+
+          <div class="search_right_first"></div>
+          <div class="search_right_second">
+            <a href="#" class="link_headline">
+              <img
+                src="https://ssl.pstatic.net/melona/libs/1519/1519687/e9b5b12a93f764eee181_20250107170245148_1.png"
+                class="w-[244px] h-[108px] display: block"
+                alt="[광고]오직 삼세페에서만! AI 패키지 더블혜택"
+              />
+            </a>
+          </div>
+          <!-- 여기까지 광고 배너 -->
+
+          <div class="shortcut_area">
+            <ul class="shortcut_list">
+              <!-- li.shortcut_item*12>a[herf="#"]link_service>span.service_icon+span.service_name -->
+              <li class="shortcut_item">
+                <a href="#" class="link_service">
+                  <span class="service_icon type_mail"></span>
+                  <span class="service_name">메일</span>
+                </a>
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_cafe"></span
+                  ><span class="service_name">카페</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_blog"></span
+                  ><span class="service_name">블로그</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_shopping"></span
+                  ><span class="service_name">스토어</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_news"></span
+                  ><span class="service_name">뉴스</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_stock"></span
+                  ><span class="service_name">증권</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_real"></span
+                  ><span class="service_name">부동산</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_map"></span
+                  ><span class="service_name">지도</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_webtoon"></span
+                  ><span class="service_name">웹툰</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_zzz">
+                    <img
+                      src="../img/zzz.png"
+                      width="40"
+                      height="40"
+                      class="service_img"
+                      alt="치지직" /></span
+                  ><span class="service_name">치지직</span></a
+                >
+              </li>
+
+              <li class="shortcut_item">
+                <a href="#" class="link_service"
+                  ><span class="service_icon type_more"></span
+                  ><span class="blind">바로가기 펼침</span></a
+                >
+              </li>
+              <li class="shortcut_item">
+                <a href="#" class="link_service">
+                  <span class="service_icon">
+                    <span
+                      class="service_ad"
+                      style="
+                        background-image: url('https://ssl.pstatic.net/melona/libs/1515/1515329/76f51085768bb0285ea1_20250106115502532.png');
+                      "
+                    >
+                    </span>
+                  </span>
+                  <span class="service_name seoul_name">서울사이버대학</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 여기까지 숏컷 아이콘 -->
         </div>
 
-        <!-- 여기까지 검색 상자 -->
-
-        <div id="search_right_first"></div>
-        <div id="search_right_second">
-          <a href="#" class="link_headline">
-            <img src="https://ssl.pstatic.net/melona/libs/1519/1519687/e9b5b12a93f764eee181_20250107170245148_1.png" 
-            w-[244px] h-[108px]
-            alt="[광고]오직 삼세페에서만! AI 패키지 더블혜택">
-          </a>
-        </div>
-        <div class="shortcut_area">
-          <ul class="shortcut_list">
-            <!-- li.shortcut_item*12>a[herf="#"]link_service>span.service_icon+span.service_name -->
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-            <li class="shortcut_item"><a href="#" class="link_service"><span class="service_icon"></span><span class="service_name"></span></a></li>
-          </ul>
-        </div>
         <div class="topAsideArea"></div>
         <div class="topPayArea"></div>
         <div class="topTalkArea"></div>
