@@ -60,98 +60,105 @@ body {
       }
     }
 
-    @mixin AsideAfter($background_position_x, $background_position_y){
-      span{
-        &::after{
-      content: "";
-      display: block;
-      background-image: url(../img/sp_main.eae24523.png);
-      background-size: 452px 436px;
-      background-position: $background_position_x ,$background_position_y;
-      background-repeat: no-repeat;
-      width: 32px;
-      height: 32px;
-      position: relative;
-        }
+    @mixin AsideAfter($background_position_x, $background_position_y) {
+      &::after {
+        content: "";
+        display: block;
+        background-image: url(../img/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: $background_position_x $background_position_y;
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
+        position: relative;
       }
     }
 
-    @mixin topArea($t: 0,$l: 0,$r: 0,$w: 0){
+    @mixin topArea($t: 10px, $l: auto, $r: auto, $w: auto) {
       top: $t;
       left: $l;
       width: $w;
       right: $r;
       position: absolute;
+
+      @function has($btn_cheaker) {
+        @return $btn_cheaker == button;
+      }
+
+      @if (has(button)) {
+        button {
+          display: block;
+          padding: 8px;
+        }
+      } @else {
+        a {
+          display: block;
+          padding: 8px;
+        }
+      }
     }
 
-    button[class^="_menu"]{
-      overflow: visible;
-      position: relative;
-    }
-
-    a[class^="link_"]{
-      position: relative;
-      display: block;
-      padding: 8px;
-    }
-    // a 적용 잘 되는지 확인 해 볼 것 10일자 내용
+    // a[class^="link_"] {
+    //   position: relative;
+    //   display: block;
+    //   padding: 8px;
+    // }
+    // ^= 는 해당 키워드로 시작 시 $= 는 해당 키워드로 끝날 시
 
     .topAsideArea {
-      @include topArea($t: 5px,$l: -12px,$w: 48px);
+      @include topArea($l: -12px, $w: 48px);
 
-
-      .btn_menu{
-        // after나 before에게 앱솔 줄 때 쓰는 방법
+      .btn_menu {
+        // after나 before에게 앱솔 줄 때 쓰는 방법 : 다중 relative
         // relative 같은 경우 사용의 제한은 없지만 이런 식으로
         // 구조가 겹쳐 있을 경우 작업하기 힘들다고 함.
-
         @include AsideAfter(
           $background_position_x: -311px,
           $background_position_y: -166px
-         )
+        );
       }
     }
 
     .topPayArea {
-      @include topArea($t: 5px, $l: 41px);
+      @include topArea($l: 41px);
 
-      .link_pay{
+      .link_pay {
         @include AsideAfter(
           $background_position_x: -248px,
-          $background_position_y: -260px 
-          );
+          $background_position_y: -260px
+        );
       }
     }
     .topTalkArea {
-      @include topArea($t: 5px, $r: 94px, $w: 48px);
+      @include topArea($r: 94px, $w: 48px);
 
-      .btn_talk{
+      .btn_talk {
         @include AsideAfter(
           $background_position_x: -99px,
-          $background_position_y: -316px 
-          );
+          $background_position_y: -316px
+        );
       }
     }
     .topNotiArea {
-      @include topArea($t: 5px, $r: 42px, $w: 48px);
+      @include topArea($r: 42px, $w: 48px);
 
-      .btn_notify{      
+      .btn_notify {
         @include AsideAfter(
-        $background_position_x: -311px,
-        $background_position_y: -232px 
+          $background_position_x: -311px,
+          $background_position_y: -232px
         );
       }
     }
 
     .topShoppingArea {
-      @include topArea($t: 5px, $r: -10px);
+      @include topArea($r: -10px);
 
-      .link_shopping{
-        &:last-child{
-        @include AsideAfter(
-        $background_position_x: -33px,
-        $background_position_y: -316px 
-        );
+      .link_shopping {
+        &:last-child {
+          @include AsideAfter(
+            $background_position_x: -33px,
+            $background_position_y: -316px
+          );
         }
       }
     }
@@ -326,7 +333,6 @@ body {
 
     .shortcut_item {
       position: relative;
-      padding-left: 14px;
 
       &:last-child {
         left: 16px;
@@ -345,6 +351,7 @@ body {
 
       & + .shortcut_item {
         margin-left: -20.5px;
+        padding-left: 14px;
       }
 
       .link_service {
@@ -534,7 +541,7 @@ body {
     font-size: 13.65px !important;
   }
 
-  .ico_ad{
+  .ico_ad {
     position: absolute;
     top: -5px;
     right: 13px;

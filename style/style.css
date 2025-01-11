@@ -48,6 +48,146 @@ body {
   top: 86px;
   right: 0;
 }
+.header .topSearchWrap a[class^=link_] {
+  position: relative;
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topAsideArea {
+  top: 10px;
+  left: -12px;
+  width: 48px;
+  right: auto;
+  position: absolute;
+}
+.header .topSearchWrap .topAsideArea button {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topAsideArea else a {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topAsideArea .btn_menu::after {
+  content: "";
+  display: block;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -311px -166px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.header .topSearchWrap .topPayArea {
+  top: 10px;
+  left: 41px;
+  width: auto;
+  right: auto;
+  position: absolute;
+}
+.header .topSearchWrap .topPayArea button {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topPayArea else a {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topPayArea .link_pay::after {
+  content: "";
+  display: block;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -248px -260px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.header .topSearchWrap .topTalkArea {
+  top: 10px;
+  left: auto;
+  width: 48px;
+  right: 94px;
+  position: absolute;
+}
+.header .topSearchWrap .topTalkArea button {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topTalkArea else a {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topTalkArea .btn_talk::after {
+  content: "";
+  display: block;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -99px -316px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.header .topSearchWrap .topNotiArea {
+  top: 10px;
+  left: auto;
+  width: 48px;
+  right: 42px;
+  position: absolute;
+}
+.header .topSearchWrap .topNotiArea button {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topNotiArea else a {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topNotiArea .btn_notify {
+  padding: 8px;
+  display: block;
+}
+.header .topSearchWrap .topNotiArea .btn_notify::after {
+  content: "";
+  display: block;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -311px -232px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+.header .topSearchWrap .topShoppingArea {
+  top: 10px;
+  left: auto;
+  width: auto;
+  right: -10px;
+  position: absolute;
+}
+.header .topSearchWrap .topShoppingArea button {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topShoppingArea else a {
+  display: block;
+  padding: 8px;
+}
+.header .topSearchWrap .topShoppingArea .link_shopping:last-child::after {
+  content: "";
+  display: block;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -33px -316px;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  position: relative;
+}
+
 .search_area {
   position: absolute;
   top: 52px;
@@ -187,7 +327,6 @@ body {
 }
 .shortcut_area .shortcut_list .shortcut_item {
   position: relative;
-  padding-left: 14px;
 }
 .shortcut_area .shortcut_list .shortcut_item:last-child {
   left: 16px;
@@ -204,6 +343,7 @@ body {
 }
 .shortcut_area .shortcut_list .shortcut_item + .shortcut_item {
   margin-left: -20.5px;
+  padding-left: 14px;
 }
 .shortcut_area .shortcut_list .shortcut_item .link_service {
   position: relative;
@@ -529,4 +669,15 @@ body {
   margin-left: -25px;
   margin-right: -25px;
   font-size: 13.65px !important;
+}
+.shortcut_item .ico_ad {
+  position: absolute;
+  top: -5px;
+  right: 13px;
+  background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -93px -376px;
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 22px;
 }
