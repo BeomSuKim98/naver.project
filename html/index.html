@@ -27,7 +27,7 @@
 
   <body>
     <div class="wrap">
-      <div class="header">
+      <section class="header con">
         <div class="topSearchWrap">
           <!-- <div class="special_logo"></div> -->
           <div class="search_area">
@@ -270,24 +270,24 @@
             </button>
           </div>
           <div class="topShoppingArea">
-            <a href="#" class="link_shopping p-8">
+            <a href="#" class="link_shopping">
               <span class="blind">장바구니</span>
               <span class="blind">알림</span>
             </a>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- 여기서부터 메인 컨텐츠 -->
-      <section class="con">
+      <section class="main con">
         <div class="top_root">
           <div class="rayout_left">
             <!-- 여기부터 검색창 바로 아래 배너 -->
             <div class="banner_area">
               <div class="timeboard">
                 <div class="outframe">
-                  <iframe src="" frameborder="0" class="inframe">
-                    <a href="#" class="ac_banner_a block">
+                  <div src="" frameborder="0" class="inframe">
+                    <a href="#" class="ac_banner_a block block">
                       <img
                         src="https://ssl.pstatic.net/melona/libs/1519/1519333/673daabc9db26d9eb1af_20240718154905875_9.jpg"
                         width="830"
@@ -295,20 +295,20 @@
                         alt="[광고]라면도 다행이라 생각했는데 도시락 보고 울컥했어요"
                       />
                     </a>
-                  </iframe>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- 여기부터 뉴스 상자 -->
+            <!-- 여기부터 뉴스 상자 탭 상단 -->
             <div class="newsStand">
               <div class="contentHeaderView_header">
                 <div class="contentHeaderView_top">
-                  <ul class="View_list">
+                  <ul class="View_list flex">
                     <li class="View_item">
                       <span>
-                        <a href="" class="tab_text">뉴스스탠드</a>
-                        <a href="" class="tab_text">언론사편집</a>
+                        <a href="" class="tab_text text-black">뉴스스탠드</a>
+                        <a href="" class="tab_text only_before">언론사편집</a>
                       </span>
                     </li>
                     <li class="View_item">
@@ -317,7 +317,7 @@
                     <li class="View_item">
                       <a href="" class="tab_text"
                         >스포츠
-                        <span class="View_item_tag">"LIVE"</span>
+                        <span class="View_item_tag">LIVE</span>
                       </a>
                     </li>
                     <li class="View_item">
@@ -329,142 +329,213 @@
                   </ul>
                 </div>
               </div>
+              <!-- 여기까지 뉴스 상자 탭 상단  -->
 
+              <!-- 여기부터 뉴스 상자 헤드라인 중단 -->
               <div class="contentHeaderView_header_sub">
-                <div class="sub_news">
-                  <a href="#" class="news_media">연합뉴스</a>
+                <a href="#" class="news_media"
+                  >전체언론사
+                  <i class="media_ikon"></i>
+                </a>
+
+                <div class="news_simple_box">
+                  <a href="#" class="subView">연합뉴스</a>
                   <div class="news_box">
                     <!-- 해당 기능은 스와이퍼 비슷한거 같은데 스와이퍼로 추후 구현할 것 -->
-                    <div class="first_arti"></div>
-                    <div class="second_arti"></div>
+                    <div class="first_arti">
+                      '소매판매 절벽' 21년만에 최악…車·옷·먹거리...
+                    </div>
+
+                    <!-- 임시 블록 처리 스와이퍼 처리 후 할 것 -->
+                    <div class="second_arti blind">
+                      '더는 못 버틴다'…전국 대학 최소 13곳 등록금 인상 검토
+                    </div>
                   </div>
                 </div>
 
                 <div class="sub_home">
+                  <a href="#" class="sub_stand_link">뉴스스탠드</a>
                   <a href="#" class="sub_home_link">뉴스홈</a>
                 </div>
               </div>
+
               <div class="contentHeaderView_content">
-                <div class="conetent_wrap">
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
-                  </div>
-                  <div>
-                    <a href="#" class="news_th"
-                      ><img src="" alt="" class="news_logo"
-                    /></a>
+                <div class="content_wrap">
+                  <div class="content_group">
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/seoulIco.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico_mediatoday.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico_koreaiconomy.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico_ohmynews.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico_sisain.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico_sportDonga.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2.dailysport.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2_bloter.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2_dailylabonews.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2_hangyerey.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2_jiji_com.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico2moneytoday.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico3_dailykorea.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico3_geyngheng.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico3_mailhealth.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="#" class="news_th"
+                        ><img
+                          src="../img/ico3_mydaily.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img
+                          src="../img/ico3_newsis.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img
+                          src="../img/ico3_YTN.png"
+                          alt=""
+                          class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
+                    <div class="content_box">
+                      <a href="" class="news_th"
+                        ><img src="" alt="" class="news_logo"
+                      /></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -476,27 +547,31 @@
                 </button>
                 <div class="page_wrap">
                   <span class="content_text">
-                    <span class="content_point">경제소식</span>
-                    "더보기"
+                    <span class="content_point">언론사</span>
+                    더보기
                   </span>
                   <span class="content_current">
                     <span class="blind">페이지</span>
-                    "1" </span
+                    1 </span
                   ><span class="content_total">
                     <span class="blind">전체</span>
-                    "/" "15"
+                    / 15
                   </span>
                 </div>
                 <button class="page_btn_next">
-                  <span class="blind">{다음 페이지}</span>
+                  <span class="blind">다음 페이지</span>
                 </button>
-                <span class="tag_ad">AD</span>
+                <!-- <span class="tag_ad">AD</span> -->
               </div>
             </div>
 
             <!-- 여기부터 두 번째 div 상자 -->
             <div></div>
+
+            <!--  여기부터 세번째 div 상자 -->
             <div></div>
+
+            <!-- 여기부터 네번째 div 상자 -->
             <div></div>
 
             <!-- 여기부터 오른쪽 레이아웃 -->

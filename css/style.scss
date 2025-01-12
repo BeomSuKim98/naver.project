@@ -2,6 +2,19 @@
 .fold {
 }
 
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html > body {
+  font-family: "GmarketSansMedium";
+  text-underline-position: under;
+}
+
 :root {
   --color_title: #080808;
   --color_search: #000;
@@ -9,6 +22,10 @@
 
 button[class^="btn_"] {
   cursor: pointer;
+}
+
+.text-black {
+  color: #080808 !important;
 }
 
 svg {
@@ -33,16 +50,18 @@ img {
 }
 
 body {
-  font-size: 1.4rem;
+  font-size: 1rem;
   line-height: 1.7rem;
+}
+
+.con {
+  width: 1280px;
+  margin: 0 auto;
 }
 
 // 헤더 시작
 
 .header {
-  width: 1280px;
-  margin: 0 auto;
-
   .topSearchWrap {
     z-index: 10;
     position: relative;
@@ -74,18 +93,21 @@ body {
       }
     }
 
-    @mixin topArea($t: 10px, $l: auto, $r: auto, $w: auto) {
+    @function has($btn_cheaker) {
+      @return $btn_cheaker == "button";
+    }
+    // has가 css에 있으면 함수 오버로딩
+    // 아니면 커스텀 정의
+    // 열심히 만들었는데 작동을 안하네 나중에 찾아보고 작동만 시키자
+
+    @mixin topArea($t: 10px, $l: auto, $r: auto, $w: auto, $button: "button") {
       top: $t;
       left: $l;
       width: $w;
       right: $r;
       position: absolute;
 
-      @function has($btn_cheaker) {
-        @return $btn_cheaker == button;
-      }
-
-      @if (has(button)) {
+      @if (has($button)) {
         button {
           display: block;
           padding: 8px;
@@ -120,7 +142,7 @@ body {
     }
 
     .topPayArea {
-      @include topArea($l: 41px);
+      @include topArea($l: 41px, $button: "button ");
 
       .link_pay {
         @include AsideAfter(
@@ -151,7 +173,7 @@ body {
     }
 
     .topShoppingArea {
-      @include topArea($r: -10px);
+      @include topArea($r: -10px, $button: "button ");
 
       .link_shopping {
         &:last-child {
@@ -221,8 +243,6 @@ body {
 
       legend {
         padding: 0;
-        // display: block;
-        // padding-inline: 2px;
       }
 
       .search_input_box {
@@ -238,7 +258,7 @@ body {
           padding: 17px 0;
           background-color: rgba(0, 0, 0, 0);
           box-sizing: border-box;
-          font-size: 2rem;
+          font-size: 1rem;
           line-height: 2rem;
           line-height: 24px;
           font-weight: bold;
@@ -350,7 +370,7 @@ body {
       }
 
       & + .shortcut_item {
-        margin-left: -20.5px;
+        margin-left: -23px;
         padding-left: 14px;
       }
 
@@ -559,13 +579,400 @@ body {
 
 // 바디 컨텐츠 시작
 .con {
+  position: relative;
+  padding-bottom: 60px;
+
   .top_root {
     .rayout_left {
+      float: left;
+      width: 830px;
     }
 
     .rayout_right {
     }
     .settingView {
+    }
+  }
+}
+
+// 광고 배너 영역
+.banner_area {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+
+  .timeboard {
+    height: 130px;
+    .outframe {
+      width: 100%;
+      height: auto;
+      margin: 0px auto;
+      line-height: 0;
+
+      .inframe {
+        width: 100%;
+        height: 134px;
+        visibility: inherit;
+        border: 0px;
+        vertical-align: bottom;
+        // 요소의 수직 정렬을 지정하는 속성
+
+        img {
+          width: 830px;
+          height: 130px;
+          aspect-ratio: auto 830 / 130;
+          // 가로세로 비율을 유지하면서 크기를 조정
+          // 값이 두개인 경우 요소가 고유한 종횡비를 가지는 경우 해당 종횡비를 따르지만 'auto'
+          // 만약 지렇지 않은 경우 지정한 비율을 따른다. '830 / 130'
+        }
+      }
+    }
+  }
+}
+
+// 뉴스 영역
+// 뉴스 영역 프레임
+.newsStand {
+  font-size: 1rem;
+  margin-top: 16px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+
+  .contentHeaderView_header {
+    display: flex;
+    padding: 18px 20px 17px;
+
+    .contentHeaderView_top {
+      flex: 1;
+    }
+  }
+}
+
+// 뉴스 영역 콘텐츠
+
+.View_item {
+  position: relative;
+
+  &:not(:first-child) {
+    padding-left: 26px;
+  }
+
+  // before 믹스 활용 어려우니 하드코딩 할 것
+
+  &:not(:first-child)::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 13px;
+    width: 1px;
+    height: 15px;
+    background-color: #d3d5d7;
+    transform: skewX(-15deg);
+  }
+
+  .tab_text {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    color: rgba(8, 8, 8, 0.5);
+
+    .View_item_tag {
+      background-color: #f4361e;
+      display: inline-block;
+      margin: 1px 0 0 1px;
+      padding: 1px 5px 0 4px;
+      border-radius: 9px;
+      font-size: 0.6rem;
+      line-height: 16.5px;
+      font-weight: 700;
+      // vertical-align: top;
+      color: #fff;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        background-image: url(../img/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: -432px -413px;
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 10px;
+        margin: 4px 3px 0 0;
+        vertical-align: top;
+      }
+    }
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    line-height: 23px;
+    font-weight: 800;
+    vertical-align: top;
+    color: rgba(8, 8, 8, 0.5);
+
+    .only_before {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background-color: #d3d5d7;
+        margin: 7px 8px 0 3px;
+        border-radius: 50%;
+        vertical-align: top;
+      }
+    }
+  }
+}
+// 여기까지 뉴스 탭 상단
+
+// 여기부터 뉴스 헤드라인 중단
+
+.contentHeaderView_header_sub {
+  background-color: #f5f7f8;
+  position: relative;
+  display: flex;
+  margin: 0 20px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  line-height: 26px;
+
+  .news_media {
+    color: #404040;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+
+    .media_ikon {
+      background-image: url(../img/sp_main.eae24523.png);
+      background-size: 452px 436px;
+      background-position: -175px -211px;
+      background-repeat: no-repeat;
+      width: 9px;
+      height: 6px;
+      display: inline-block;
+      margin: 10px 0 0 5px;
+      vertical-align: top;
+    }
+  }
+
+  .news_simple_box {
+    background-color: #f5f7f8;
+    position: relative;
+    display: flex;
+    margin: 0 20px;
+    border-radius: 4px;
+    line-height: 26px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 7px;
+      left: -13px;
+      background-color: #d3d5d7;
+      width: 1px;
+      height: 12px;
+    }
+
+    .subView {
+      color: #404040;
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+    }
+
+    .news_box {
+      display: inline-block;
+      vertical-align: top;
+      white-space: nowrap;
+
+      .first_arti {
+        margin-left: 5px;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 3px;
+          height: 3px;
+          background-color: #d3d5d7;
+          margin: 12px 6px 0 6px;
+          border-radius: 50%;
+          vertical-align: top;
+        }
+      }
+
+      div {
+        cursor: pointer;
+        display: inline-block;
+      }
+    }
+  }
+
+  .sub_home {
+    margin-left: auto;
+
+    .sub_home_link {
+      position: relative;
+      display: inline-block;
+      padding-left: 28px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 7px;
+        left: 10px;
+        width: 1px;
+        height: 12px;
+        background-color: #d3d5d7;
+      }
+    }
+  }
+}
+
+// 여기까지 뉴스 헤드라인 중단
+
+// 여기부터 뉴스 바둑판식 하단
+
+.contentHeaderView_content {
+  position: relative;
+  display: flex;
+  margin: 18px 20px;
+
+  .content_wrap {
+    flex: 1;
+
+    .content_group {
+      border: 1px solid #ebebeb;
+      overflow: hidden;
+      position: relative;
+      height: 222px;
+      border-radius: 4px;
+
+      .content_box {
+        position: relative;
+        float: left;
+        width: 16.66%;
+        height: 56px;
+        text-align: center;
+        border: 1px solid #ebebeb;
+
+        .news_th {
+          display: block;
+          padding: 18px 0;
+          text-align: center;
+
+          .news_logo {
+            height: 20px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contentHeaderView_content_page {
+  border-top: 1px solid #ebebeb;
+  position: relative;
+  padding: 10px 0 11px;
+  line-height: 34px;
+  text-align: center;
+
+  &::before {
+  }
+
+  .page_btn_prev {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dadcdf;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+    vertical-align: top;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(../img/sp_main.eae24523.png);
+      background-size: 452px 436px;
+      background-position: -193px -424px;
+      background-repeat: no-repeat;
+      transform: rotate(180deg);
+      width: 10px;
+      height: 12px;
+      margin: auto;
+    }
+  }
+
+  .page_wrap {
+    color: #606060;
+    display: inline-block;
+    min-width: 156px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    line-height: 35px;
+    font-weight: 600;
+
+    .content_text {
+      padding-right: 4px;
+      color: #606060;
+
+      .content_point {
+        color: #3a67ea;
+      }
+    }
+
+    .content_current {
+      .centent_total {
+      }
+    }
+  }
+
+  .page_btn_next {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dadcdf;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 50%;
+    vertical-align: top;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(../img/sp_main.eae24523.png);
+      background-size: 452px 436px;
+      background-position: -193px -424px;
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 12px;
+      margin: auto;
     }
   }
 }
