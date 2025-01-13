@@ -12,8 +12,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- 서로 다른 컴퓨터에서 세팅이 달라, 각자 저장이 따로 됌. scss에서 작업하면 문제없음 추후 고치기 -->
-    <!-- <link rel="stylesheet" href="../css/style.css" /> -->
-    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="../style/style.css" /> -->
 
     <!-- 폰트어썸 불러오기 -->
     <link
@@ -564,19 +564,20 @@
                 <!-- <span class="tag_ad">AD</span> -->
               </div>
             </div>
+            <!-- 여기까지 뉴스 상자 -->
 
             <!-- 여기부터 두 번째 div 상자 -->
             <div class="shopping_section">
-              <div>
+              <div class="shopping_section_wrap">
                 <div class="iframe_box">
                   <div class="in_con">
                     <div class="shopping_content_header">
                       <div class="shopping_content_header_tab">
                         <ul class="header_tab_list">
-                          <li class="header_tab_item"><a href="" class="header_tab_a"></a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a"></a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a"></a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a"></a></li>
+                          <li class="header_tab_item"><a href="" class="header_tab_a">쇼핑</a></li>
+                          <li class="header_tab_item"><a href="" class="header_tab_a">맨즈</a></li>
+                          <li class="header_tab_item"><a href="" class="header_tab_a">원쁠딜</a></li>
+                          <li class="header_tab_item"><a href="" class="header_tab_a">쇼핑라이브</a></li>
                         </ul>
                       </div>
                     </div>
@@ -584,8 +585,9 @@
                     <!-- 여기부터 두 번째 상자 상단 버튼 -->
                     <div class="shopping_top_button">
                       <div class="shopping_view_page">
-                        <span class="curent">
-                          <span class="blind">1</span>
+                        <span class="current">
+                          <span class="blind"></span>
+                          1
                         </span>
                         <span class="total">
                           <span class="blind">전체</span>
@@ -608,10 +610,10 @@
                           </span>
                         </i>
                       </button>
-                      
-                      
                     </div>
-                    <!-- 여기부터 왼쪽 3개 컨테이너 -->
+                    
+                    
+                    <!-- 여기부터 메인 3개 컨테이너 -->
                     <div class="shopping_main_content">
                       <div class="shopping_left_wrap">
                         <div class="shopping_inner_top">
@@ -677,10 +679,10 @@
                           </ul>
                         </div>
 
-                        <div>
-                          <a href="">
-                            <span>
-                              <img src="" alt="">
+                        <div class="null">
+                          <a href="#" class="FocusItem_link_banner">
+                            <span class="FocusItem_AD_span">
+                              <img src="#" alt="" class="FocusItem_img">
                             </span>
                             <div></div>
                           </a>
@@ -691,83 +693,129 @@
                       <div>
                         <!-- 프레임 -->
                         <!-- ul>li*5>div>div>(div>a>span>img)+a>div*2 -->
-                        <!-- ul*2.shopping_main_five_ul>li.shopping_main_five_li*5>div.shopping_main_out_frame>div.shopping_main_in_frame>(div.shopping_product>a.productLink>span.productLink_box>img.productLink_img)+a.productLink_a.divproductLink_text*2 -->
+                        <!-- ul*2.shopping_main_five_ul>li.shopping_main_five_li*5>div.shopping_main_out_frame>div.shopping_main_in_frame>(div.shopping_product>a.productLink>span.productLink_box>img.productLink_img)+a.productLink_a>div.productLink_text*2 -->
+                        <ul class="shopping_main_five_ul">
+                          <li class="shopping_main_five_li">
+                            <div class="shopping_main_out_frame">
+                              <div class="shopping_main_in_frame">
+                                <div class="shopping_product">
+                                  <a href="" class="productLink">
+                                    <span class="productLink_box">
+                                      <img src="" alt="" class="productLink_img"></span>
+                                    </a>
+                                  </div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="shopping_main_five_li">
+                            <div class="shopping_main_out_frame">
+                              <div class="shopping_main_in_frame">
+                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="shopping_main_five_li">
+                            <div class="shopping_main_out_frame">
+                              <div class="shopping_main_in_frame">
+                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="shopping_main_five_li">
+                            <div class="shopping_main_out_frame">
+                              <div class="shopping_main_in_frame">
+                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="shopping_main_five_li">
+                            <div class="shopping_main_out_frame">
+                              <div class="shopping_main_in_frame">
+                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                         <ul class="shopping_main_five_ul">
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
                                 <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
                             </div>
                           </li>
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
                                 <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
                             </div>
                           </li>
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
                                 <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
                             </div>
                           </li>
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
                                 <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
                             </div>
                           </li>
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
                                 <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
+                                <a href="" class="productLink_a">
+                                  <div class="productLink_text"></div>
+                                  <div class="productLink_text"></div>
+                                </a>
+                              </div>
                             </div>
                           </li>
                         </ul>
-
-                        <ul class="shopping_main_five_ul">
-                          <li class="shopping_main_five_li">
-                            <div class="shopping_main_out_frame">
-                              <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
-                            </div>
-                          </li>
-                          <li class="shopping_main_five_li">
-                            <div class="shopping_main_out_frame">
-                              <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
-                            </div>
-                          </li>
-                          <li class="shopping_main_five_li">
-                            <div class="shopping_main_out_frame">
-                              <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
-                            </div>
-                          </li>
-                          <li class="shopping_main_five_li">
-                            <div class="shopping_main_out_frame">
-                              <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
-                            </div>
-                          </li>
-                          <li class="shopping_main_five_li">
-                            <div class="shopping_main_out_frame">
-                              <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
-                                <a href="" class="productLink_a divproductLink_text"></a><a href="" class="productLink_a divproductLink_text"></a></div>
-                            </div>
-                          </li>
-                        </ul>
+                       
                       </div>
+                      <!-- 여기까지 메인 콘텐츠 -->
                     </div>
                     <!-- 그리드 끝 -->
 
@@ -779,7 +827,7 @@
                         <span class="todayPick_title"></span>
                         <a href="" class="todayPick_linkMall">
                           <span class="todayPickMall_span">
-                            <img src="" alt="" class="todayPcikMall_img">
+                            <img src="" alt="" class="todayPickMall_img">
                           </span>
                           <span class="todayPick_text">
                             <em class="todayPick_text_em"></em>
@@ -811,7 +859,10 @@
                       </button>
                       <!-- <span class="tag_ad">AD</span> -->
                     </div>
+                    <!-- 여기까지 in_con -->
+                    
                   </div>
+                  
                 </div>
               </div>
 

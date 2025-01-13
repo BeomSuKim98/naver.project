@@ -976,3 +976,314 @@ body {
     }
   }
 }
+
+// 여기까지 뉴스 스탠드
+
+// 여기부터 쇼핑 컨테이너
+// 외곽 프레임
+.shopping_section{
+  margin-top: 16px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #e3e5e8,0 1px 2px 0 rgba(0,0,0,.04);
+  box-sizing: border-box;
+
+  .shopping_section_wrap{
+    .iframe_box{
+      width: 831px;
+      height: 560px;
+
+      .in_con{
+        width: 830px;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 0 0 1px #e3e5e8,0 1px 2px 0 rgba(0,0,0,.04);
+        box-sizing: border-box;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// 쇼핑 콘테이너 내부 작업 시작
+
+// 쇼핑 콘텐츠 헤더 시작
+
+  .shopping_content_header{
+    display: flex;
+    padding: 19px 20px 16px;
+
+    .shopping_content_header_tab{
+      flex: 1 1;
+
+      .header_tab_list{ 
+        display: flex;
+
+        .header_tab_item{
+          position: relative;
+
+          &:not(:first-child){
+          padding-left: 26px;
+
+            &::before{
+              content: "";
+              display: block;
+              position: absolute;
+              top: 4px;
+              left: 13px;
+              width: 1px;
+              height: 15px;
+              background-color: #d3d5d7;
+              transform: skewX(-15deg);
+            }
+          }
+
+          .header_tab_a{
+            position: relative;
+            display: inline-block;
+            font-size: 0.9rem;
+            line-height: 23px;
+            font-weight: 700;
+            vertical-align: top;
+            color: rgba(8, 8, 8, .5);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  // 여기까지 쇼핑 콘텐츠 헤더
+
+  // 여기부터 탑 버튼 시작
+  .shopping_top_button{
+    position: absolute;
+    top: 4px;
+    right: 20px;
+    margin-left: auto;
+    padding: 10px 0;
+
+    .shopping_view_page{
+      color: #606060;
+      display: inline-block;
+      margin: 6px 9px 8px 0;
+      font-size: 0.9rem;
+      line-height: 16px;
+      font-weight: 600;
+      vertical-align: top;
+
+      .current{
+        color: #606060;
+        display: inline-block;
+        margin: 6px 9px 8px 0;
+        line-height: 16px;
+        font-weight: 600;
+
+        .total{
+          color: rgba(113, 113, 113, .6);
+        }
+      }
+    }
+
+    .shopping_btn_prev{
+      border-radius: 4px 0 0 4px;
+
+      .arrow_prev{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        &::before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 5px;
+          height: 5px;
+          transform: translate(-50%, -50%) rotate(45deg);
+          margin-left: 2px;
+          border-left: 2px solid #80868c;
+          border-bottom: 2px solid #80868c;
+          margin-left: 1px;
+        }
+      }
+    }
+
+    .shopping_btn_next{
+      width: 30px;
+      height: 30px;
+      position: relative;
+      display: inline-block;
+      border: 1px solid rgba(211, 213, 215, .8);
+      vertical-align: top;
+      cursor: pointer;
+
+      border-left: 0;
+      border-radius: 0 4px 4px 0;
+
+      .arrow_next{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        &::before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 5px;
+          height: 5px;
+          transform: translate(-50%, -50%) rotate(45deg);
+          margin-left: -2px;
+          border-top: 2px solid #80868c;
+          border-right: 2px solid #80868c;
+          margin-left: -1px;
+        }
+      }
+    }
+  }
+  // 여기까지 탑 버튼
+
+  // 여기부터 메인 콘텐츠 작업 시작 
+  .shopping_main_content{
+
+    .shopping_left_wrap{
+
+      .shopping_inner_top{
+
+        .shopping_first_line{
+
+
+        }
+
+        .shopping_second_line{
+
+
+        }
+
+        .shopping_third_line{
+
+
+        }
+
+        .shopping_top_link{
+
+
+        }
+
+        .shopping_dot{
+
+
+        }
+      }
+
+      // 4개 있는 두 번째 div 
+      .QuickLink_list{
+
+        .QuickLink_item{
+
+          .QuickLink_a{
+
+            .QuickLink_ikon{
+
+              
+            }
+
+            .QuickLink_text{
+
+
+            }
+          }
+        }
+      }
+
+      // 광고 배너 
+      .null{
+
+        .FocusItem_Link_banner{
+
+          .FocusItem_AD_span{
+
+            .FocusItem_img{
+
+              
+            }
+          }
+        }
+      }
+      // 여기까지 광고 배너
+    }
+      // 여기까지 메인 콘텐츠 왼쪽 작업 끝
+  }
+
+
+// 쇼핑 메인 그리드 프레임 작업 시작
+.shopping_main_five_ul{
+
+  .shopping_main_five_li{
+
+    .shopping_main_out_frame{
+
+      .shopping_main_in_frame{
+
+      }
+    }
+  }
+}
+// 여기까지 쇼핑 메인 그리드 프레임 작업 
+
+// 여기부터 쇼핑 메인 그리드 콘텐츠 작업 시작
+.shopping_product{
+
+  .productLink{
+
+    .productLink_box{
+
+      .productLink_img{
+
+      }
+    }
+  }
+}
+
+.productLink_a{
+  
+  .produckLink_text{
+
+  }
+}
+// 여기까지 쇼핑 메인 그리드 콘텐츠 작업
+
+// 여기부터 오늘의 혜택 상자 작업
+.todatPick_box{
+
+  .todayPick_frame{
+
+    .todayPick_title{
+      
+    }
+    .todayPick_linkMall{
+
+      .todayPickMall_span{
+
+        .todayPickMall_img{
+
+        }
+      }
+
+      .todayPick_text{
+        .todayPick_text_em{
+
+        }
+      }
+    }
+  }
+}
+// 여기까지 오늘의 혜택 상자 작업
+
+// 여기까지 두 번째 div 작업 긑
