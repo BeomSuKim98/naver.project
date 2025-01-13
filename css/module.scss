@@ -1,0 +1,87 @@
+// mixin 문법만 묶어 놓는다.
+
+@mixin AsideAfter($background_position_x, $background_position_y) {
+  &::after {
+    content: "";
+    display: block;
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: $background_position_x $background_position_y;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    position: relative;
+  }
+}
+
+@function has($btn_cheaker) {
+  @return $btn_cheaker == "button";
+}
+// has가 css에 있으면 함수 오버로딩
+// 아니면 커스텀 정의
+// 열심히 만들었는데 작동을 안하네 나중에 찾아보고 작동만 시키자
+
+@mixin topArea($t: 10px, $l: auto, $r: auto, $w: auto, $button: "button") {
+  top: $t;
+  left: $l;
+  width: $w;
+  right: $r;
+  position: absolute;
+
+  @if (has($button)) {
+    button {
+      display: block;
+      padding: 8px;
+    }
+  } @else {
+    a {
+      display: block;
+      padding: 8px;
+    }
+  }
+}
+
+@mixin type_vari($background_position_x, $background_position_y) {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -3px;
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -153px -142px;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+  }
+
+  &::after {
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: $background_position_x $background_position_y;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+}
+
+@mixin beforeOnlyBackGround($background_position_x, $background_position_y) {
+  &::before {
+    content: "";
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: $background_position_x $background_position_y;
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin onlySize($w: auto, $h: auto, $t: auto, $l: auto, $r: auto, $b: auto) {
+  width: $w;
+  height: $h;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+}

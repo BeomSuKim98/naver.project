@@ -13,7 +13,7 @@
 
     <!-- 서로 다른 컴퓨터에서 세팅이 달라, 각자 저장이 따로 됌. scss에서 작업하면 문제없음 추후 고치기 -->
     <link rel="stylesheet" href="../css/style.css" />
-    <!-- <link rel="stylesheet" href="../style/style.css" /> -->
+    <link rel="stylesheet" href="../style/style.css" />
 
     <!-- 폰트어썸 불러오기 -->
     <link
@@ -574,10 +574,18 @@
                     <div class="shopping_content_header">
                       <div class="shopping_content_header_tab">
                         <ul class="header_tab_list">
-                          <li class="header_tab_item"><a href="" class="header_tab_a">쇼핑</a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a">맨즈</a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a">원쁠딜</a></li>
-                          <li class="header_tab_item"><a href="" class="header_tab_a">쇼핑라이브</a></li>
+                          <li class="header_tab_item">
+                            <a href="" class="header_tab_a text-black">쇼핑</a>
+                          </li>
+                          <li class="header_tab_item">
+                            <a href="" class="header_tab_a">맨즈</a>
+                          </li>
+                          <li class="header_tab_item">
+                            <a href="" class="header_tab_a">원쁠딜</a>
+                          </li>
+                          <li class="header_tab_item">
+                            <a href="" class="header_tab_a">쇼핑라이브</a>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -597,60 +605,102 @@
 
                       <button class="shopping_btn_prev">
                         <i class="arrow_prev">
-                          <span class="blind">
-                            이전 페이지
-                          </span>
+                          <span class="blind"> 이전 페이지 </span>
                         </i>
                       </button>
-                      
+
                       <button class="shopping_btn_next">
                         <i class="arrow_next">
-                          <span class="blind">
-                            이전 페이지
-                          </span>
+                          <span class="blind"> 이전 페이지 </span>
                         </i>
                       </button>
                     </div>
-                    
-                    
+
                     <!-- 여기부터 메인 3개 컨테이너 -->
                     <div class="shopping_main_content">
                       <div class="shopping_left_wrap">
                         <div class="shopping_inner_top">
                           <span class="blind">몰 바로가기</span>
                           <!-- 아니 ul 잘만 썼으면서 여긴 왜 이렇게 구조를 잡은거야 다른 사람이 만든건가? -->
-                          <div class="shopping_first_line">
-                            <a href="#" class="shopping_top_link" target="_blank">
+                          <div class="shopping_item_line">
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                            >
                               <strong>쿠팡</strong>
                             </a>
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">G마켓</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >G마켓</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">옥션</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >옥션</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">올리브영</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >올리브영</a
+                            >
                           </div>
 
-                          <div class="shopping_second_line">
+                          <div class="shopping_item_line">
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >11번가</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">11번가</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >SSG닷컴</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">SSG닷컴</a>
-                            <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">GS SHOP</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >GS SHOP</a
+                            >
                           </div>
-                          
-                          <div class="shopping_third_line">
+
+                          <div class="shopping_item_line">
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >하프클럽</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">하프클럽</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >CJ온스타일</a
+                            >
                             <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">CJ온스타일</a>
-                            <span class="shopping_dot"></span>
-                            <a href="#" class="shopping_top_link" target="_blank">패션플러스</a>
+                            <a
+                              href="#"
+                              class="shopping_top_link"
+                              target="_blank"
+                              >패션플러스</a
+                            >
                           </div>
                         </div>
 
-                        <div>
+                        <div class="QuickLink_area">
                           <ul class="QuickLink_list">
                             <li class="QuickLink_item">
                               <a href="" class="QuickLink_a">
@@ -682,7 +732,7 @@
                         <div class="null">
                           <a href="#" class="FocusItem_link_banner">
                             <span class="FocusItem_AD_span">
-                              <img src="#" alt="" class="FocusItem_img">
+                              <img src="#" alt="" class="FocusItem_img" />
                             </span>
                             <div></div>
                           </a>
@@ -701,9 +751,13 @@
                                 <div class="shopping_product">
                                   <a href="" class="productLink">
                                     <span class="productLink_box">
-                                      <img src="" alt="" class="productLink_img"></span>
-                                    </a>
-                                  </div>
+                                      <img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img"
+                                    /></span>
+                                  </a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -714,7 +768,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -725,7 +787,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -736,7 +806,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -747,7 +825,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -760,7 +846,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -771,7 +865,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -782,7 +884,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -793,7 +903,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -804,7 +922,15 @@
                           <li class="shopping_main_five_li">
                             <div class="shopping_main_out_frame">
                               <div class="shopping_main_in_frame">
-                                <div class="shopping_product"><a href="" class="productLink"><span class="productLink_box"><img src="" alt="" class="productLink_img"></span></a></div>
+                                <div class="shopping_product">
+                                  <a href="" class="productLink"
+                                    ><span class="productLink_box"
+                                      ><img
+                                        src=""
+                                        alt=""
+                                        class="productLink_img" /></span
+                                  ></a>
+                                </div>
                                 <a href="" class="productLink_a">
                                   <div class="productLink_text"></div>
                                   <div class="productLink_text"></div>
@@ -813,7 +939,6 @@
                             </div>
                           </li>
                         </ul>
-                       
                       </div>
                       <!-- 여기까지 메인 콘텐츠 -->
                     </div>
@@ -827,7 +952,7 @@
                         <span class="todayPick_title"></span>
                         <a href="" class="todayPick_linkMall">
                           <span class="todayPickMall_span">
-                            <img src="" alt="" class="todayPickMall_img">
+                            <img src="" alt="" class="todayPickMall_img" />
                           </span>
                           <span class="todayPick_text">
                             <em class="todayPick_text_em"></em>
@@ -835,7 +960,6 @@
                         </a>
                       </div>
                     </div>
-
 
                     <div class="contentHeaderView_content_page">
                       <button class="page_btn_prev">
@@ -860,12 +984,9 @@
                       <!-- <span class="tag_ad">AD</span> -->
                     </div>
                     <!-- 여기까지 in_con -->
-                    
                   </div>
-                  
                 </div>
               </div>
-
             </div>
 
             <!--  여기부터 세번째 div 상자 -->

@@ -2,6 +2,8 @@
 .fold {
 }
 
+@import "modules.scss";
+
 @font-face {
   font-family: "GmarketSansMedium";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
@@ -76,47 +78,6 @@ body {
         position: absolute;
         top: 86px;
         right: 0;
-      }
-    }
-
-    @mixin AsideAfter($background_position_x, $background_position_y) {
-      &::after {
-        content: "";
-        display: block;
-        background-image: url(../img/sp_main.eae24523.png);
-        background-size: 452px 436px;
-        background-position: $background_position_x $background_position_y;
-        background-repeat: no-repeat;
-        width: 32px;
-        height: 32px;
-        position: relative;
-      }
-    }
-
-    @function has($btn_cheaker) {
-      @return $btn_cheaker == "button";
-    }
-    // has가 css에 있으면 함수 오버로딩
-    // 아니면 커스텀 정의
-    // 열심히 만들었는데 작동을 안하네 나중에 찾아보고 작동만 시키자
-
-    @mixin topArea($t: 10px, $l: auto, $r: auto, $w: auto, $button: "button") {
-      top: $t;
-      left: $l;
-      width: $w;
-      right: $r;
-      position: absolute;
-
-      @if (has($button)) {
-        button {
-          display: block;
-          padding: 8px;
-        }
-      } @else {
-        a {
-          display: block;
-          padding: 8px;
-        }
       }
     }
 
@@ -298,19 +259,19 @@ body {
       &::before {
         content: "";
         display: block;
-        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-        background-size: 452px 436px;
-        background-position: -148px -301px;
-        background-repeat: no-repeat;
+        @include beforeOnlyBackGround(
+          $background_position_x: -148px,
+          $background_position_y: -301px
+        );
         width: 24px;
         height: 14px;
       }
 
       .keyboard_text {
-        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-        background-size: 452px 436px;
-        background-position: -152px 0px;
-        background-repeat: no-repeat;
+        @include beforeOnlyBackGround(
+          $background_position_x: -152px,
+          $background_position_y: 0px
+        );
         width: 68px;
         height: 37px;
         position: absolute;
@@ -329,10 +290,10 @@ body {
       &::before {
         content: "";
         display: block;
-        background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-        background-size: 452px 436px;
-        background-position: -154px -211px;
-        background-repeat: no-repeat;
+        @include beforeOnlyBackGround(
+          $background_position_x: -154px,
+          $background_position_y: -211px
+        );
         width: 10px;
         height: 6px;
       }
@@ -361,10 +322,7 @@ body {
           content: "";
           display: block;
           position: absolute;
-          top: 12px;
-          left: 10px;
-          width: 1px;
-          height: 20px;
+          @include onlySize($t 12px, $l: 10px, $w: 1px, $h: 20px);
           background-color: rgba(227, 229, 232, 0.8);
         }
       }
@@ -390,10 +348,7 @@ body {
             content: "";
             display: block;
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
             margin: auto;
           }
         }
@@ -414,33 +369,6 @@ body {
 }
 
 // type_^ 클래스 명시 부분.
-
-@mixin type_vari($background_position_x, $background_position_y) {
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -1px;
-    left: -3px;
-    background-image: url(../img/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: -153px -142px;
-    background-repeat: no-repeat;
-    width: 50px;
-    height: 50px;
-  }
-
-  &::after {
-    background-image: url(../img/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: $background_position_x $background_position_y;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    display: block;
-  }
-}
-
 .shortcut_item {
   .type {
     &_mail {
@@ -544,13 +472,10 @@ body {
 
   .service_ad {
     position: absolute;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    left: 2px;
+    @include onlySize($t: 2px, $r: 2px, $b: 2px, $l: 2px);
     margin: auto;
-    // -webkit-mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
     mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
+    // mask-image는 포토샵이나 일러스트레이터에서 쓰는 레이어 마이크와 같은 기능을 수행한다.
     background-size: 100%;
     background-repeat: no-repeat;
   }
@@ -563,14 +488,11 @@ body {
 
   .ico_ad {
     position: absolute;
-    top: -5px;
-    right: 13px;
-    background-image: url(https://pm.pstatic.net/resources/asset/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: -93px -376px;
-    background-repeat: no-repeat;
-    width: 26px;
-    height: 22px;
+    @include beforeOnlyBackGround(
+      $background_position_x: -93px,
+      $background_position_y: -376px
+    );
+    @include onlySize($w: 26px, $h: 22px, $t: -5px, $r: 13px);
   }
 }
 // 검색창밑 아이콘 숏컷에어리어 끝
@@ -667,10 +589,7 @@ body {
     content: "";
     display: block;
     position: absolute;
-    top: 4px;
-    left: 13px;
-    width: 1px;
-    height: 15px;
+    @include onlySize($w: 1px, $h: 15px, $t: 4px, $l: 13px);
     background-color: #d3d5d7;
     transform: skewX(-15deg);
   }
@@ -696,10 +615,10 @@ body {
       &::before {
         content: "";
         display: inline-block;
-        background-image: url(../img/sp_main.eae24523.png);
-        background-size: 452px 436px;
-        background-position: -432px -413px;
-        background-repeat: no-repeat;
+        @include beforeOnlyBackGround(
+          $background_position_x: -432px,
+          $background_position_y: -413px
+        );
         width: 14px;
         height: 10px;
         margin: 4px 3px 0 0;
@@ -751,10 +670,10 @@ body {
     cursor: pointer;
 
     .media_ikon {
-      background-image: url(../img/sp_main.eae24523.png);
-      background-size: 452px 436px;
-      background-position: -175px -211px;
-      background-repeat: no-repeat;
+      @include beforeOnlyBackGround(
+        $background_position_x: -175px,
+        $background_position_y: -211px
+      );
       width: 9px;
       height: 6px;
       display: inline-block;
@@ -828,10 +747,7 @@ body {
         content: "";
         display: block;
         position: absolute;
-        top: 7px;
-        left: 10px;
-        width: 1px;
-        height: 12px;
+        @include onlySize($w: 1px, $h: 12px, $t: 7px, $l: 10px);
         background-color: #d3d5d7;
       }
     }
@@ -906,17 +822,11 @@ body {
       content: "";
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url(../img/sp_main.eae24523.png);
-      background-size: 452px 436px;
-      background-position: -193px -424px;
-      background-repeat: no-repeat;
-      transform: rotate(180deg);
-      width: 10px;
-      height: 12px;
+      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0, $w: 10px, $h: 12px);
+      @include beforeOnlyBackGround(
+        $background_position_x: -193px,
+        $background_position_y: -424px
+      );
       margin: auto;
     }
   }
@@ -962,14 +872,11 @@ body {
       content: "";
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url(../img/sp_main.eae24523.png);
-      background-size: 452px 436px;
-      background-position: -193px -424px;
-      background-repeat: no-repeat;
+      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+      @include beforeOnlyBackGround(
+        $background_position_x: -193px,
+        $background_position_y: -436px
+      );
       width: 10px;
       height: 12px;
       margin: auto;
@@ -981,23 +888,23 @@ body {
 
 // 여기부터 쇼핑 컨테이너
 // 외곽 프레임
-.shopping_section{
+.shopping_section {
   margin-top: 16px;
   position: relative;
   border-radius: 8px;
-  box-shadow: 0 0 0 1px #e3e5e8,0 1px 2px 0 rgba(0,0,0,.04);
+  box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
 
-  .shopping_section_wrap{
-    .iframe_box{
+  .shopping_section_wrap {
+    .iframe_box {
       width: 831px;
       height: 560px;
 
-      .in_con{
+      .in_con {
         width: 830px;
         position: relative;
         border-radius: 8px;
-        box-shadow: 0 0 0 1px #e3e5e8,0 1px 2px 0 rgba(0,0,0,.04);
+        box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
         box-sizing: border-box;
         opacity: 1;
       }
@@ -1009,276 +916,304 @@ body {
 
 // 쇼핑 콘텐츠 헤더 시작
 
-  .shopping_content_header{
-    display: flex;
-    padding: 19px 20px 16px;
+.shopping_content_header {
+  display: flex;
+  padding: 19px 20px 16px;
 
-    .shopping_content_header_tab{
-      flex: 1 1;
+  .shopping_content_header_tab {
+    flex: 1 1;
 
-      .header_tab_list{ 
-        display: flex;
+    .header_tab_list {
+      display: flex;
 
-        .header_tab_item{
-          position: relative;
+      .header_tab_item {
+        position: relative;
 
-          &:not(:first-child){
+        &:not(:first-child) {
           padding-left: 26px;
 
-            &::before{
-              content: "";
-              display: block;
-              position: absolute;
-              top: 4px;
-              left: 13px;
-              width: 1px;
-              height: 15px;
-              background-color: #d3d5d7;
-              transform: skewX(-15deg);
-            }
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            @include onlySize($w: 1px, $h: 15px, $t: 4px, $l: 13px);
+            background-color: #d3d5d7;
+            transform: skewX(-15deg);
           }
+        }
 
-          .header_tab_a{
-            position: relative;
-            display: inline-block;
-            font-size: 0.9rem;
-            line-height: 23px;
-            font-weight: 700;
-            vertical-align: top;
-            color: rgba(8, 8, 8, .5);
-            cursor: pointer;
-          }
+        .header_tab_a {
+          position: relative;
+          display: inline-block;
+          font-size: 0.9rem;
+          line-height: 23px;
+          font-weight: 700;
+          vertical-align: top;
+          color: rgba(8, 8, 8, 0.5);
+          cursor: pointer;
         }
       }
     }
   }
-  // 여기까지 쇼핑 콘텐츠 헤더
+}
+// 여기까지 쇼핑 콘텐츠 헤더
 
-  // 여기부터 탑 버튼 시작
-  .shopping_top_button{
-    position: absolute;
-    top: 4px;
-    right: 20px;
-    margin-left: auto;
-    padding: 10px 0;
+// 여기부터 탑 버튼 시작
+.shopping_top_button {
+  position: absolute;
+  top: 4px;
+  right: 20px;
+  margin-left: auto;
+  padding: 10px 0;
 
-    .shopping_view_page{
+  .shopping_view_page {
+    color: #606060;
+    display: inline-block;
+    margin: 6px 9px 8px 0;
+    font-size: 0.9rem;
+    line-height: 16px;
+    font-weight: 400;
+    vertical-align: 50%;
+
+    .current {
       color: #606060;
       display: inline-block;
-      margin: 6px 9px 8px 0;
-      font-size: 0.9rem;
-      line-height: 16px;
-      font-weight: 600;
-      vertical-align: top;
 
-      .current{
-        color: #606060;
+      .blind {
         display: inline-block;
-        margin: 6px 9px 8px 0;
-        line-height: 16px;
-        font-weight: 600;
-
-        .total{
-          color: rgba(113, 113, 113, .6);
-        }
       }
     }
+    .total {
+      color: rgba(113, 113, 113, 0.6);
+    }
+  }
 
-    .shopping_btn_prev{
-      border-radius: 4px 0 0 4px;
+  .shopping_btn_prev {
+    border-radius: 4px 0 0 4px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(211, 213, 215, 0.8);
+    cursor: pointer;
 
-      .arrow_prev{
+    .arrow_prev {
+      position: absolute;
+      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0, $w: 10px, $h: 12px);
+      margin: auto;
+
+      &::before {
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-
-        &::before{
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 5px;
-          height: 5px;
-          transform: translate(-50%, -50%) rotate(45deg);
-          margin-left: 2px;
-          border-left: 2px solid #80868c;
-          border-bottom: 2px solid #80868c;
-          margin-left: 1px;
-        }
+        @include onlySize($w: 5px, $h: 5px, $t: 50%, $l: 50%);
+        transform: translate(-50%, -50%) rotate(45deg);
+        margin-left: 2px;
+        border-left: 2px solid #80868c;
+        border-bottom: 2px solid #80868c;
+        margin-left: 1px;
       }
     }
+  }
 
-    .shopping_btn_next{
-      width: 30px;
-      height: 30px;
+  .shopping_btn_next {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(211, 213, 215, 0.8);
+    cursor: pointer;
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+    margin-left: -6px;
+
+    .arrow_next {
+      position: absolute;
+      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+      margin: auto;
+
+      &::before {
+        content: "";
+        position: absolute;
+        @include onlySize($w: 5px, $h: 5px, $t: 50%, $l: 50%);
+        transform: translate(-50%, -50%) rotate(45deg);
+        margin-left: -2px;
+        border-top: 2px solid #80868c;
+        border-right: 2px solid #80868c;
+        margin-left: -1px;
+      }
+    }
+  }
+}
+// 여기까지 탑 버튼
+
+// 여기부터 메인 콘텐츠 작업 시작
+.shopping_main_content {
+  display: flex;
+  height: 376px;
+  padding: 0 20px 1px;
+  box-sizing: border-box;
+
+  .shopping_left_wrap {
+    flex: 1 1;
+    max-width: 248px; //임시변수
+
+    .shopping_inner_top {
       position: relative;
-      display: inline-block;
-      border: 1px solid rgba(211, 213, 215, .8);
-      vertical-align: top;
-      cursor: pointer;
+      padding: 9px 11px 4px;
+      border-radius: 4px;
+      background: rgba(245, 248, 251, 0.6);
 
-      border-left: 0;
-      border-radius: 0 4px 4px 0;
-
-      .arrow_next{
+      &::before {
+        content: "";
+        display: block;
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
+        @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: inherit;
+      }
 
-        &::before{
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 5px;
-          height: 5px;
-          transform: translate(-50%, -50%) rotate(45deg);
-          margin-left: -2px;
-          border-top: 2px solid #80868c;
-          border-right: 2px solid #80868c;
-          margin-left: -1px;
-        }
+      .shopping_item_line {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+      }
+
+      .shopping_top_link {
+        color: #404040;
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: -0.6px;
+      }
+
+      .shopping_dot {
+        margin: 9px 0 0;
+        width: 3px;
+        height: 3px;
+        background-color: #d3d5d7;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: top;
       }
     }
-  }
-  // 여기까지 탑 버튼
 
-  // 여기부터 메인 콘텐츠 작업 시작 
-  .shopping_main_content{
+    // 4개 있는 두 번째 div
+    .QuickLink_area {
+      position: relative;
+      margin-top: 12px;
+      padding: 9px;
+      border-radius: 4px;
+      background: rgba(245, 248, 251, 0.6);
 
-    .shopping_left_wrap{
-
-      .shopping_inner_top{
-
-        .shopping_first_line{
-
-
-        }
-
-        .shopping_second_line{
-
-
-        }
-
-        .shopping_third_line{
-
-
-        }
-
-        .shopping_top_link{
-
-
-        }
-
-        .shopping_dot{
-
-
-        }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: inherit;
       }
 
-      // 4개 있는 두 번째 div 
-      .QuickLink_list{
+      .QuickLink_list {
+        position: relative;
+        display: flex;
 
-        .QuickLink_item{
+        .QuickLink_item {
+          flex: 1 1;
 
-          .QuickLink_a{
+          .QuickLink_a {
+            text-align: center;
 
-            .QuickLink_ikon{
-
-              
+            .QuickLink_ikon {
+              width: 32px;
+              height: 32px;
+              position: relative;
+              display: inline-block;
+              border-radius: 50%;
+              background-color: #fff;
+              line-height: 32px;
+              text-align: center;
+              vertical-align: top;
+              border: 1px solid rgba(238, 242, 248, 0.8);
+              // 일일이 nth 써서 배경 넣기
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background-image: url(../img/sp_main.d8baffc2.png);
+                background-size: 158px 137px;
+                background-repeat: no-repeat;
+                transform: translate(-50%, -50%);
+              }
             }
 
-            .QuickLink_text{
-
-
+            .QuickLink_text {
+              color: #404040;
+              margin-top: 2px;
+              font-size: 0.9rem;
+              line-height: 20px;
             }
           }
         }
       }
+    }
 
-      // 광고 배너 
-      .null{
-
-        .FocusItem_Link_banner{
-
-          .FocusItem_AD_span{
-
-            .FocusItem_img{
-
-              
-            }
+    // 광고 배너
+    .null {
+      .FocusItem_Link_banner {
+        .FocusItem_AD_span {
+          .FocusItem_img {
           }
         }
       }
-      // 여기까지 광고 배너
     }
-      // 여기까지 메인 콘텐츠 왼쪽 작업 끝
+    // 여기까지 광고 배너
   }
-
+  // 여기까지 메인 콘텐츠 왼쪽 작업 끝
+}
 
 // 쇼핑 메인 그리드 프레임 작업 시작
-.shopping_main_five_ul{
-
-  .shopping_main_five_li{
-
-    .shopping_main_out_frame{
-
-      .shopping_main_in_frame{
-
+.shopping_main_five_ul {
+  .shopping_main_five_li {
+    .shopping_main_out_frame {
+      .shopping_main_in_frame {
       }
     }
   }
 }
-// 여기까지 쇼핑 메인 그리드 프레임 작업 
+// 여기까지 쇼핑 메인 그리드 프레임 작업
 
 // 여기부터 쇼핑 메인 그리드 콘텐츠 작업 시작
-.shopping_product{
-
-  .productLink{
-
-    .productLink_box{
-
-      .productLink_img{
-
+.shopping_product {
+  .productLink {
+    .productLink_box {
+      .productLink_img {
       }
     }
   }
 }
 
-.productLink_a{
-  
-  .produckLink_text{
-
+.productLink_a {
+  .produckLink_text {
   }
 }
 // 여기까지 쇼핑 메인 그리드 콘텐츠 작업
 
 // 여기부터 오늘의 혜택 상자 작업
-.todatPick_box{
-
-  .todayPick_frame{
-
-    .todayPick_title{
-      
+.todatPick_box {
+  .todayPick_frame {
+    .todayPick_title {
     }
-    .todayPick_linkMall{
-
-      .todayPickMall_span{
-
-        .todayPickMall_img{
-
+    .todayPick_linkMall {
+      .todayPickMall_span {
+        .todayPickMall_img {
         }
       }
 
-      .todayPick_text{
-        .todayPick_text_em{
-
+      .todayPick_text {
+        .todayPick_text_em {
         }
       }
     }
