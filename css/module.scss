@@ -85,3 +85,25 @@
   right: $r;
   bottom: $b;
 }
+
+@mixin beforeShoppingLink($background_position_x, $background_position_y){
+  a{
+    &:first-child{
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-image: url(../img/sp_main.d8baffc2.png);
+        background-size: 158px 137px;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        background-position:$background_position_x $background_position_y;
+        width: 32px;
+        height: 32px;
+    }
+  }
+  
+  }
+}

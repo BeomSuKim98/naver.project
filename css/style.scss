@@ -2,7 +2,7 @@
 .fold {
 }
 
-@import "modules.scss";
+@import "module.scss";
 
 @font-face {
   font-family: "GmarketSansMedium";
@@ -60,6 +60,11 @@ body {
   width: 1280px;
   margin: 0 auto;
 }
+
+
+
+
+
 
 // 헤더 시작
 
@@ -322,7 +327,7 @@ body {
           content: "";
           display: block;
           position: absolute;
-          @include onlySize($t 12px, $l: 10px, $w: 1px, $h: 20px);
+          @include onlySize($t: 12px, $l: 10px, $w: 1px, $h: 20px);
           background-color: rgba(227, 229, 232, 0.8);
         }
       }
@@ -1121,8 +1126,25 @@ body {
         .QuickLink_item {
           flex: 1 1;
 
+          &:nth-child(1){
+            @include beforeShoppingLink($background_position_x: -34px, $background_position_y: 0);
+          }
+
+          &:nth-child(2){
+            @include beforeShoppingLink($background_position_x: -68px, $background_position_y: -34px);
+          }
+
+          &:nth-child(3){
+            @include beforeShoppingLink($background_position_x: -34px, $background_position_y: -34px);
+          }
+
+          &:nth-child(4){
+            @include beforeShoppingLink($background_position_x: -19px, $background_position_y: -121px);
+          }
+
           .QuickLink_a {
             text-align: center;
+            display: block;
 
             .QuickLink_ikon {
               width: 32px;
@@ -1135,18 +1157,6 @@ body {
               text-align: center;
               vertical-align: top;
               border: 1px solid rgba(238, 242, 248, 0.8);
-              // 일일이 nth 써서 배경 넣기
-              &::before {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                background-image: url(../img/sp_main.d8baffc2.png);
-                background-size: 158px 137px;
-                background-repeat: no-repeat;
-                transform: translate(-50%, -50%);
-              }
             }
 
             .QuickLink_text {
@@ -1163,9 +1173,39 @@ body {
     // 광고 배너
     .null {
       .FocusItem_Link_banner {
+        margin-top: 12px;
+        display: block;
+
         .FocusItem_AD_span {
+          width: 248px;
+          height: 146px;
+          overflow: hidden;
+          position: relative;
+          display: block;
+          border-radius: 4px;
+
           .FocusItem_img {
+            vertical-align: top;
+
+            &::after{
+              content: "";
+              display: block;
+              position: absolute;
+              @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+              border: 1px solid rgba(0, 0, 0, .06);
+              perspective: 1px;
+              transform: translateZ(0);
+            }
           }
+        }
+        .FocusItem_text{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-top: 8px;
+          font-size: 0.9rem;
+          line-height: 19px;
+          text-align: center;
         }
       }
     }
@@ -1175,45 +1215,139 @@ body {
 }
 
 // 쇼핑 메인 그리드 프레임 작업 시작
+.shopping_main_con{
+  margin-right: 0;
+  margin-left: 20px;
+  position: relative;
+  width: 522px;
+
 .shopping_main_five_ul {
+
   .shopping_main_five_li {
+    padding-left: 0px;
+    float: left;
+    padding: 0 0 14px 8px;
+
     .shopping_main_out_frame {
+      position: relative;
+      width: 98px;
+
       .shopping_main_in_frame {
       }
     }
   }
 }
+}
 // 여기까지 쇼핑 메인 그리드 프레임 작업
 
 // 여기부터 쇼핑 메인 그리드 콘텐츠 작업 시작
 .shopping_product {
-  .productLink {
+  position: relative;
+
+  .productLink { 
+    position: relative;
+    display: block;
+
     .productLink_box {
+      width: 98px;
+      height: 126px;
+      overflow: hidden;
+      position: relative;
+      display: block;
+      border-radius: 4px;
+
       .productLink_img {
+        transition: transform .2s;
+        // image-rendering: -webkit-optimize-contrast;
+        vertical-align: top;
+        pointer-events: none;
+
+        &::after{
+          content: "";
+          display: block;
+          position: absolute;
+          @include onlySize($t: 0, $l: 0, $r:0, $b: 0);
+          border: 1px solid rgba(0, 0, 0, .06);
+          background-color: rgba(0, 0, 0, .03);
+          transform: translateZ(0);
+          perspective: 1px;
+        }
       }
     }
   }
 }
 
 .productLink_a {
+  display: block;
+  padding-top: 8px;
+
   .produckLink_text {
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 19px;
+    letter-spacing: -.4px;
+    word-spacing: nowrap;
   }
 }
 // 여기까지 쇼핑 메인 그리드 콘텐츠 작업
 
 // 여기부터 오늘의 혜택 상자 작업
 .todatPick_box {
+  display: flex;
+  margin: 0 20px 18px;
+
   .todayPick_frame {
+    width: 100%;
+    padding: 15px 20px 14px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    line-height: 21px;
+    font-weight: 700;
+    background-color: #f5f7f8;
+
     .todayPick_title {
+      flex: none;
+     position: relative;
+     padding-right: 19px;
+
+     &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      @include onlySize($t: 8px, $r: 8px, $w: 3px, $h:3px);
+      background-color: #d3d5d7;
+      border-radius: 50%;
+      // todayPickheader에서 line height 21px 상속
+     }
+
     }
     .todayPick_linkMall {
+      flex: 1 1;
+      display: flex;
+      min-width: 0;
+
       .todayPickMall_span {
+        display: inline-block;
+    height: 13px;
+    padding-top: 4px;
+    line-height: 13px;
+    vertical-align: top;
+
         .todayPickMall_img {
+          vertical-align: top;
+          height: 13px;
         }
       }
 
       .todayPick_text {
+        margin-left: 8px;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #404040;
+
         .todayPick_text_em {
+          color: #9858f5;
         }
       }
     }
