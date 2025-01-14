@@ -420,21 +420,21 @@ body {
 
     &_real {
       @include type_vari(
-        $background_position_x: -0px,
+        $background_position_x: 0px,
         $background_position_y: -260px
       );
     }
 
     &_map {
       @include type_vari(
-        $background_position_x: -270px,
+        $background_position_x: -269px,
         $background_position_y: 0px
       );
     }
 
     &_webtoon {
       @include type_vari(
-        $background_position_x: -164px,
+        $background_position_x: -161px,
         $background_position_y: -260px
       );
     }
@@ -448,6 +448,7 @@ body {
       &::after {
         width: 0;
         height: 0;
+        background-image: none;
       }
 
       .service_img {
@@ -493,11 +494,12 @@ body {
 
   .ico_ad {
     position: absolute;
-    @include beforeOnlyBackGround(
-      $background_position_x: -93px,
-      $background_position_y: -376px
-    );
-    @include onlySize($w: 26px, $h: 22px, $t: -5px, $r: 13px);
+    content: "";
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -93px -376px;
+    background-repeat: no-repeat;
+    @include onlySize($w: 26px, $h: 22px, $t: -5px, $r: 9px);
   }
 }
 // 검색창밑 아이콘 숏컷에어리어 끝
@@ -825,14 +827,13 @@ body {
 
     &::before {
       content: "";
-      display: block;
-      position: absolute;
-      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0, $w: 10px, $h: 12px);
-      @include beforeOnlyBackGround(
-        $background_position_x: -193px,
-        $background_position_y: -424px
-      );
-      margin: auto;
+        position: absolute;
+        @include onlySize($w: 10px, $h: 10px, $t: 50%, $l: 50%);
+        transform: translate(-50%, -50%) rotate(45deg);
+        margin-left: 2px;
+        border-left: 2px solid #80868c;
+        border-bottom: 2px solid #80868c;
+        margin-left: 1px;
     }
   }
 
@@ -875,16 +876,13 @@ body {
 
     &::before {
       content: "";
-      display: block;
       position: absolute;
-      @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
-      @include beforeOnlyBackGround(
-        $background_position_x: -193px,
-        $background_position_y: -436px
-      );
-      width: 10px;
-      height: 12px;
-      margin: auto;
+      @include onlySize($w: 10px, $h: 10px, $t: 50%, $l: 50%);
+      transform: translate(-50%, -50%) rotate(-135deg);
+      margin-left: 2px;
+      border-left: 2px solid #80868c;
+      border-bottom: 2px solid #80868c;
+      margin-left: 1px;
     }
   }
 }
@@ -1140,6 +1138,8 @@ body {
 
           &:nth-child(4){
             @include beforeShoppingLink($background_position_x: -19px, $background_position_y: -121px);
+            width: 17px;
+            height: 16px;
           }
 
           .QuickLink_a {
@@ -1172,7 +1172,7 @@ body {
 
     // 광고 배너
     .null {
-      .FocusItem_Link_banner {
+      .FocusItem_link_banner {
         margin-top: 12px;
         display: block;
 
@@ -1186,18 +1186,21 @@ body {
 
           .FocusItem_img {
             vertical-align: top;
+            width: 248px;
+            height: 146px;
+          }
 
-            &::after{
-              content: "";
-              display: block;
-              position: absolute;
-              @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
-              border: 1px solid rgba(0, 0, 0, .06);
-              perspective: 1px;
-              transform: translateZ(0);
-            }
+          &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+            border: 1px solid rgba(0, 0, 0, .06);
+            perspective: 1px;
+            transform: translateZ(0);
           }
         }
+
         .FocusItem_text{
           overflow: hidden;
           text-overflow: ellipsis;
@@ -1217,7 +1220,7 @@ body {
 // 쇼핑 메인 그리드 프레임 작업 시작
 .shopping_main_con{
   margin-right: 0;
-  margin-left: 20px;
+  margin-left: 10px;
   position: relative;
   width: 522px;
 
@@ -1226,7 +1229,7 @@ body {
   .shopping_main_five_li {
     padding-left: 0px;
     float: left;
-    padding: 0 0 14px 8px;
+    padding: 0 0 14px 6px;
 
     .shopping_main_out_frame {
       position: relative;
@@ -1281,18 +1284,19 @@ body {
   display: block;
   padding-top: 8px;
 
-  .produckLink_text {
+  .productLink_text {
     overflow: hidden;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 19px;
     letter-spacing: -.4px;
     word-spacing: nowrap;
+    text-align: center;
   }
 }
 // 여기까지 쇼핑 메인 그리드 콘텐츠 작업
 
 // 여기부터 오늘의 혜택 상자 작업
-.todatPick_box {
+.todayPick_box {
   display: flex;
   margin: 0 20px 18px;
 
@@ -1304,21 +1308,23 @@ body {
     line-height: 21px;
     font-weight: 700;
     background-color: #f5f7f8;
+    display: flex;
 
     .todayPick_title {
       flex: none;
-     position: relative;
-     padding-right: 19px;
+      position: relative;
+      padding-right: 19px;
+          
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        @include onlySize($t: 8px, $r: 8px, $w: 3px, $h:3px);
+        background-color: #d3d5d7;
+        border-radius: 50%;
+        // todayPickheader에서 line height 21px 상속
+       }
 
-     &::after{
-      content: "";
-      display: block;
-      position: absolute;
-      @include onlySize($t: 8px, $r: 8px, $w: 3px, $h:3px);
-      background-color: #d3d5d7;
-      border-radius: 50%;
-      // todayPickheader에서 line height 21px 상속
-     }
 
     }
     .todayPick_linkMall {
@@ -1328,23 +1334,26 @@ body {
 
       .todayPickMall_span {
         display: inline-block;
-    height: 13px;
-    padding-top: 4px;
-    line-height: 13px;
-    vertical-align: top;
+        height: 13px;
+        padding-top: 1px;
+        line-height: 13px;
+        vertical-align: top;
+    
 
         .todayPickMall_img {
-          vertical-align: top;
+          // vertical-align: top;
           height: 13px;
+          line-height: 13px;
+          margin-bottom: 1px;
         }
       }
 
       .todayPick_text {
         margin-left: 8px;
         overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    color: #404040;
+        text-overflow: ellipsis;
+       white-space: nowrap;
+       color: #404040;
 
         .todayPick_text_em {
           color: #9858f5;
