@@ -61,11 +61,6 @@ body {
   margin: 0 auto;
 }
 
-
-
-
-
-
 // 헤더 시작
 
 .header {
@@ -827,13 +822,13 @@ body {
 
     &::before {
       content: "";
-        position: absolute;
-        @include onlySize($w: 10px, $h: 10px, $t: 50%, $l: 50%);
-        transform: translate(-50%, -50%) rotate(45deg);
-        margin-left: 2px;
-        border-left: 2px solid #80868c;
-        border-bottom: 2px solid #80868c;
-        margin-left: 1px;
+      position: absolute;
+      @include onlySize($w: 10px, $h: 10px, $t: 50%, $l: 50%);
+      transform: translate(-50%, -50%) rotate(45deg);
+      margin-left: 2px;
+      border-left: 2px solid #80868c;
+      border-bottom: 2px solid #80868c;
+      margin-left: 1px;
     }
   }
 
@@ -907,7 +902,6 @@ body {
         width: 830px;
         position: relative;
         border-radius: 8px;
-        box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
         box-sizing: border-box;
         opacity: 1;
       }
@@ -1124,22 +1118,34 @@ body {
         .QuickLink_item {
           flex: 1 1;
 
-          &:nth-child(1){
-            @include beforeShoppingLink($background_position_x: -34px, $background_position_y: 0);
+          &:nth-child(1) {
+            @include beforeShoppingLink(
+              $background_position_x: -34px,
+              $background_position_y: 0
+            );
           }
 
-          &:nth-child(2){
-            @include beforeShoppingLink($background_position_x: -68px, $background_position_y: -34px);
+          &:nth-child(2) {
+            @include beforeShoppingLink(
+              $background_position_x: -68px,
+              $background_position_y: -34px
+            );
           }
 
-          &:nth-child(3){
-            @include beforeShoppingLink($background_position_x: -34px, $background_position_y: -34px);
+          &:nth-child(3) {
+            @include beforeShoppingLink(
+              $background_position_x: -34px,
+              $background_position_y: -34px
+            );
           }
 
-          &:nth-child(4){
-            @include beforeShoppingLink($background_position_x: -19px, $background_position_y: -121px);
-            width: 17px;
-            height: 16px;
+          &:nth-child(4) {
+            @include beforeShoppingLink(
+              $background_position_x: -19px,
+              $background_position_y: -121px,
+              $w: 17px,
+              $h: 16px
+            );
           }
 
           .QuickLink_a {
@@ -1190,18 +1196,18 @@ body {
             height: 146px;
           }
 
-          &::after{
+          &::after {
             content: "";
             display: block;
             position: absolute;
             @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
-            border: 1px solid rgba(0, 0, 0, .06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             perspective: 1px;
             transform: translateZ(0);
           }
         }
 
-        .FocusItem_text{
+        .FocusItem_text {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -1218,28 +1224,27 @@ body {
 }
 
 // 쇼핑 메인 그리드 프레임 작업 시작
-.shopping_main_con{
+.shopping_main_con {
   margin-right: 0;
   margin-left: 10px;
   position: relative;
   width: 522px;
 
-.shopping_main_five_ul {
+  .shopping_main_five_ul {
+    .shopping_main_five_li {
+      padding-left: 0px;
+      float: left;
+      padding: 0 0 14px 6px;
 
-  .shopping_main_five_li {
-    padding-left: 0px;
-    float: left;
-    padding: 0 0 14px 6px;
+      .shopping_main_out_frame {
+        position: relative;
+        width: 98px;
 
-    .shopping_main_out_frame {
-      position: relative;
-      width: 98px;
-
-      .shopping_main_in_frame {
+        .shopping_main_in_frame {
+        }
       }
     }
   }
-}
 }
 // 여기까지 쇼핑 메인 그리드 프레임 작업
 
@@ -1247,7 +1252,7 @@ body {
 .shopping_product {
   position: relative;
 
-  .productLink { 
+  .productLink {
     position: relative;
     display: block;
 
@@ -1260,18 +1265,18 @@ body {
       border-radius: 4px;
 
       .productLink_img {
-        transition: transform .2s;
+        transition: transform 0.2s;
         // image-rendering: -webkit-optimize-contrast;
         vertical-align: top;
         pointer-events: none;
 
-        &::after{
+        &::after {
           content: "";
           display: block;
           position: absolute;
-          @include onlySize($t: 0, $l: 0, $r:0, $b: 0);
-          border: 1px solid rgba(0, 0, 0, .06);
-          background-color: rgba(0, 0, 0, .03);
+          @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          background-color: rgba(0, 0, 0, 0.03);
           transform: translateZ(0);
           perspective: 1px;
         }
@@ -1288,7 +1293,7 @@ body {
     overflow: hidden;
     font-size: 0.8rem;
     line-height: 19px;
-    letter-spacing: -.4px;
+    letter-spacing: -0.4px;
     word-spacing: nowrap;
     text-align: center;
   }
@@ -1314,18 +1319,16 @@ body {
       flex: none;
       position: relative;
       padding-right: 19px;
-          
-      &::after{
+
+      &::after {
         content: "";
         display: block;
         position: absolute;
-        @include onlySize($t: 8px, $r: 8px, $w: 3px, $h:3px);
+        @include onlySize($t: 8px, $r: 8px, $w: 3px, $h: 3px);
         background-color: #d3d5d7;
         border-radius: 50%;
         // todayPickheader에서 line height 21px 상속
-       }
-
-
+      }
     }
     .todayPick_linkMall {
       flex: 1 1;
@@ -1338,7 +1341,6 @@ body {
         padding-top: 1px;
         line-height: 13px;
         vertical-align: top;
-    
 
         .todayPickMall_img {
           // vertical-align: top;
@@ -1352,8 +1354,8 @@ body {
         margin-left: 8px;
         overflow: hidden;
         text-overflow: ellipsis;
-       white-space: nowrap;
-       color: #404040;
+        white-space: nowrap;
+        color: #404040;
 
         .todayPick_text_em {
           color: #9858f5;
@@ -1364,4 +1366,403 @@ body {
 }
 // 여기까지 오늘의 혜택 상자 작업
 
-// 여기까지 두 번째 div 작업 긑
+// 여기까지 두 번째 div 작업 끝
+
+// 여기부터 세 번째 div 상자 작업 시작
+
+// 세 번째 상자(feed 상자) 프레임
+.feed {
+  margin-top: 16px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #e3e5e8, 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+
+  .feed_header {
+    display: flex;
+    padding: 18px 20px 17px;
+
+    .feed_header_wrap {
+      flex: 1;
+    }
+  }
+
+  .feed_recommend {
+    background-color: #f5f7f8;
+    position: relative;
+    display: flex;
+    margin: 0 20px 18px;
+    border-radius: 4px;
+
+    .feed_recommend_wrap {
+      position: relative;
+    }
+
+    .feed_recommend_link_home {
+      flex: none;
+      margin-left: auto;
+      padding: 0 20px;
+      line-height: 50px;
+      font-weight: bold;
+    }
+  }
+
+  .feed_main {
+    padding: 0 20px;
+
+    .feed_main_box {
+      position: relative;
+    }
+
+    .feed_main_bottom {
+      border-top: 1px solid #ebebeb;
+      position: relative;
+
+      .feed_main_bottom_header {
+        position: relative;
+        display: flex;
+
+        strong {
+          padding: 23px 0 15px;
+          font-size: 1.2rem;
+          line-height: 22px;
+          font-weight: 800;
+        }
+      }
+
+      .feed_main_bottom_ulWrap {
+        overflow: hidden;
+      }
+
+      .feed_bottom_btn_prev {
+      }
+
+      .feed_bottom_btn_next {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+        background-color: #fbfbfc;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url(../img/sp_main.d8baffc2.png);
+          background-size: 452px 436px;
+          background-position: -193px -424px;
+          background-repeat: no-repeat;
+          width: 10px;
+          height: 12px;
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  // 버튼은 프레임에서 작성
+
+  .feed_main_more {
+    border-top: 1px solid #ebebeb;
+
+    .feed_main_more_btn {
+      color: #404040;
+      display: block;
+      width: 100%;
+      font-size: 1.1rem;
+      line-height: 56px;
+      font-weight: 600;
+      cursor: pointer;
+
+      .feed_main_more_btn_i {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        display: inline-block;
+        margin: 23px 0 0 5px;
+        vertical-align: top;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 3px;
+          bottom: 4px;
+          width: 100%;
+          transform: translateX(-50%);
+          background-color: #5290ff;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 3px;
+          right: 4px;
+          height: 100%;
+          transform: translateY(-50%);
+          background-color: #5290ff;
+        }
+      }
+    }
+  }
+}
+// feed 상자 프레임 작업 끝
+
+// 여기부터 feed 상자 css 작업 시작
+// 여기부터 feed 상자 헤더 작업
+.feed_header_tab_list {
+  display: flex;
+
+  .feed_header_tab_item {
+    position: relative;
+
+    &:not(:first-child) {
+      padding-left: 26px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      @include onlySize($w: 1px, $h: 15px, $t: 4px, $l: 13px);
+      background-color: #d3d5d7;
+      transform: skewX(-15deg);
+    }
+
+    .feed_header_tab_span {
+      position: relative;
+      display: inline-block;
+      font-size: 1.6rem;
+      line-height: 23px;
+      font-weight: 800;
+      vertical-align: top;
+      color: rgba(8, 8, 8, 0.5);
+
+      .feed_header_tab_a {
+        position: relative;
+        display: inline-block;
+        // vertical-align: top;
+        color: #080808;
+
+        em {
+          line-height: 10px;
+          vertical-align: 0;
+        }
+      }
+    }
+  }
+}
+// feed 상자 헤더 작업 끝
+
+// 여기부터 리코멘드 css 작업 시작
+.feed_recommend_list {
+  transform: translateX(0px);
+  transition: 0.3s;
+  display: inline-flex;
+  padding: 7px 10px;
+
+  .feed_recommend_item {
+    margin: 0 2px;
+
+    .feed_recommend_item_a {
+      color: #404040;
+      border: 1px solid #ebebeb;
+      display: block;
+      padding: 0 12px;
+      border-radius: 18px;
+      background-color: #fff;
+      line-height: 34px;
+      text-align: center;
+    }
+  }
+}
+
+// 여기까지 리코멘드 css 작업 끝
+
+// 여기부터 feed 메인 css 작업 시작
+.feed_main_list {
+  margin-top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 24px 0 4px -24px;
+
+  .feed_main_item {
+    position: relative;
+    flex-shrink: 0;
+    width: 25%;
+    padding: 0 0 20px 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    .feed_main_imgLink {
+      display: block;
+
+      .imgBox {
+        position: relative;
+
+        .spanBox {
+          overflow: hidden;
+          position: relative;
+          display: block;
+          border-radius: 4px;
+          width: 100%;
+          height: 120px;
+
+          .feed_main_img {
+            vertical-align: top;
+            // transition: transform .2s; 추후 호버 작업시 사용
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: inherit;
+            transform: translate3d(0, 0, 0);
+            perspective: 1px;
+          }
+        }
+      }
+
+      .feed_main_textBox {
+        margin-top: 10px;
+
+        strong {
+          overflow: hidden;
+          max-height: 40px;
+          line-height: 20px;
+          // -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          // -webkit-line-clamp: 2;
+          // -webkit-box-orient: vertical;
+          font-weight: 400;
+          display: block;
+        }
+
+        .feed_main_srcBox {
+          display: flex;
+          margin-top: 4px;
+          font-size: 0.9rem;
+          line-height: 20px;
+
+          .srcBox_inner {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .srcIconBox {
+              display: inline-block;
+              margin: 0 6px 0 0;
+              border-radius: 50%;
+              vertical-align: top;
+              position: relative;
+
+              &::before {
+                position: absolute;
+                @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+                content: "";
+                display: block;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: inherit;
+              }
+
+              img {
+                border-radius: inherit;
+                vertical-align: top;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 여기까지 feed 메인 css 작업 끝
+
+// 여기부터 feed 메인 바텀 css 작업 시작
+.feed_main_bottom_list {
+  display: flex;
+  margin: 0 0 4px -28px;
+  // transform: translateX(-100%);
+  // transition: 0.3;
+  // 추후 스와이퍼 도입 후 사용
+
+  .feed_main_bottom_item {
+    position: relative;
+    flex-shrink: 0;
+    width: 108px;
+    padding: 0 0 20px 28px;
+
+    .feed_main_bottom_Link {
+      display: block;
+
+      .feed_main_bottom_Link_box {
+        position: relative;
+
+        .Link_box_span {
+          width: 100%;
+          height: 156px;
+          overflow: hidden;
+          position: relative;
+          display: block;
+          border-radius: 4px;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: inherit;
+            transform: translate3d(0, 0, 0);
+            perspective: 1px;
+          }
+
+          .Link_box_img {
+            vertical-align: top;
+          }
+        }
+      }
+
+      .feed_main_bottom_text {
+        display: block;
+        overflow: hidden;
+        max-height: 40px;
+        line-height: 20px;
+        // -webkit-line-clamp: 2;
+        // -webkit-box-orient: vertical;
+        margin-top: 10px;
+        font-weight: 400;
+      }
+
+      .feed_main_bottom_srcBox {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #606060;
+        margin-top: 4px;
+        font-size: 0.9rem;
+        line-height: 20px;
+
+        .feed_main_bottom_src {
+          white-space: nowrap;
+          color: #606060;
+          font-size: 1.3rem;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+// 여기까지 feed 메인 바텀 css 작업 끝
+
+// 여기까지 feed 상자 css 작업 끝

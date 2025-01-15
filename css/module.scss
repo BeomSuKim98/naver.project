@@ -55,18 +55,18 @@
     width: 50px;
     height: 50px;
   }
-  
+
   &::after {
     background-image: url(../img/sp_main.eae24523.png);
     background-size: 452px 436px;
-    background-position-x: ($background_position_x +2px);
-    background-position-y: ($background_position_y +3px);
+    background-position-x: ($background_position_x + 2px);
+    background-position-y: ($background_position_y + 3px);
     background-repeat: no-repeat;
     width: 40px;
     height: 40px;
     display: block;
   }
-// x에 +3px y에 +2px
+  // x에 +3px y에 +2px
   // 문제 확인 after에 좌표 값이 이상해짐
 }
 
@@ -80,7 +80,6 @@
   }
 }
 
-
 @mixin onlySize($w: auto, $h: auto, $t: auto, $l: auto, $r: auto, $b: auto) {
   width: $w;
   height: $h;
@@ -90,23 +89,28 @@
   bottom: $b;
 }
 
-@mixin beforeShoppingLink($background_position_x, $background_position_y){
-  a{
-    div{
-    &:first-child{
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        background-image: url(../img/sp_main.d8baffc2.png);
-        background-size: 158px 137px;
-        background-repeat: no-repeat;
-        transform: translate(-50%, -50%);
-        background-position:$background_position_x $background_position_y;
-        width: 32px;
-        height: 32px;
+@mixin beforeShoppingLink(
+  $w: 32px,
+  $h: 32px,
+  $background_position_x,
+  $background_position_y
+) {
+  a {
+    div {
+      &:first-child {
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          background-image: url(../img/sp_main.d8baffc2.png);
+          background-size: 158px 137px;
+          background-repeat: no-repeat;
+          transform: translate(-50%, -50%);
+          background-position: $background_position_x $background_position_y;
+          width: $w;
+          height: $h;
         }
       }
     }
