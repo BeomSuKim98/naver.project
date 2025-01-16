@@ -116,3 +116,12 @@
     }
   }
 }
+
+@mixin imgFrame($w: auto, $h: auto) {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  border-radius: 4px;
+  width: $w;
+  height: $h;
+}

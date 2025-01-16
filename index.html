@@ -14,9 +14,9 @@
     <!-- <link rel="stylesheet" href="./style/style.css" /> -->
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!-- 제이쿼리 불러오기 -->
-    <link rel="js" href="./js/script.js" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 스크립트 불러오기 -->
+
+    <script defer src="./js/script.js"></script>
 
     <!-- 폰트어썸 불러오기 -->
     <link
@@ -284,9 +284,9 @@
       <!-- 여기서부터 메인 컨텐츠 -->
       <section class="main con">
         <div class="top_root">
-          <div class="rayout_left">
+          <div class="layout_left">
             <!-- 여기부터 검색창 바로 아래 배너 -->
-            <div class="banner_area">
+            <div class="banner_area commonlayout">
               <div class="timeboard">
                 <div class="outframe">
                   <div src="" frameborder="0" class="inframe">
@@ -304,7 +304,7 @@
             </div>
 
             <!-- 여기부터 뉴스 상자 탭 상단 -->
-            <div class="newsStand">
+            <div class="newsStand commonlayout">
               <div class="contentHeaderView_header">
                 <div class="contentHeaderView_top">
                   <ul class="View_list flex">
@@ -539,8 +539,8 @@
 
               <!-- 여기부터 첫 번째 div 하단 버튼 -->
               <div class="contentHeaderView_content_page">
-                <button class="page_btn_prev">
-                  <span class="blind">{이전 페이지}</span>
+                <button class="page_btn_prev btn_prev">
+                  <span class="blind">이전 페이지</span>
                 </button>
                 <div class="page_wrap">
                   <span class="content_text">
@@ -555,7 +555,7 @@
                     / 15
                   </span>
                 </div>
-                <button class="page_btn_next">
+                <button class="page_btn_next btn_next">
                   <span class="blind">다음 페이지</span>
                 </button>
                 <!-- <span class="tag_ad">AD</span> -->
@@ -564,7 +564,7 @@
             <!-- 여기까지 뉴스 상자 -->
 
             <!-- 여기부터 두 번째 div 상자 -->
-            <div class="shopping_section">
+            <div class="shopping_section commonlayout">
               <div class="shopping_section_wrap">
                 <div class="iframe_box">
                   <div class="in_con">
@@ -600,13 +600,13 @@
                         </span>
                       </div>
 
-                      <button class="shopping_btn_prev">
+                      <button class="shopping_btn_prev btn_prev">
                         <i class="arrow_prev">
                           <span class="blind"> 이전 페이지 </span>
                         </i>
                       </button>
 
-                      <button class="shopping_btn_next">
+                      <button class="shopping_btn_next btn_next">
                         <i class="arrow_next">
                           <span class="blind"> 이전 페이지 </span>
                         </i>
@@ -1013,7 +1013,7 @@
                     </div>
 
                     <div class="contentHeaderView_content_page">
-                      <button class="page_btn_prev">
+                      <button class="page_btn_prev btn_prev">
                         <span class="blind">이전 페이지</span>
                       </button>
                       <div class="page_wrap">
@@ -1029,7 +1029,7 @@
                           / 13
                         </span>
                       </div>
-                      <button class="page_btn_next">
+                      <button class="page_btn_next btn_next">
                         <span class="blind">다음 페이지</span>
                       </button>
                       <!-- <span class="tag_ad">AD</span> -->
@@ -1041,7 +1041,7 @@
             </div>
 
             <!--  여기부터 세번째 div 상자 -->
-            <div class="feed">
+            <div class="feed commonlayout">
               <div class="feed_header">
                 <div class="feed_header_wrap">
                   <ul class="feed_header_tab_list">
@@ -1056,14 +1056,13 @@
                     </li>
                     <li class="feed_header_tab_item">
                       <span class="feed_header_tab_span"
-                        ><a href="" class="feed_header_tab_a">
-                          자동차</a
-                      ></span>
+                        ><a href="" class="feed_header_tab_a"> 자동차</a></span
+                      >
                     </li>
                     <li class="feed_header_tab_item">
                       <span class="feed_header_tab_span"
-                        ><a href="" class="feed_header_tab_a"></a
-                      >웹툰</span>
+                        ><a href="" class="feed_header_tab_a"></a>웹툰</span
+                      >
                     </li>
                     <li class="feed_header_tab_item">
                       <span class="feed_header_tab_span"
@@ -1142,13 +1141,19 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>몰라보게 예뻐진 빵꾸똥꾸 진지희 근황.jpg(젖살 싹 빠지고 완전 리즈되었네요)</strong>
+                          <strong
+                            >몰라보게 예뻐진 빵꾸똥꾸 진지희 근황.jpg(젖살 싹
+                            빠지고 완전 리즈되었네요)</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc01.jpg"
+                                  alt=""
+                              /></span>
+                              <span class="srcText">클레오</span></span
                             >
-                          <span class="srcText">클레오</span></span>
                           </div>
                         </div>
                       </a>
@@ -1165,8 +1170,11 @@
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">방구석 청년</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc02.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">방구석 청년</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1183,8 +1191,11 @@
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">오떼</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc03.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">오떼</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1197,12 +1208,18 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>나는 솔로 10기 현숙님, 3월 결혼 앞두고 웨딩스냅 촬영</strong>
+                          <strong
+                            >나는 솔로 10기 현숙님, 3월 결혼 앞두고 웨딩스냅
+                            촬영</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">클레오</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc01.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">클레오</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1215,12 +1232,17 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>슬기로운 집콕 생활! 업사이트 클링 DIY 키트</strong>
+                          <strong
+                            >슬기로운 집콕 생활! 업사이트 클링 DIY 키트</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">의식주의</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc05.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">의식주의</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1233,12 +1255,18 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>일상 수납부터 캠핑까지, 편리한 접이식 폴딩카트</strong>
+                          <strong
+                            >일상 수납부터 캠핑까지, 편리한 접이식
+                            폴딩카트</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">클레오</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc01.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">클레오</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1251,12 +1279,18 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>벤츠 E클래스 6기통 엔트리 가격부터 공개, 9000만원부터</strong>
+                          <strong
+                            >벤츠 E클래스 6기통 엔트리 가격부터 공개,
+                            9000만원부터</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">탑라이더</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc07.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">탑라이더</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1273,8 +1307,11 @@
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">클레오</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc01.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">클레오</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1291,8 +1328,11 @@
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">클레오</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc01.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">클레오</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1309,8 +1349,14 @@
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">●디젤매니아● 대한민국 일등 패션 커뮤니티 디매인 DMAIN</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc10.jpg"
+                                  alt="" /></span
+                              ><span class="srcText"
+                                >●디젤매니아● 대한민국 일등 패션 커뮤니티 디매인
+                                DMAIN</span
+                              ></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1323,12 +1369,17 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>실시간 난리난 이병헌 이민정 인스타 사진</strong>
+                          <strong
+                            >실시간 난리난 이병헌 이민정 인스타 사진</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">쏘쏘</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc11.jpg"
+                                  alt="" /></span
+                              ><span class="srcText">쏘쏘</span></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1341,12 +1392,20 @@
                           /></span>
                         </div>
                         <div class="feed_main_textBox">
-                          <strong>나는솔로22기 영숙❤️미스터박 비쥬얼 커플에게 축하할 소식 전해졌다❤️</strong>
+                          <strong
+                            >나는솔로22기 영숙❤️미스터박 비쥬얼 커플에게 축하할
+                            소식 전해졌다❤️</strong
+                          >
                           <div class="feed_main_srcBox">
                             <span class="srcBox_inner"
                               ><span class="srcIconBox"
-                                ><img src="" alt="" /></span
-                            ><span class="srcText">Daily`s issue report</span></span>
+                                ><img
+                                  src="./img/feedCommImg/feedImgSrc12.jpg"
+                                  alt="" /></span
+                              ><span class="srcText"
+                                >Daily`s issue report</span
+                              ></span
+                            >
                           </div>
                         </div>
                       </a>
@@ -1581,54 +1640,66 @@
             </div>
 
             <!-- 여기부터 네번째 div 상자 -->
-            <div class="bottom_ad_box">
-              <div>
-                <div><a href=""><img src="" alt=""></a></div>
+            <div class="bottom_ad_box commonlayout">
+              <div class="bottom_ad_box_wrap">
+                <a href="" class="bottom_ad_box_link">
+                  <img
+                    src="./img/bottomAdImg.png"
+                    alt=""
+                    class="bottom_ad_box_img"
+                /></a>
               </div>
             </div>
-
-            <!-- 여기부터 오른쪽 레이아웃 -->
           </div>
 
-          <div class="rayout_right">
-            <div>
+          <!-- 여기부터 오른쪽 레이아웃 -->
+
+          <div class="layout_right">
+            <div class="login_box commonlayout">
               <div class="loginWrap">
-                <p class="login_text"></p>
+                <p class="login_text">
+                  네이버를 더 안전하고 편리하게 이용하세요
+                </p>
                 <a href="" class="login_link">
-                  <i class="login_logo">
-                    <span class="blind"></span></i></a>
+                  <i class="login_logo"> <span class="blind">NAVER</span></i
+                  >로그인</a
+                >
                 <div class="login_sup_box">
-                  <a href="" class="find_id"></a>
-                  <a href="" class="find_password"></a>
-                  <a href="" class="sign"></a>
+                  <a href="#" class="find_id">아이디 찾기</a>
+                  <a href="#" class="find_password">비밀번호 찾기</a>
+                  <a href="#" class="sign">회원가입</a>
                 </div>
               </div>
             </div>
 
             <!-- 여기까지 로그인 div -->
+
             <div>
               <!-- (a>strong+(div>(div>img)+div>p)+div>div>(div>img)+span*2+svg)+(i>span)+div>button*2>span.blind -->
               <a href="">
                 <strong></strong>
                 <div>
-                  <div><img src="" alt=""></div>
+                  <div><img src="" alt="" /></div>
                   <div>
                     <p></p>
                   </div>
                 </div>
                 <div>
                   <div>
-                    <div><img src="" alt=""></div>
+                    <div><img src="" alt="" /></div>
                     <span></span><span></span>
                     <svg></svg>
                   </div>
-                </div>
-              </a><i><span></span></i>
-              <div><button class="ad_btn"><span class="blind"></span></button><button class="ad_btn"><span class="blind"></span></button></div>
+                </div> </a
+              ><i><span></span></i>
+              <div>
+                <button class="ad_btn"><span class="blind"></span></button
+                ><button class="ad_btn"><span class="blind"></span></button>
+              </div>
             </div>
             <!-- 여기까지 일반 광고 div -->
             <a href="">
-              <img src="" alt="">
+              <img src="" alt="" />
             </a>
 
             <!-- 여기까지 특가 광고 배너 div -->

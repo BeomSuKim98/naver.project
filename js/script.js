@@ -1,10 +1,23 @@
 function shoppingAdImg() {
-  let imageIndex = $(".productLink");
-  console.log(imageIndex);
+  let imageIndex = $(".productLink_img");
 
-  for (let i = 1; i < imageIndex.length; i++) {
-    $(imageIndex[i]).attr("src", "../img/shoppingAdImg/adimg_" + i + ".jpg");
+  for (let i = 0; i < imageIndex.length; i++) {
+    $(imageIndex[i]).attr(
+      "src",
+      "../img/shoppingAdImg/adimg_" + (i + 1) + ".jpg"
+    );
   }
 }
-
 shoppingAdImg();
+
+function feedAdImg() {
+  let imageIndex = $(".feed_main_img");
+
+  for (let i = 0; i < imageIndex.length; i++) {
+    $(imageIndex[i]).attr(
+      "src",
+      "../img/feedCommImg/feedImg" + (i + 1) + ".jpg"
+    );
+  }
+}
+feedAdImg();
