@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./css/style.css" />
 
     <!-- 스크립트 불러오기 -->
-
     <script defer src="./js/script.js"></script>
 
     <!-- 폰트어썸 불러오기 -->
@@ -1674,42 +1673,298 @@
 
             <!-- 여기까지 로그인 div -->
 
-            <div>
+            <div class="ad_banner commonlayout">
               <!-- (a>strong+(div>(div>img)+div>p)+div>div>(div>img)+span*2+svg)+(i>span)+div>button*2>span.blind -->
-              <a href="">
-                <strong></strong>
-                <div>
-                  <div><img src="" alt="" /></div>
-                  <div>
-                    <p></p>
+              <a href="" class="ad_banner_wrap">
+                <strong class="ad_banner_title">한국직업능력진흥원 무료교육</strong>
+                <div class="ad_banner_content">
+                  <div class="ad_banner_img_box">
+                    <img src="" alt="" class="ad_banner_img"/></div>
+                  <div class="ad_banner_content_box">
+                    <p class="ad_banner_content_text">
+                      한국직업능력진흥원 <br>
+                      2025 최신 인기자격증<br>
+                      무료수강
+                    </p>
                   </div>
                 </div>
-                <div>
-                  <div>
-                    <div><img src="" alt="" /></div>
-                    <span></span><span></span>
-                    <svg></svg>
+                <div class="ad_banner_bottom">
+                  <div class="ad_banner_bottom_wrap">
+                    <div class="ad_banner_bottom_thImg_box">
+                      <img src="" alt="" class="ad_banner_bottom_thImg"/>
+                    </div>
+                    <span class="ad_banner_bottom_text_1">
+                      한국직업능력진흥원
+                    </span>
+                    <span class="ad_banner_bottom_text_2">
+                      더 알아보기
+                    </span>
+
+                    <svg class="ad_banner_svg_arrow" width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.5" d="M0.75 1.25L4.75 5.75L0.75 10.25" stroke="currentColor" stroke-linecap="round"></path>        
+                    </svg>
                   </div>
                 </div> </a
-              ><i><span></span></i>
-              <div>
-                <button class="ad_btn"><span class="blind"></span></button
-                ><button class="ad_btn"><span class="blind"></span></button>
+              >
+              <!-- <i><span></span></i> -->
+              <div class="ad_btn_box">
+                <button class="ad_btn_1">
+                  <span class="blind">AD, 광고 닫기</span>
+                  </button
+                ><button class="ad_btn_2">
+                  <span class="blind">AD 광고 닫기</span>
+                </button>
               </div>
             </div>
             <!-- 여기까지 일반 광고 div -->
-            <a href="">
-              <img src="" alt="" />
+
+            <a href="" class="special_ad_banner">
+              <img src="./img/special_ad_img_1.png" alt="" class="special_ad_img"/>
             </a>
 
             <!-- 여기까지 특가 광고 배너 div -->
-            <div></div>
+            <div class="focus_ad_banner">
+              <div class="focus_ad_banner_wrap">
+                <div  class="focus_ad_banner_left_box">
+                  <div class="focus_ad_banner_left_text_box">
+                    <span class="focus_ad_banner_left_text"></span>
+                  </div>
+                  <a href="" class="focus_ad_ikon">AD</a>
+                </div>
+
+                <div class="focus_ad_banner_right_box">
+                  <div class="focus_ad_banner_right_ul_box">
+                    <!-- ul>li*3>(a>(div>img)+span>span)+a>em -->
+                    <!-- ul.focus_list>li.focus_item*3>(a.focus_link>(div.focus_img_box>img.focus_img)+span.focus_link_text_out>span.focus_link_text_out)+a.focus_item_bottom_link>em -->
+                    <ul class="focus_list">
+                      <li class="focus_item">
+                        <a href="" class="focus_link">
+                          <div class="focus_img_box">
+                            <img src="" alt="" class="focus_img">
+                          </div>
+                          <span class="focus_link_text_out">
+                            <span class="focus_link_text_in"></span>
+                          </span>
+                        </a>
+                        <a href="" class="focus_item_bottom_link">
+                          <em></em>
+                        </a>
+                      </li>
+                      <li class="focus_item">
+                        <a href="" class="focus_link">
+                          <div class="focus_img_box"><img src="" alt="" class="focus_img"></div>
+                          <span class="focus_link_text_out"><span class="focus_link_text_out"></span></span>
+                        </a><a href="" class="focus_item_bottom_link"><em></em></a></li>
+                      <li class="focus_item">
+                        <a href="" class="focus_link">
+                          <div class="focus_img_box"><img src="" alt="" class="focus_img"></div>
+                          <span class="focus_link_text_out"><span class="focus_link_text_out"></span></span>
+                        </a><a href="" class="focus_item_bottom_link"><em></em></a></li>
+                    </ul>
+                    <div>
+                      <button class="btn_prve"><i><span class="blind"></span></i></button>
+                      <button class="btn_next"><i><span class="blind"></span></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- 여기까지 포커스 광고 div -->
-            <div></div>
+
+            <!-- 여기부터 날씨 위젯 -->
+            <div class="weather commonlayout">
+              <div class="weather_wrap">
+                <div class="weather_header">
+                <a href=""></a>
+                <a href=""></a>
+                <span></span>
+                </div>
+              
+
+              <div class="weather_content">
+                <div class="weather_content_left_box">
+                  <a href="" class="weather_content_a">
+                    <div class="weather_content_left_temprature_box">
+                      <div class="weather_content_leftBox_in_left">
+
+                      </div>
+                      <div class="weather_content_leftBox_in_right">
+                        <div class="weather_content_leftBox_in_rtght_status"></div>
+                      </div>
+                    </div>
+                  
+
+                    <div class="weather_content_temprature_info">
+                      <span class="weather_content_info_text_out">
+                        <span class="weather_content_info_text_in">
+
+                        </span>
+                      </span>
+                      <span class="weather_content_info_text_out">
+                        <span class="weather_content_info_text_in">
+
+                        </span>
+                      </span>
+                    </div>
+                  </a>
+
+                  <a href="" class="weather_content_bottom_dustInfo">
+                    <span class="weather_today_dust">
+                      <span class="weather_today_dust_grade">
+
+                      </span>
+                    </span>
+                    <span class="weather_today_dust">
+                      <span class="weather_today_dust_grade">
+
+                      </span>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="weather_content_right_box">
+                  <a href="" class="weather_content_right_a">
+                    <div>
+                      <canvas>
+
+                      </canvas>
+                    </div>
+                    <ul class="weather_list">
+                      <!-- li.weather_item*5>div.weather_text_time+(div.weather_ikon_box>span.blind)+div.weather_graph -->
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box">
+                          <span class="blind"></span>
+                        </div>
+                        <div class="weather_graph">
+
+                        </div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                    </ul>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
 
             <!-- 여기까지 날씨 위젯 -->
-            <div></div>
+
+            <!-- 날씨와 증시의 레이아웃이 비슷하기 때문에 재사용 -->
+            <div class="weather commonlayout">
+              <div class="weather_wrap">
+                <div class="weather_header">
+                <a href=""></a>
+                <a href=""></a>
+                <span></span>
+                </div>
+              
+
+              <div class="weather_content">
+                <div class="weather_content_left_box">
+                  <a href="" class="weather_content_a">
+                    <div class="weather_content_left_temprature_box">
+                      <div class="weather_content_leftBox_in_left">
+
+                      </div>
+                      <div class="weather_content_leftBox_in_right">
+                        <div class="weather_content_leftBox_in_rtght_status"></div>
+                      </div>
+                    </div>
+                  
+
+                    <div class="weather_content_temprature_info">
+                      <span class="weather_content_info_text_out">
+                        <span class="weather_content_info_text_in">
+
+                        </span>
+                      </span>
+                      <span class="weather_content_info_text_out">
+                        <span class="weather_content_info_text_in">
+
+                        </span>
+                      </span>
+                    </div>
+                  </a>
+
+                  <a href="" class="weather_content_bottom_dustInfo">
+                    <span class="weather_today_dust">
+                      <span class="weather_today_dust_grade">
+
+                      </span>
+                    </span>
+                    <span class="weather_today_dust">
+                      <span class="weather_today_dust_grade">
+
+                      </span>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="weather_content_right_box">
+                  <a href="" class="weather_content_right_a">
+                    <div>
+                      <canvas>
+
+                      </canvas>
+                    </div>
+                    <ul class="weather_list">
+                      <!-- li.weather_item*5>div.weather_text_time+(div.weather_ikon_box>span.blind)+div.weather_graph -->
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box">
+                          <span class="blind"></span>
+                        </div>
+                        <div class="weather_graph">
+
+                        </div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                      <li class="weather_item">
+                        <div class="weather_text_time"></div>
+                        <div class="weather_ikon_box"><span class="blind"></span></div>
+                        <div class="weather_graph"></div>
+                      </li>
+                    </ul>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
 
             <!-- 여기까지 증시 위젯 -->
             <div></div>
