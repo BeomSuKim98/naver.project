@@ -21,3 +21,5 @@ function feedAdImg() {
   }
 }
 feedAdImg();
+
+// 1.20일 깃허브 업로드 시 js를 불러 오지 못함을 확인
