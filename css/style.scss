@@ -1856,7 +1856,7 @@ body {
 // 여기부터 일반광고 레이아웃
 
 // 일반광고 레이아웃 프레임
-/*
+
 .ad_banner{
   position: relative;
   text-align: left;
@@ -1903,8 +1903,6 @@ body {
 // 여기부터 일반광고 css 작업
 
 .ad_banner_title{
-  line-height: 22px;
-  letter-spacing: -.5px;
 }
 
 .ad_banner_content{
@@ -1934,8 +1932,6 @@ body {
 
     .ad_banner_content_box{
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       width: 174px;
 
       &::before{
@@ -2005,7 +2001,7 @@ body {
 }
 
 // 여기까지 일반광고 작업
-*/
+
 
 .normal_ad_banner {
   position: relative;
@@ -2547,18 +2543,39 @@ body {
 // 여기부터 증시 위젯
 
 .stock_content {
+  overflow: hidden;
+  display: flex;
+  height: 160px;
+
   .stock_content_wrap {
+    width: 100%;
+
     .stock_content_header {
+      font-size: 1.1rem;
     }
 
     .stock_content_number {
+      font-size:1.4rem;
     }
   }
 }
 
 .stock_content_ratioWrap {
+  color: #f44336;
   .stock_content_ratioWrap_i {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -39px -424px;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0);
+
     span {
+      padding-left: 6px;
     }
   }
 }
@@ -2570,15 +2587,40 @@ body {
 
 .stock_content_right_box_wrap {
   .stock_li {
+    height: 36px;
+    border-bottom: 1px solid #ebebeb;
+
     .stock_li_a {
+      padding: 6px 0 9px;
+      display: flex;
+      line-height: 21px;
+      justify-content: space-between;
+
       .stock_li_a_name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 82px;
       }
 
       .stock_li_a_ratio_wrap {
+        display: flex;
+        
         .stock_li_a_ratio_wrap_i {
+          background-image: url(../img/sp_main.eae24523.png);
+    background-size: 452px 436px;
+    background-position: -39px -424px;
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    margin-top: 5px;
+    margin-right: 0;
         }
 
         .stock_li_a_ratio_num {
+          color: #2196f3;
+          margin-right: 4px;
+          font-size:0.7rem;
         }
       }
     }
