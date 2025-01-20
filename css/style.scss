@@ -2248,9 +2248,10 @@ body {
         padding-right: 7px;
         font-size: 1.1rem;
         line-height: 40px;
+        vertical-align: top;
       }
 
-      > a:last-child {
+      > a:nth-child(2) {
         border: 1px solid #606060;
         display: inline-block;
         min-width: 75px;
@@ -2258,6 +2259,32 @@ body {
         margin-top: 7px;
         padding: 0 10px 0 7px;
         border-radius: 15px;
+
+        vertical-align: bottom;
+        position: relative;
+
+        > span {
+          display: block;
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: -7px;
+          left: 22px;
+          font-size: 0.6rem;
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          background-image: url(../img/sp_main.eae24523.png);
+          background-size: 452px 436px;
+          background-position: -91px -424px;
+          background-repeat: no-repeat;
+          width: 12px;
+          height: 12px;
+          margin: 6px 2px 0 0;
+          vertical-align: top;
+        }
       }
 
       > span {
@@ -2287,6 +2314,28 @@ body {
           margin-top: 6px;
           line-height: 20px;
           text-align: center;
+          font-size: 1.2rem;
+
+          .weather_content_info_text:first-child {
+            color: #3172e7;
+          }
+
+          .weather_content_info_text:last-child {
+            color: #cd3534;
+
+            &::before {
+              content: "";
+              display: inline-block;
+              width: 1px;
+              height: 11px;
+              background-color: #d3d5d7;
+              margin: 0 5px 0 3px;
+              -webkit-transform: skewX(-15deg);
+              -ms-transform: skewX(-15deg);
+              transform: skewX(-15deg);
+              vertical-align: -1px;
+            }
+          }
         }
       }
 
@@ -2309,6 +2358,13 @@ body {
 // 날씨 위젯과 증시 위젯은 같은 프레임 사용
 
 // 여기부터 날씨 css
+.canvas {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  left: 0;
+}
+
 .weather_content_left_temprature_box {
   display: flex;
   align-items: center;
@@ -2319,31 +2375,43 @@ body {
     width: 85px;
     height: 86px;
     margin-right: 4px;
-  }
 
-  .weather_content_leftBox_in_right {
-    min-width: 0;
-    font-size: 2.5rem;
-    line-height: 48px;
-    letter-spacing: -2px;
-
-    .weather_content_leftBox_in_right_status {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      padding-left: 5px;
-      font-size: 1.1rem;
-      line-height: 20px;
-      font-weight: bold;
-      letter-spacing: -0.3px;
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../img/weatherIkon.png);
+      background-size: 641px 587px;
+      background-position: 0px -174px;
+      background-repeat: no-repeat;
+      width: 86px;
+      height: 86px;
     }
   }
 }
 
-.weather_content_temprature.info {
+.weather_content_leftBox_in_right {
+  min-width: 0;
+  font-size: 2rem;
+  line-height: 48px;
+  letter-spacing: -2px;
+
+  .weather_content_leftBox_in_rtght_status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 5px;
+    font-size: 0.9rem;
+    line-height: 20px;
+    font-weight: bold;
+    letter-spacing: -0.3px;
+  }
+}
+
+.weather_content_temprature_info {
   margin-top: 16px;
   line-height: 16px;
   text-align: center;
+  font-size: 0.8rem;
 
   > span:first-child {
     color: #3172e7;
@@ -2367,7 +2435,19 @@ body {
 
     .weather_today_dust_grade {
       padding-left: 4px;
-      color: #02c73c;
+      color: #fda60e;
+    }
+  }
+  .weather_today_dust:last-child {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background-color: #d3d5d7;
+      margin: 8px 6px 0;
+      border-radius: 50%;
+      vertical-align: top;
     }
   }
 }
@@ -2376,6 +2456,24 @@ body {
   display: flex;
   height: 143px;
   justify-content: space-between;
+
+  .weather_item:nth-child(1) {
+    .weather_graph {
+      margin-top: 15px;
+    }
+  }
+
+  .weather_item:nth-child(4) {
+    .weather_graph {
+      margin-top: 20px;
+    }
+  }
+
+  .weather_item:nth-child(5) {
+    .weather_graph {
+      margin-top: 30px;
+    }
+  }
 
   .weather_item {
     position: relative;
@@ -2402,35 +2500,87 @@ body {
       &::before {
         content: "";
         display: block;
-        // background-image: url(https://pm.pstatic.net/resources/asset/sp_weather.11654bc0.png);
+        background-image: url(../img/weatherIkon.png);
         background-size: 641px 587px;
         background-position: -198px -522px;
         background-repeat: no-repeat;
         width: 32px;
         height: 32px;
-        // js 제작 후 쓸 것
+      }
+    }
+
+    .weather_ikon_box:last-child {
+      &::before {
+        content: "";
+        display: block;
+        background-image: url(../img/weatherIkon.png);
+        background-size: 641px 587px;
+        background-position: -165px -522px;
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
       }
     }
 
     .weather_graph {
-      margin-top: 36px;
       position: absolute;
       font-size: 14px;
       line-height: 16px;
       @include onlySize($r: 0, $b: 60px, $l: 0, $t: 0);
-    }
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 40px;
-      bottom: 0;
-      left: 15px;
-      background-color: #ebebeb;
-      width: 1px;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 20px;
+        bottom: 0;
+        left: 15px;
+        background-color: #ebebeb;
+        width: 1px;
+      }
     }
   }
 }
 
 // 여기까지 날씨 위젯
+
+// 여기부터 증시 위젯
+
+.stock_content {
+  .stock_content_wrap {
+    .stock_content_header {
+    }
+
+    .stock_content_number {
+    }
+  }
+}
+
+.stock_content_ratioWrap {
+  .stock_content_ratioWrap_i {
+    span {
+    }
+  }
+}
+
+.stock_content_imgWrap {
+  img {
+  }
+}
+
+.stock_content_right_box_wrap {
+  .stock_li {
+    .stock_li_a {
+      .stock_li_a_name {
+      }
+
+      .stock_li_a_ratio_wrap {
+        .stock_li_a_ratio_wrap_i {
+        }
+
+        .stock_li_a_ratio_num {
+        }
+      }
+    }
+  }
+}

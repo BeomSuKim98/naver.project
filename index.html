@@ -1838,9 +1838,11 @@
             <div class="weather commonlayout">
               <div class="weather_wrap">
                 <div class="weather_header">
-                  <a href=""></a>
-                  <a href=""></a>
-                  <span></span>
+                  <a href="">날씨</a>
+                  <a href="">
+                    <span>예보 비교</span>
+                  </a>
+                  <span class="localLocation">안산시</span>
                 </div>
 
                 <div class="weather_content">
@@ -1849,73 +1851,87 @@
                       <div class="weather_content_left_temprature_box">
                         <div class="weather_content_leftBox_in_left"></div>
                         <div class="weather_content_leftBox_in_right">
-                          <div
-                            class="weather_content_leftBox_in_rtght_status"
-                          ></div>
+                          3.6°
+                          <div class="weather_content_leftBox_in_rtght_status">
+                            흐림
+                          </div>
                         </div>
                       </div>
 
                       <div class="weather_content_temprature_info">
-                        <span class="weather_content_info_text_out">
-                          <span class="weather_content_info_text_in"> </span>
+                        <span class="weather_content_info_text">
+                          <span class="blind"></span>
+                          0°
                         </span>
-                        <span class="weather_content_info_text_out">
-                          <span class="weather_content_info_text_in"> </span>
+                        <span class="weather_content_info_text">
+                          <span class="blind"> </span>
+                          7°
                         </span>
                       </div>
                     </a>
 
                     <a href="" class="weather_content_bottom_dustInfo">
                       <span class="weather_today_dust">
-                        <span class="weather_today_dust_grade"> </span>
+                        미세
+                        <span class="weather_today_dust_grade">나쁨</span>
                       </span>
                       <span class="weather_today_dust">
-                        <span class="weather_today_dust_grade"> </span>
+                        초미세
+                        <span class="weather_today_dust_grade">나쁨</span>
                       </span>
                     </a>
                   </div>
 
                   <div class="weather_content_right_box">
+                    <div class="canvas">
+                      <canvas
+                        width="180"
+                        height="37"
+                        style="
+                          min-width: 100%;
+                          min-height: 100%;
+                          max-width: 100%;
+                          max-height: 100%;
+                        "
+                      ></canvas>
+                    </div>
                     <a href="" class="weather_content_right_a">
-                      <div>
-                        <canvas> </canvas>
-                      </div>
                       <ul class="weather_list">
                         <!-- li.weather_item*5>div.weather_text_time+(div.weather_ikon_box>span.blind)+div.weather_graph -->
                         <li class="weather_item">
-                          <div class="weather_text_time"></div>
+                          <div class="weather_text_time">12시</div>
                           <div class="weather_ikon_box">
                             <span class="blind"></span>
                           </div>
-                          <div class="weather_graph"></div>
+                          <div class="weather_graph">5°</div>
                         </li>
                         <li class="weather_item">
-                          <div class="weather_text_time"></div>
+                          <div class="weather_text_time">14</div>
                           <div class="weather_ikon_box">
                             <span class="blind"></span>
                           </div>
-                          <div class="weather_graph"></div>
+                          <div class="weather_graph">7°</div>
                         </li>
                         <li class="weather_item">
-                          <div class="weather_text_time"></div>
+                          <div class="weather_text_time">16</div>
                           <div class="weather_ikon_box">
                             <span class="blind"></span>
                           </div>
-                          <div class="weather_graph"></div>
+                          <div class="weather_graph">7°</div>
                         </li>
                         <li class="weather_item">
-                          <div class="weather_text_time"></div>
+                          <div class="weather_text_time">18</div>
                           <div class="weather_ikon_box">
                             <span class="blind"></span>
                           </div>
-                          <div class="weather_graph"></div>
+                          <div class="weather_graph">4°</div>
                         </li>
                         <li class="weather_item">
-                          <div class="weather_text_time"></div>
+                          <div class="weather_text_time">20</div>
                           <div class="weather_ikon_box">
                             <span class="blind"></span>
                           </div>
-                          <div class="weather_graph"></div>
+                          <div class="weather_graph">2°</div>
                         </li>
                       </ul>
                     </a>
@@ -1930,87 +1946,81 @@
             <div class="weather commonlayout">
               <div class="weather_wrap">
                 <div class="weather_header">
+                  증시
                   <a href=""></a>
-                  <a href=""></a>
-                  <span></span>
+                  <span>01.20</span>
                 </div>
 
                 <div class="weather_content">
                   <div class="weather_content_left_box">
-                    <a href="" class="weather_content_a">
-                      <div class="weather_content_left_temprature_box">
-                        <div class="weather_content_leftBox_in_left"></div>
-                        <div class="weather_content_leftBox_in_right">
-                          <div
-                            class="weather_content_leftBox_in_rtght_status"
-                          ></div>
+                    <div class="stock_content">
+                      <a href="" class="stock_content_a">
+                        <div class="stock_content_wrap">
+                          <div class="stock_content_header">코스피</div>
+                          <div class="stock_content_number">2,525.58</div>
+                          <div class="stock_content_ratioWrap">
+                            <i class="stock_content_ratioWrap_i">
+                              <span class="blind">상승</span> </i
+                            >2.03
+                            <span class="stock_content_ratio">+0.08%</span>
+                          </div>
+                          <div class="stock_content_imgWrap">
+                            <img
+                              src="https://ssl.pstatic.net/imgfinance/chart/mobile/mini/KOSPI_naverpc_l.png"
+                              width="180"
+                              height="72"
+                              alt=""
+                            />
+                          </div>
                         </div>
-                      </div>
-
-                      <div class="weather_content_temprature_info">
-                        <span class="weather_content_info_text_out">
-                          <span class="weather_content_info_text_in"> </span>
-                        </span>
-                        <span class="weather_content_info_text_out">
-                          <span class="weather_content_info_text_in"> </span>
-                        </span>
-                      </div>
-                    </a>
-
-                    <a href="" class="weather_content_bottom_dustInfo">
-                      <span class="weather_today_dust">
-                        <span class="weather_today_dust_grade"> </span>
-                      </span>
-                      <span class="weather_today_dust">
-                        <span class="weather_today_dust_grade"> </span>
-                      </span>
-                    </a>
+                      </a>
+                    </div>
                   </div>
 
                   <div class="weather_content_right_box">
-                    <a href="" class="weather_content_right_a">
-                      <div>
-                        <canvas> </canvas>
-                      </div>
-                      <ul class="weather_list">
-                        <!-- li.weather_item*5>div.weather_text_time+(div.weather_ikon_box>span.blind)+div.weather_graph -->
-                        <li class="weather_item">
-                          <div class="weather_text_time"></div>
-                          <div class="weather_ikon_box">
-                            <span class="blind"></span>
-                          </div>
-                          <div class="weather_graph"></div>
+                    <div href="" class="weather_content_right_a">
+                      <ul class="stock_content_right_box_wrap">
+                        <li class="stock_li">
+                          <a href="" class="stock_li_a">
+                            <span class="stock_li_a_name"> 제주반도체 </span>
+                            <span class="stock_li_a_ratio_wrap">
+                              <i class="stock_li_a_ratio_wrap_i">
+                                <span class="blind"> 상승 </span>
+                              </i>
+                              <span class="stock_li_a_ratio_num"> 29.99% </span>
+                              12,700
+                            </span>
+                          </a>
                         </li>
-                        <li class="weather_item">
-                          <div class="weather_text_time"></div>
-                          <div class="weather_ikon_box">
-                            <span class="blind"></span>
-                          </div>
-                          <div class="weather_graph"></div>
+                        <li class="stock_li">
+                          <a href="" class="stock_li_a">
+                            <span class="stock_li_a_name"> 삼성전자 </span>
+                            <span class="stock_li_a_ratio_wrap">
+                              <i class="stock_li_a_ratio_wrap_i">
+                                <span class="blind"> 하락 </span>
+                              </i>
+                              <span class="stock_li_a_ratio_num"> 0.56% </span>
+                              53,400
+                            </span>
+                          </a>
                         </li>
-                        <li class="weather_item">
-                          <div class="weather_text_time"></div>
-                          <div class="weather_ikon_box">
-                            <span class="blind"></span>
-                          </div>
-                          <div class="weather_graph"></div>
+                        <li class="stock_li">
+                          <a href="" class="stock_li_a">
+                            <span class="stock_li_a_name"> 한화오션 </span>
+                            <span class="stock_li_a_ratio_wrap">
+                              <i class="stock_li_a_ratio_wrap_i">
+                                <span class="blind"> 상승 </span>
+                              </i>
+                              <span class="stock_li_a_ratio_num"> 2.17% </span>
+                              51,800
+                            </span>
+                          </a>
                         </li>
-                        <li class="weather_item">
-                          <div class="weather_text_time"></div>
-                          <div class="weather_ikon_box">
-                            <span class="blind"></span>
-                          </div>
-                          <div class="weather_graph"></div>
-                        </li>
-                        <li class="weather_item">
-                          <div class="weather_text_time"></div>
-                          <div class="weather_ikon_box">
-                            <span class="blind"></span>
-                          </div>
-                          <div class="weather_graph"></div>
+                        <li class="stock_li">
+                          <a href="" class="stock_li_a"> 인기종목 더보기 </a>
                         </li>
                       </ul>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
