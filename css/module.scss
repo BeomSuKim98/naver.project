@@ -64,20 +64,22 @@
     background-repeat: no-repeat;
     width: 40px;
     height: 40px;
+    content: "";
     display: block;
+    position: absolute;
+    @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+    margin: auto;
   }
   // x에 +3px y에 +2px
   // 문제 확인 after에 좌표 값이 이상해짐
 }
 
 @mixin beforeOnlyBackGround($background_position_x, $background_position_y) {
-  &::before {
-    content: "";
-    background-image: url(../img/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: $background_position_x $background_position_y;
-    background-repeat: no-repeat;
-  }
+  content: "";
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: $background_position_x $background_position_y;
+  background-repeat: no-repeat;
 }
 
 @mixin onlySize($w: auto, $h: auto, $t: auto, $l: auto, $r: auto, $b: auto) {
@@ -124,4 +126,41 @@
   border-radius: 4px;
   width: $w;
   height: $h;
+}
+
+@mixin beforebackimg(
+  $w: auto,
+  $h: auto,
+  $t: auto,
+  $l: auto,
+  $r: auto,
+  $b: auto,
+  $bgp_x: auto,
+  $bgp_y: auto
+) {
+  content: "";
+  display: block;
+  position: absolute;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: $bgp_x $bgp_y;
+  background-repeat: no-repeat;
+  width: $w;
+  height: $h;
+  margin: auto;
+}
+
+@mixin afterSi {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }

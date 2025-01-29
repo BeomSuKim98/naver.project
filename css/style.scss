@@ -1,16 +1,5 @@
-// 공용
-.fold {
-}
-
+// 모듈 css 임포트
 @import "module.scss";
-
-@font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 
 .commonlayout {
   overflow: hidden;
@@ -18,6 +7,10 @@
   border-radius: 8px;
   box-sizing: border-box;
   margin-top: 16px;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 em {
@@ -86,8 +79,8 @@ em {
 }
 
 html > body {
-  font-family: "GmarketSansMedium";
-  text-underline-position: under;
+  font-family: "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo",
+    sans-serif;
 }
 
 :root {
@@ -173,6 +166,174 @@ body {
           $background_position_y: -166px
         );
       }
+
+      // 여기부터 탑 ex 메뉴 프레임
+      .topAsideArea_ex_menu {
+        position: absolute;
+        top: 40px;
+        left: -10px;
+        width: 420px;
+        height: 740px;
+        background-color: #fff;
+        z-index: 11;
+        height: 750px;
+        overflow-y: auto;
+
+        &::before {
+          left: 22px;
+          @include beforeOnlyBackGround(
+            $background_position_x: -246px,
+            $background_position_y: -243px
+          );
+          width: 22px;
+          height: 13px;
+          display: block;
+          position: absolute;
+          top: -13px;
+        }
+
+        .topAsideArea_ex_menu_wrap {
+          height: 100%;
+          font-size: 16px;
+          line-height: 19px;
+          word-break: break-all;
+          background-color: #f8fbfc;
+
+          .topAsideArea_ex_menu_header {
+            height: 63px;
+            // position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: #fff;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 100%;
+              right: 0;
+              left: 0;
+              height: 8px;
+              opacity: 0;
+              transition: border-color, opacity 0.3s linear;
+            }
+          }
+          .topAsideArea_ex_menu_main {
+            overflow: hidden;
+            padding: 0 12px;
+            background-color: #fff;
+          }
+
+          .topAsideArea_ex_menu_footer {
+          }
+        }
+      }
+
+      // 여기부터 탑 ex 메뉴 헤더
+
+      .topAsideArea_ex_header_wrap {
+        position: relative;
+        display: flex;
+        max-width: 568px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        &::before {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: #efeff0;
+          height: 1px;
+          content: "";
+        }
+        .EMHeader_title {
+          padding: 18px 0 16px;
+          color: #080808;
+          font-size: 17px;
+          letter-spacing: -0.4px;
+        }
+
+        .EMHeader_top {
+          position: relative;
+          margin: 0 -8px 0 auto;
+          &::before {
+            content: "";
+            display: table;
+            table-layout: fixed;
+            clear: both;
+          }
+        }
+      }
+
+      // top ex 메뉴 숏컷 아이콘
+
+      .EMH_shortcut {
+        max-width: 1098px;
+        margin: 0 auto;
+        .EMH_shortcut_top {
+          .EMH_shortcut_top_a {
+            overflow: hidden;
+            position: relative;
+            padding: 7px 6px;
+            display: block;
+          }
+        }
+
+        .EMH_shortcut_main {
+          overflow-x: inherit;
+          margin-bottom: 20px;
+          font-size: 0;
+          white-space: nowrap;
+          position: relative;
+
+          .EMH_shortcut_main_wrap {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+
+            .EMHList {
+              padding: 0 8px;
+
+              .EMHItem {
+                float: left;
+                width: 25%;
+
+                .EMHLink {
+                  display: block;
+                  padding: 7px 0 10px;
+
+                  .EMHImgBox {
+                    width: 48px;
+                    height: 44px;
+                    position: relative;
+                    margin: 0 auto;
+                    transform: scale(1.2);
+
+                    .EMHImg {
+                      width: 48px;
+                      aspect-ratio: auto 48 / 48;
+                      height: 48px;
+                    }
+                  }
+
+                  .EMHem {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                    margin-top: 4px;
+                    font-size: 0.8rem;
+                    line-height: 20px;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
     .topPayArea {
@@ -220,6 +381,171 @@ body {
     }
 
     // 여기까지 상단 바 Aside
+  }
+}
+
+// asideMenu_serviceMenu 영역
+
+.sideMenu_serviceMenu {
+  max-width: 1098px;
+  margin: 0 auto;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: #eaeef3;
+    height: 12px;
+    margin: 0 -12px;
+  }
+
+  .SS_title {
+    padding: 24px 8px 12px;
+
+    > h2 {
+      font-size: 17px;
+      letter-spacing: -0.4px;
+      color: #1e1e23;
+      float: left;
+      font-size: 700;
+    }
+
+    .SS_topBar {
+      float: right;
+      margin: 0 -11px;
+
+      .SS_topBar_a {
+        float: left;
+        padding: 0 11px;
+        border: 0;
+        font-size: 15px;
+        line-height: 28px;
+        font-weight: 400;
+        color: #404040;
+        letter-spacing: -0.4px;
+
+        .SS_topBar_i {
+          &::after {
+            width: 17px;
+            height: 17px;
+            display: inline-block;
+            margin-right: 4px;
+            color: #404040;
+            letter-spacing: -0.4px;
+            border: 0;
+            position: relative;
+            @include beforeOnlyBackGround(
+              $background_position_x: -179px,
+              $background_position_y: -403px
+            );
+            transform: scale(0.6);
+            left: 1px;
+            top: 4px;
+          }
+
+          &::before {
+            content: "";
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// SS 서비스 콘텐츠 영역
+.SS_content {
+  padding-bottom: 32px;
+
+  .SS_content_ {
+    margin-top: 20px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      border-radius: inherit;
+      border: 1px solid rgba(239, 239, 240, 0.7);
+    }
+
+    &_news {
+    }
+  }
+  .SS_content_title_wrap {
+    position: relative;
+    padding: 0 54px 0 18px;
+    background-color: #eef2f9;
+
+    .SS_content_title {
+      color: #1e1e23;
+      font-size: 14px;
+      line-height: 40px;
+      font-weight: 700;
+
+      .SS_content_title_num {
+        margin-left: 2px;
+        color: #477ee3;
+      }
+    }
+  }
+  .SS_content_main_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 17px 17px 19px;
+
+    // ul 영역
+    .SS_content_main_list {
+      flex: 1;
+
+      .SS_content_item {
+        position: relative;
+        padding-right: 26px;
+        margin: 5px;
+
+        .SS_content_main_a {
+          overflow: hidden;
+          display: block;
+
+          .SS_content_main_imgBox {
+            float: left;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            margin-right: 8px;
+
+            &::before {
+              position: absolute;
+              @include onlySize($t: 0, $l: 0, $r: 0, $b: 0, $w: 45px, $h: 45px);
+              @include beforeOnlyBackGround(
+                $background_position_x: -155px,
+                $background_position_y: -144px
+              );
+              transform: scale(0.8);
+            }
+
+            .SS_content_main_img {
+              position: relative;
+            }
+          }
+
+          .SS_content_main_em {
+            position: absolute;
+            top: 11px;
+          }
+        }
+      }
+    }
+    // ul 영역
   }
 }
 
@@ -359,17 +685,6 @@ body {
       top: 0;
       right: 1px;
       padding: 26px 6px;
-
-      &::before {
-        content: "";
-        display: block;
-        @include beforeOnlyBackGround(
-          $background_position_x: -154px,
-          $background_position_y: -211px
-        );
-        width: 10px;
-        height: 6px;
-      }
     }
   }
 }
@@ -416,14 +731,6 @@ body {
           position: relative;
           display: block;
           margin: 0 auto;
-
-          &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
-            margin: auto;
-          }
         }
       }
 
@@ -440,59 +747,99 @@ body {
     }
   }
 }
+// type_^ 클래스 명시 부분. 서브메뉴를 위해 밖으로 빼놓음
 
-// type_^ 클래스 명시 부분.
+.type {
+  &_mail {
+    @include type_vari(
+      $background_position_x: -205px,
+      $background_position_y: -219px
+    );
+  }
+
+  &_cafe {
+    @include type_vari(
+      $background_position_x: -41px,
+      $background_position_y: -219px
+    );
+  }
+
+  &_blog {
+    @include type_vari(
+      $background_position_x: 0px,
+      $background_position_y: -219px
+    );
+  }
+
+  &_shopping {
+    @include type_vari(
+      $background_position_x: -41px,
+      $background_position_y: -260px
+    );
+  }
+
+  &_news {
+    @include type_vari(
+      $background_position_x: -270px,
+      $background_position_y: -205px
+    );
+  }
+
+  &_stock {
+    @include type_vari(
+      $background_position_x: -123px,
+      $background_position_y: -260px
+    );
+  }
+
+  &_real {
+    @include type_vari(
+      $background_position_x: 0px,
+      $background_position_y: -260px
+    );
+  }
+
+  &_keep {
+    @include type_vari(
+      $background_position_x: -287px,
+      $background_position_y: -266px
+    );
+
+    &::after {
+      transform: scale(1.3);
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &_talktalk {
+    @include type_vari(
+      $background_position_x: -99px,
+      $background_position_y: -319px
+    );
+
+    &::after {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &_naverPay {
+    @include type_vari(
+      $background_position_x: -231px,
+      $background_position_y: -9px
+    );
+
+    &::after {
+      width: 35px;
+      height: 35px;
+      transform: scale(0.8);
+    }
+  }
+}
+
 .shortcut_item {
   .type {
-    &_mail {
-      @include type_vari(
-        $background_position_x: -205px,
-        $background_position_y: -219px
-      );
-    }
-
-    &_cafe {
-      @include type_vari(
-        $background_position_x: -41px,
-        $background_position_y: -219px
-      );
-    }
-
-    &_blog {
-      @include type_vari(
-        $background_position_x: 0px,
-        $background_position_y: -219px
-      );
-    }
-
-    &_shopping {
-      @include type_vari(
-        $background_position_x: -41px,
-        $background_position_y: -260px
-      );
-    }
-
-    &_news {
-      @include type_vari(
-        $background_position_x: -270px,
-        $background_position_y: -205px
-      );
-    }
-
-    &_stock {
-      @include type_vari(
-        $background_position_x: -123px,
-        $background_position_y: -260px
-      );
-    }
-
-    &_real {
-      @include type_vari(
-        $background_position_x: 0px,
-        $background_position_y: -260px
-      );
-    }
-
     &_map {
       @include type_vari(
         $background_position_x: -269px,
@@ -502,7 +849,7 @@ body {
 
     &_webtoon {
       @include type_vari(
-        $background_position_x: -161px,
+        $background_position_x: -163px,
         $background_position_y: -260px
       );
     }
@@ -535,41 +882,34 @@ body {
         $background_position_y: -164px
       );
     }
-
-    &_webtoon {
-      @include type_vari(
-        $background_position_x: -164px,
-        $background_position_y: -260px
-      );
-    }
-  }
-
-  .service_ad {
-    position: absolute;
-    @include onlySize($t: 2px, $r: 2px, $b: 2px, $l: 2px);
-    margin: auto;
-    mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
-    // mask-image는 포토샵이나 일러스트레이터에서 쓰는 레이어 마이크와 같은 기능을 수행한다.
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-
-  .seoul_name {
-    margin-left: -25px;
-    margin-right: -25px;
-    font-size: 13.65px !important;
-  }
-
-  .ico_ad {
-    position: absolute;
-    content: "";
-    background-image: url(../img/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: -93px -376px;
-    background-repeat: no-repeat;
-    @include onlySize($w: 26px, $h: 22px, $t: -5px, $r: 9px);
   }
 }
+.service_ad {
+  position: absolute;
+  @include onlySize($t: 2px, $r: 2px, $b: 2px, $l: 2px);
+  margin: auto;
+  mask-image: url(data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M35.8916%204.05844C34.4994%202.6636%2032.7598%201.66622%2030.8527%201.16957C29.6805%200.675129%2026.2138%20-0.0109778%2019.9694%200.000133254C13.725%200.0112443%2010.2473%200.708462%209.08618%201.2029C5.21209%202.23714%202.19023%205.2696%201.16957%209.14729C0.675129%2010.3195%20-0.0109778%2013.8306%200.000133254%2020.0333C0.0112443%2026.2361%200.708462%2029.7555%201.20568%2030.9138C2.23787%2034.7881%205.26978%2037.8105%209.14729%2038.8304C10.3195%2039.3249%2013.7139%2040.011%2020.0333%2039.9999C26.3527%2039.9888%2029.7555%2039.2943%2030.9138%2038.7971C34.7879%2037.7629%2037.8098%2034.7304%2038.8304%2030.8527C39.3249%2029.6805%2040.011%2026.1555%2039.9999%2019.9667C39.9888%2013.7778%2039.2943%2010.2445%2038.7971%209.08618C38.2933%207.18157%2037.2902%205.44593%2035.8916%204.05844V4.05844Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E);
+  // mask-image는 포토샵이나 일러스트레이터에서 쓰는 레이어 마이크와 같은 기능을 수행한다.
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.seoul_name {
+  margin-left: -25px;
+  margin-right: -25px;
+  font-size: 13.65px !important;
+}
+
+.ico_ad {
+  position: absolute;
+  content: "";
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -93px -376px;
+  background-repeat: no-repeat;
+  @include onlySize($w: 26px, $h: 22px, $t: -5px, $r: 9px);
+}
+
 // 검색창밑 아이콘 숏컷에어리어 끝
 
 // 여기까지 상단바
@@ -673,7 +1013,7 @@ body {
     .View_item_tag {
       background-color: #f4361e;
       display: inline-block;
-      margin: 1px 0 0 1px;
+      margin: 3px 0 0 1px;
       padding: 1px 5px 0 4px;
       border-radius: 9px;
       font-size: 0.6rem;
@@ -691,7 +1031,7 @@ body {
         );
         width: 14px;
         height: 10px;
-        margin: 4px 3px 0 0;
+        margin: 3px 3px 0 0;
         vertical-align: top;
       }
     }
@@ -846,8 +1186,8 @@ body {
       .content_box {
         position: relative;
         float: left;
-        width: 16.66%;
-        height: 56px;
+        width: 16.665%;
+        height: 55.3px;
         text-align: center;
         border: 0.5px solid #ebebeb;
 
@@ -1043,17 +1383,6 @@ body {
       position: absolute;
       @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
       margin: auto;
-
-      &::before {
-        content: "";
-        position: absolute;
-        @include onlySize($w: 5px, $h: 5px, $t: 50%, $l: 50%);
-        transform: translate(-50%, -50%) rotate(45deg);
-        margin-left: -2px;
-        border-top: 2px solid #80868c;
-        border-right: 2px solid #80868c;
-        margin-left: -1px;
-      }
     }
   }
 }
@@ -1857,24 +2186,23 @@ body {
 
 // 일반광고 레이아웃 프레임
 
-.ad_banner{
+.ad_banner {
   position: relative;
   text-align: left;
 
-  .ad_banner_wrap{
+  .ad_banner_wrap {
     display: block;
     height: 240px;
     padding: 18px 18px 0;
     position: relative;
   }
 
-  .ad_btn_box{
-
+  .ad_btn_box {
     display: block;
     right: 2px;
     top: 4px;
 
-    .ad_btn{
+    .ad_btn {
       background-repeat: no-repeat;
       width: 42px;
       height: 16px;
@@ -1887,11 +2215,11 @@ body {
       background-image: url(../img/ad_arrow_naver.png);
       background-size: 100px 90px;
 
-      &_1{
+      &_1 {
         background-position: 0px -20px;
       }
 
-      &_2{
+      &_2 {
         background-position: -46px -20px;
       }
     }
@@ -1900,108 +2228,139 @@ body {
 
 // 여기까지 일반광고 레이아웃 프레임
 
-// 여기부터 일반광고 css 작업
+.ad_box {
+  font-size: 12px;
+  line-height: 1.5;
+  position: relative;
+  text-align: left;
 
-.ad_banner_title{
+  .ad_box_wrap {
+    box-sizing: border-box;
+    display: block;
+    height: 240px;
+    padding: 18px 18px 0;
+    position: relative;
+
+    .ad_box_title {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+  }
 }
 
-.ad_banner_content{
+// 여기부터 일반광고 css 작업
+
+.abt {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
 
-  .ad_banner_img_box{
+  .abtib {
     border-radius: 6px;
     overflow: hidden;
     position: relative;
+    margin-right: 15px;
 
-    &::after{
-      content: "";
-      border: 1px solid rgba(0, 0, 0, .08);
-      border-radius: inherit;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-    }
-
-    .ad_banner_img{
+    .ad_abnner_img {
       object-fit: cover;
+
+      &::after {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: inherit;
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  .ad_box_right_box {
+    &::after {
+      background-color: #ebebeb;
+      content: "";
+      height: 1px;
     }
 
-    .ad_banner_content_box{
-      display: flex;
+    &::before {
+      background-color: #ebebeb;
+      content: "";
+      height: 1px;
+    }
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+
+    .ad_banner_content_box {
       width: 174px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-      &::before{
-        background-color: #ebebeb;
-        content: "";
-        height: 1px;
-      }
-
-      &::after{
-        background-color: #ebebeb;
-        content: "";
-        height: 1px;
-      }
-
-      .ad_banner_content_text{
-        font-size: 0.8rem;
+      .ad_banner_content_text {
+        color: #303038;
+        font-size: 15px;
+        letter-spacing: -0.5px;
         padding: 0 5px;
       }
     }
   }
 }
 
-.ad_banner_bottom{
-  margin-top: 15px;
-  
-  .ad_bannerbottom_wrap{
+.ad_banner_bottom {
+  margin-top: 13px;
+
+  .ad_banner_bottom_wrap {
     align-items: center;
     display: flex;
 
-    .ad_Banner_bottom_thImg_box{
+    .ad_banner_bottom_thImg_box {
       border-radius: 50%;
       margin-right: 6px;
       overflow: hidden;
       position: relative;
 
-      &::after{
-        content: "";
-        border: 1px solid rgba(0, 0, 0, .08);
-        border-radius: inherit;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-      }
-
-      .ad_banner_bottom_thImg{
+      .ad_banner_bottom_thImg {
         object-fit: cover;
 
-      }
-
-      .ad_banner_bottom_text_1{
-        letter-spacing: -.5px; 
-      }
-
-      .ad_banner_bottom_text_2{
-        margin-left: auto;
-        letter-spacing: -.5px; 
-      }
-
-      .ad_banner_svg_arrow{
-        margin-left: 3px;
-        color: #000;
+        &::after {
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: inherit;
+          bottom: 0;
+          content: "";
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
       }
     }
+  }
+
+  .ad_banner_bottom_text_1 {
+    color: #424244;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+  }
+
+  .ad_banner_bottom_text_2 {
+    color: #505052;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    margin-left: auto;
+  }
+  svg {
+    margin-left: 3px;
+    margin-bottom: 5px;
+    color: #000;
+    fill: none;
   }
 }
 
 // 여기까지 일반광고 작업
-
 
 .normal_ad_banner {
   position: relative;
@@ -2340,6 +2699,8 @@ body {
         flex: 1;
         min-width: 0;
         margin: 20px 0 18px;
+        justify-content: center;
+        align-items: center;
 
         .weather_content_right_a {
           position: relative;
@@ -2555,28 +2916,38 @@ body {
     }
 
     .stock_content_number {
-      font-size:1.4rem;
+      font-size: 1.4rem;
     }
   }
 }
 
 .stock_content_ratioWrap {
   color: #f44336;
-  .stock_content_ratioWrap_i {
-    position: absolute;
-    top: 3px;
-    left: 0;
+
+  span {
+    padding-left: 6px;
+  }
+}
+
+.stock_content_ratioWrap_i {
+  background-image: url(../img/sp_main.eae24523.png);
+  background-size: 452px 436px;
+  background-position: -39px -424px;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0);
+
+  &_up {
+    background-position: -65px -424px;
     background-image: url(../img/sp_main.eae24523.png);
     background-size: 452px 436px;
-    background-position: -39px -424px;
     background-repeat: no-repeat;
     width: 12px;
     height: 12px;
+    display: inline-block;
     background-color: rgba(0, 0, 0, 0);
-
-    span {
-      padding-left: 6px;
-    }
   }
 }
 
@@ -2589,6 +2960,21 @@ body {
   .stock_li {
     height: 36px;
     border-bottom: 1px solid #ebebeb;
+
+    .stock_li_a_more {
+      &::after {
+        margin-left: 60px;
+        content: "";
+        display: inline-block;
+        @include beforeOnlyBackGround(
+          $background_position_x: -226px,
+          $background_position_y: -424px
+        );
+
+        width: 10px;
+        height: 12px;
+      }
+    }
 
     .stock_li_a {
       padding: 6px 0 9px;
@@ -2605,24 +2991,726 @@ body {
 
       .stock_li_a_ratio_wrap {
         display: flex;
-        
+
         .stock_li_a_ratio_wrap_i {
-          background-image: url(../img/sp_main.eae24523.png);
-    background-size: 452px 436px;
-    background-position: -39px -424px;
-    background-repeat: no-repeat;
-    width: 12px;
-    height: 12px;
-    margin-top: 5px;
-    margin-right: 0;
+          @include beforeOnlyBackGround(
+            $background_position_x: -39px,
+            $background_position_y: -424px
+          );
+
+          width: 12px;
+          height: 12px;
+          margin-top: 5px;
+          margin-right: 0;
+          display: inline-block;
+
+          &_up {
+            @include beforeOnlyBackGround(
+              $background_position_x: -65px,
+              $background_position_y: -424px
+            );
+
+            width: 12px;
+            height: 12px;
+            margin-top: 5px;
+            margin-right: 0;
+          }
         }
 
         .stock_li_a_ratio_num {
           color: #2196f3;
           margin-right: 4px;
-          font-size:0.7rem;
+          font-size: 0.7rem;
+
+          &_up {
+            color: #f44336;
+            margin-right: 4px;
+            font-size: 0.7rem;
+          }
         }
       }
+    }
+  }
+}
+
+.calender {
+  background-color: #f4f6fa;
+
+  .calender_header {
+    color: #080808;
+    position: relative;
+    padding: 25px 17px 0px 19px;
+    font-size: 1.5rem;
+    line-height: 23px;
+    font-weight: 800;
+  }
+
+  .calender_wrap {
+    position: relative;
+
+    .calender_inner {
+      overflow: hidden;
+      white-space: nowrap;
+
+      .calender_page_1 {
+        display: inline-block;
+        padding: 3px 18px;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+.calender_top {
+  width: 384px;
+  position: relative;
+  padding: 8px 11px 8px 18px;
+  background-color: #fff;
+
+  .calender_top_header {
+    display: flex;
+    position: relative;
+
+    .calender_top_header_text {
+      color: #080808;
+      width: 50%;
+      font-size: 1.2rem;
+      line-height: 34px;
+      font-weight: 800;
+    }
+  }
+}
+
+.calender_top_date_wrap {
+  float: left;
+  width: 50%;
+  margin-top: 4px;
+  text-decoration: none;
+
+  .calender_top_date_box {
+    display: block;
+    margin: 0 -1px;
+    font-size: 3.1rem;
+    line-height: 48px;
+    letter-spacing: -2px;
+    text-decoration: none;
+
+    .calender_top_date_text {
+      display: inline-block;
+      margin: 23px 0 0 9px;
+      font-size: 1.3rem;
+      line-height: 20px;
+    }
+  }
+}
+
+.calender_top_login {
+  .calender_top_login_text {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    color: #606060;
+    text-decoration: underline;
+  }
+}
+
+.calender_top_date_table_wrap {
+  float: left;
+  width: 50%;
+  padding: 7px 0 0 5px;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &::after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
+  }
+
+  .calender_table {
+    padding-left: 9px;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    th {
+      width: 24px;
+      height: 27px;
+      font-weight: 600;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    td {
+      width: 24px;
+      height: 27px;
+      position: relative;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .calender_table_sunday {
+      color: #eb5b5b;
+      opacity: 0.6;
+    }
+
+    .calender_now {
+      color: #fff;
+      font-weight: bold;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: -0.5px;
+        width: 24px;
+        height: 24px;
+        background-color: #101010;
+        z-index: -1;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.calender_bottom {
+  margin-top: 12px;
+  width: 384px;
+  background-color: #fff;
+  height: 200px;
+
+  .calender_bottom_header_wrap {
+    display: flex;
+    padding: 14px 18px 0;
+
+    .calender_bottom_header_i {
+      @include beforeOnlyBackGround(
+        $background_position_x: -311px,
+        $background_position_y: -17px
+      );
+      width: 64px;
+      height: 16px;
+      flex: none;
+      margin: 2px 8px 4px 0;
+    }
+  }
+
+  .calender_bottom_header_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #080808;
+    width: 130px;
+    font-size: 0.9rem;
+    line-height: 22px;
+    font-weight: 800;
+  }
+
+  .calender_bottom_header_btn {
+    color: #606060;
+    flex: none;
+    margin-left: auto;
+    font-size: 0.8rem;
+
+    &::after {
+      display: inline-block;
+      @include beforeOnlyBackGround(
+        $background_position_x: -302px,
+        $background_position_y: -332px
+      );
+      width: 16px;
+      height: 16px;
+      margin-left: 5px;
+      vertical-align: top;
+    }
+  }
+
+  .calender_bottom_list {
+    padding: 12px 18px 0;
+
+    .calender_item:nth-child(3) {
+      a {
+        &::before {
+          position: absolute;
+          top: 4px;
+          right: -5px;
+          bottom: 4px;
+          background-color: #7a7b7c;
+          content: "";
+          display: block;
+          width: 4px;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+
+        &::after {
+          position: absolute;
+          top: 8px;
+          right: -10px;
+          bottom: 8px;
+          background-color: #d0d2d3;
+          content: "";
+          display: block;
+          width: 4px;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+
+    .calender_item {
+      float: left;
+      width: 108px;
+
+      .calender_bottom_wrap {
+        position: relative;
+        display: block;
+        border-radius: 4px;
+
+        > strong {
+          position: absolute;
+          right: 8px;
+          bottom: 7px;
+          left: 8px;
+          display: block;
+          overflow: hidden;
+          max-height: 36px;
+          line-height: 18px;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          color: #fff;
+          font-size: 0.7rem;
+          font-weight: 400;
+          z-index: 10;
+        }
+
+        .calender_wrap_box {
+          width: 108px;
+          height: 126px;
+          overflow: hidden;
+          position: relative;
+          display: block;
+          border-radius: 4px;
+
+          > img {
+            width: 108px;
+            aspect-ratio: auto 108 / 126;
+            height: 126px;
+          }
+
+          &::before {
+            position: absolute;
+            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+            content: "";
+            background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0) 50%,
+                rgba(0, 0, 0, 0.35) 74.86%
+              ),
+              linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.09) 0%,
+                rgba(0, 0, 0, 0.09) 100%
+              );
+            z-index: 1;
+          }
+
+          .claender_bottom_wrap_i {
+            @include beforebackimg(
+              $w: 7px,
+              $h: 10px,
+              $bgp_x: -395px,
+              $bgp_y: -378px
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+.calender_moblie {
+  display: flex;
+  padding: 20px 23px 23px 22px;
+  text-decoration: none;
+  line-height: 22px;
+  align-items: center;
+
+  &::before {
+    @include beforeOnlyBackGround(
+      $background_position_x: -120px,
+      $background_position_y: -376px
+    );
+
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+  }
+
+  &::after {
+    @include beforeOnlyBackGround(
+      $background_position_x: -142px,
+      $background_position_y: -73px
+    );
+    width: 8px;
+    height: 12px;
+    margin-left: auto;
+  }
+}
+
+// 여기까지 위젯
+
+// 여기부터 오른쪽 레이아웃 최하단 광고 시작
+
+.right_layout_bottom_ad {
+  padding: 8px 50px 8px 18px;
+  font-size: 0.9rem;
+
+  .right_layout_bottom_ad_wrap {
+    overflow: hidden;
+    display: flex;
+    width: 352px;
+
+    .right_layout_bottom_a {
+      color: #404040;
+      display: flex;
+      align-items: center;
+      width: 352px;
+      padding: 11px 0;
+      line-height: 20px;
+
+      .right_layout_bottom_imgBox {
+        width: 42px;
+        height: 42px;
+        display: inline-block;
+        margin-right: 12px;
+        vertical-align: top;
+        .right_layout_bottom_img {
+          width: 42px;
+          aspect-ratio: auto 42 / 42;
+          height: 42px;
+        }
+      }
+
+      .right_layout_bottom_ad_textBox {
+        .right_layout_bottom_text1 {
+          overflow: hidden;
+          font-weight: bold;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: #101010;
+        }
+
+        .right_layout_bottom_text2 {
+          overflow: hidden;
+          -o-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: #606060;
+          margin-top: 2px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+// 여기부터 footer
+
+// footer 프레임
+.footerf {
+  background-color: #f5f6f7;
+  border-top: 1px solid #ebebeb;
+
+  .footer_wrap {
+    width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 78px;
+    font-size: 0.9rem;
+  }
+}
+
+// footer ad_banner 프레임
+
+.footer_ad_banner {
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+  padding: 30px 0;
+
+  .footer_ad_banner_left_box {
+    float: left;
+    width: 410px;
+    height: 100px;
+  }
+
+  .footer_ad_banner_center_box {
+    float: left;
+    margin-left: 20px;
+  }
+
+  .footer_ad_banner_right_box {
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+// footer ad_banner 컨텐츠
+
+.footer_ad_banner_box_a {
+  display: block;
+  overflow: hidden;
+  background-color: #f5f6f7;
+
+  .footer_ad_banner_box_imgBox {
+    overflow: hidden;
+    position: relative;
+    float: left;
+    width: 160px;
+    height: 100px;
+    border-radius: 6px;
+
+    &::after {
+      position: absolute;
+      @include onlySize($t: 0, $r: 0, $b: 0, $l: 0);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: inherit;
+      content: "";
+    }
+
+    .footer_ad_banner_box_img {
+      width: 160px;
+      aspect-ratio: auto 160 / 100;
+      height: 100px;
+    }
+
+    .icon_nad {
+      display: block;
+      width: 25px;
+      height: 16px;
+      background-image: url(../img/footerAdImg/adSvg.svg);
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      color: transparent;
+      position: absolute;
+      top: 3px;
+      right: 3px;
+    }
+  }
+
+  .footer_ad_banner_box_textBox {
+    overflow: hidden;
+    height: 100px;
+    padding: 5px 3px 0 18px;
+    box-sizing: border-box;
+
+    .footer_ad_banner_box_textHeader1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      align-items: center;
+      height: 20px;
+      max-width: 141px;
+      padding: 0 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      line-height: 20px;
+      letter-spacing: -0.25px;
+      color: #fff;
+      background-color: #a0adb2;
+      vertical-align: top;
+    }
+
+    .footer_ad_banner_box_textHeader2 {
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      font-size: 14px;
+      line-height: 1.6;
+      letter-spacing: -0.25px;
+      color: #222122;
+    }
+
+    .footer_ad_banner_box_textBody {
+      margin-top: 3px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 14px;
+      line-height: 1.43;
+      color: #545454;
+    }
+  }
+}
+
+// 여기까지 footer ad box
+
+// 여기부터 notice 박스
+.footer_notice_box {
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+  padding: 21px 0;
+  line-height: 17px;
+
+  .notice_box_wrap {
+    float: left;
+
+    .footer_notice_title {
+      float: left;
+      margin-right: 11px;
+
+      > a {
+      }
+    }
+  }
+
+  .footer_notice_box_fullservice {
+    float: right;
+
+    &::after {
+      display: inline-block;
+      width: 8px;
+      height: 12px;
+      margin: 3px 0 0 10px;
+      vertical-align: top;
+      @include beforeOnlyBackGround(
+        $background_position_x: -193px,
+        $background_position_y: -424px
+      );
+    }
+  }
+}
+
+// 여기부터 파트너 박스
+
+.partner {
+  border-bottom: 1px solid #ebebeb;
+  overflow: hidden;
+
+  .partner_box {
+    float: left;
+    padding: 20px 0;
+
+    .partner_wrap + .partner_wrap {
+      margin-top: 10px;
+    }
+
+    .partner_wrap {
+      overflow: hidden;
+      line-height: 20px;
+
+      .partner_h3 {
+        float: left;
+        width: 87px;
+        padding-right: 9px;
+      }
+
+      .partner_a {
+        color: #404040;
+        float: left;
+        & + .partner_a::before {
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          background-color: #d3d5d7;
+          margin: 0 10px;
+          vertical-align: -1px;
+        }
+      }
+    }
+  }
+
+  .partner_service_box_wrap {
+    float: right;
+    padding: 21px 0;
+    font-size: 12px;
+
+    .partner_service_box {
+      float: left;
+      width: 142px;
+      height: 48px;
+
+      .partner_service_box_a {
+        margin-left: 11px;
+        float: right;
+
+        img {
+          width: 48px;
+          aspect-ratio: auto 48 / 48;
+          height: 48px;
+        }
+      }
+
+      .partner_service_textBox {
+        overflow: hidden;
+
+        .partner_service_title {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: block;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+// 여기부터 제휴
+
+.corp_area {
+  width: 1280px;
+  margin: 0 auto;
+  padding-top: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 14px;
+
+  .bold {
+    font-weight: 700;
+  }
+
+  .corp_list {
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 17px;
+    vertical-align: top;
+
+    .corp_item {
+      color: #404040;
+      display: inline-block;
+      line-height: 20px;
+      vertical-align: top;
+
+      & + .corp_item::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: #d3d5d7;
+        margin: 0 10px;
+        vertical-align: -1px;
+      }
+
+      .corp_a {
+        line-height: 20px;
+      }
+    }
+  }
+  .addr {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+
+    ._blank {
     }
   }
 }
