@@ -78,3 +78,23 @@ function newsHover() {
 }
 
 newsHover();
+
+
+function tabMenu(){
+  $(".first_tab").click(function () {
+    $(".contentHeaderView_content").removeClass("topblind");
+    $(".contentHeaderView_second").addClass("topblind");
+    $(".second_tab").removeClass("text-black");
+    $(".first_tab").addClass("text-black");
+    
+  });
+
+  $(".second_tab").click(function () {
+    $(".contentHeaderView_second").removeClass("topblind");
+    $(".contentHeaderView_content").addClass("topblind");
+    $(".second_tab").addClass("text-black");
+    $(".first_tab").removeClass("text-black");
+  });
+}
+
+tabMenu();
