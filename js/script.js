@@ -23,3 +23,58 @@ function feedAdImg() {
 feedAdImg();
 
 // 1.20일 깃허브 업로드 시 js를 불러 오지 못함을 확인
+
+function sideMenuInOut() {
+  $(".topTipBox").mouseenter(function () {
+    $(this).find(".tooltipBox").removeClass("topblind");
+  });
+
+  $(".topTipBox").mouseenter(function (event) {
+    event.stopPropagation();
+  });
+
+  $(".topTipBox").mouseleave(function () {
+    $(this).find(".tooltipBox").addClass("topblind");
+  });
+}
+
+function sideMenuPopup_1() {
+  $(".topAsideArea").click(function () {
+    $(".topAsideArea_ex_menu").removeClass("topblind");
+  });
+
+  $("body").click(function () {
+    $(".topAsideArea_ex_menu").addClass("topblind");
+  });
+
+  $(".topAsideArea").click(function (e) {
+    return false;
+  });
+}
+
+sideMenuPopup_1();
+sideMenuInOut();
+
+function newsHover() {
+  $(".content_box").mouseenter(function () {
+    console.log("작동확인");
+    let hoverdiv = $("<div></div>").addClass("news_th_hover");
+    let hoverA1 = $("<a></a>")
+      .addClass("news_th_hover_a")
+      .attr("href", "#")
+      .text("구독");
+    let hoverA2 = $("<a></a>")
+      .addClass("news_th_hover_a")
+      .attr("href", "#")
+      .text("기사보기");
+
+    hoverdiv.append(hoverA1, hoverA2);
+    $(this).append(hoverdiv);
+
+    $(".content_box").mouseleave(function () {
+      $(this).find(".news_th_hover").remove();
+    });
+  });
+}
+
+newsHover();

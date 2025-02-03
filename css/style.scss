@@ -1,5 +1,8 @@
 // 모듈 css 임포트
 @import "module.scss";
+a:hover {
+  text-decoration: underline;
+}
 
 .commonlayout {
   overflow: hidden;
@@ -11,6 +14,10 @@
 
 .bold {
   font-weight: 700;
+}
+
+.topblind {
+  display: none !important;
 }
 
 em {
@@ -136,6 +143,37 @@ body {
     height: 156px;
     padding: 52px 0 8px;
 
+    .tooltipBox {
+      top: 51px;
+      left: -50%;
+      color: #101010;
+      z-index: 10;
+      position: absolute;
+      padding: 10px 16px;
+      border: 1px solid #03c75a;
+      border-radius: 25px;
+      white-space: nowrap;
+      font-size: 16px;
+      background-color: #fff;
+
+      &::before {
+        left: 22px;
+        content: "";
+        background-image: url(../img/sp_main.eae24523.png);
+        background-size: 452px 436px;
+        background-position: -194px -301px;
+        background-repeat: no-repeat;
+        width: 22px;
+        height: 13px;
+        display: block;
+        position: absolute;
+        top: -13px;
+        left: 38%;
+        transform: rotate(180deg);
+        z-index: 11;
+      }
+    }
+
     .search_right_first {
     }
 
@@ -165,6 +203,19 @@ body {
           $background_position_x: -311px,
           $background_position_y: -166px
         );
+
+        &:hover {
+          &::before {
+            background-color: rgb(231, 231, 231);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
 
       // 여기부터 탑 ex 메뉴 프레임
@@ -174,7 +225,7 @@ body {
         left: -10px;
         width: 420px;
         height: 740px;
-        background-color: #fff;
+        background-color: #f8fbfc;
         z-index: 11;
         height: 750px;
         overflow-y: auto;
@@ -201,7 +252,6 @@ body {
 
           .topAsideArea_ex_menu_header {
             height: 63px;
-            // position: fixed;
             top: 0;
             right: 0;
             left: 0;
@@ -222,7 +272,7 @@ body {
           .topAsideArea_ex_menu_main {
             overflow: hidden;
             padding: 0 12px;
-            background-color: #fff;
+            background-color: #f8fbfc;
           }
 
           .topAsideArea_ex_menu_footer {
@@ -272,6 +322,12 @@ body {
       .EMH_shortcut {
         max-width: 1098px;
         margin: 0 auto;
+        background-color: #fff;
+
+        a:hover {
+          text-decoration: none;
+        }
+
         .EMH_shortcut_top {
           .EMH_shortcut_top_a {
             overflow: hidden;
@@ -338,6 +394,22 @@ body {
 
     .topPayArea {
       @include topArea($l: 41px, $button: "button ");
+      .tooltipBox {
+        left: -61.5%;
+      }
+
+      &:hover {
+        &::before {
+          background-color: rgb(231, 231, 231);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
 
       .link_pay {
         @include AsideAfter(
@@ -348,6 +420,18 @@ body {
     }
     .topTalkArea {
       @include topArea($r: 94px, $w: 48px);
+      &:hover {
+        &::before {
+          background-color: rgb(231, 231, 231);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
 
       .btn_talk {
         @include AsideAfter(
@@ -358,6 +442,21 @@ body {
     }
     .topNotiArea {
       @include topArea($r: 42px, $w: 48px);
+      &:hover {
+        &::before {
+          background-color: rgb(231, 231, 231);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .tooltipBox {
+        left: -25%;
+      }
 
       .btn_notify {
         @include AsideAfter(
@@ -369,6 +468,18 @@ body {
 
     .topShoppingArea {
       @include topArea($r: -10px, $button: "button ");
+      &:hover {
+        &::before {
+          background-color: rgb(231, 231, 231);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
 
       .link_shopping {
         &:last-child {
@@ -466,6 +577,7 @@ body {
     margin-top: 20px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.03);
     position: relative;
+    background-color: #fff;
 
     &::before {
       position: absolute;
@@ -546,6 +658,63 @@ body {
       }
     }
     // ul 영역
+  }
+}
+
+// 탑사이드 메뉴 푸터
+.topAsideArea_ex_menu_footer {
+  max-width: 1098px;
+
+  .ex_menu_footer_wrap {
+    padding: 15px 0 50px;
+    text-align: center;
+
+    .TENFooter_ul {
+      .TENFooter_item {
+        color: #929294;
+        display: inline-block;
+        position: relative;
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 400;
+        letter-spacing: -0.23px;
+        vertical-align: top;
+
+        & + .TENFooter_item::before {
+          background-color: #d3d5d7;
+          position: absolute;
+          top: 6px;
+          left: 0;
+          content: "";
+          width: 1px;
+          height: 10px;
+        }
+
+        .TENFooter_a {
+          display: block;
+          padding: 3px 8px;
+        }
+      }
+    }
+
+    > a {
+      display: inline-block;
+      margin-top: 9px;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 54px;
+        height: 14px;
+        background-position: 0 -159px;
+        margin: 6px;
+        @include beforeOnlyBackGround(
+          $background_position_x: -84px,
+          $background_position_y: -197px
+        );
+        transform: scale(2);
+      }
+    }
   }
 }
 
@@ -696,6 +865,10 @@ body {
   position: relative;
   width: 676px;
   margin: 68px auto 0;
+
+  a:hover {
+    text-decoration: none;
+  }
 
   .shortcut_list {
     display: flex;
@@ -1180,16 +1353,45 @@ body {
       border: 1px solid #ebebeb;
       overflow: hidden;
       position: relative;
-      height: 222px;
       border-radius: 4px;
 
       .content_box {
         position: relative;
         float: left;
         width: 16.665%;
-        height: 55.3px;
         text-align: center;
         border: 0.5px solid #ebebeb;
+
+        .news_th_hover {
+          a:hover {
+            font-weight: 700;
+          }
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #2868f2;
+          font-size: 12px;
+
+          .news_th_hover_a {
+            color: #fff;
+            line-height: 30px;
+          }
+
+          .news_th_hover_a + .news_th_hover_a::before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            background-color: #d3d5d7;
+            margin: 4px 12px 0;
+          }
+        }
 
         .news_th {
           display: block;
