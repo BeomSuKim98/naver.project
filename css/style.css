@@ -148,6 +148,10 @@ body {
   white-space: nowrap;
   font-size: 16px;
   background-color: #fff;
+  display: none;
+}
+.header .topSearchWrap .tooltipBox.on {
+  display: block;
 }
 .header .topSearchWrap .tooltipBox::before {
   left: 22px;
@@ -181,6 +185,20 @@ body {
   display: block;
   padding: 8px;
 }
+.header .topSearchWrap .topAsideArea.click_on .btn_menu::before {
+  background-color: rgb(231, 231, 231);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+.header .topSearchWrap .topAsideArea.click_on .tooltipBox {
+  display: none !important;
+}
 .header .topSearchWrap .topAsideArea .btn_menu::after {
   content: "";
   display: block;
@@ -191,16 +209,6 @@ body {
   width: 32px;
   height: 32px;
   position: relative;
-}
-.header .topSearchWrap .topAsideArea .btn_menu:hover::before {
-  background-color: rgb(231, 231, 231);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 .header .topSearchWrap .topAsideArea .topAsideArea_ex_menu {
   position: absolute;
@@ -1515,6 +1523,7 @@ body {
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
+  width: 108px;
 }
 .contentHeaderView_header_sub .news_media .media_ikon {
   content: "";
@@ -1525,7 +1534,7 @@ body {
   width: 9px;
   height: 6px;
   display: inline-block;
-  margin: 10px 0 0 5px;
+  margin: 10px 0 0 0px;
   vertical-align: top;
 }
 .contentHeaderView_header_sub .news_simple_box {
@@ -1535,8 +1544,16 @@ body {
   margin: 0 20px;
   border-radius: 4px;
   line-height: 26px;
+  height: 30px;
 }
-.contentHeaderView_header_sub .news_simple_box::before {
+.contentHeaderView_header_sub .news_simple_box .subView {
+  color: #404040;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+}
+.contentHeaderView_header_sub .news_simple_box .subView::before {
   content: "";
   display: block;
   position: absolute;
@@ -1546,22 +1563,7 @@ body {
   width: 1px;
   height: 12px;
 }
-.contentHeaderView_header_sub .news_simple_box .subView {
-  color: #404040;
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-}
-.contentHeaderView_header_sub .news_simple_box .news_box {
-  display: inline-block;
-  vertical-align: top;
-  white-space: nowrap;
-}
-.contentHeaderView_header_sub .news_simple_box .news_box .first_arti {
-  margin-left: 5px;
-}
-.contentHeaderView_header_sub .news_simple_box .news_box .first_arti::before {
+.contentHeaderView_header_sub .news_simple_box .subView::after {
   content: "";
   display: inline-block;
   width: 3px;
@@ -1571,12 +1573,23 @@ body {
   border-radius: 50%;
   vertical-align: top;
 }
+.contentHeaderView_header_sub .news_simple_box .news_box {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 320px;
+}
+.contentHeaderView_header_sub .news_simple_box .news_box .first_arti {
+  margin-left: 5px;
+}
 .contentHeaderView_header_sub .news_simple_box .news_box div {
   cursor: pointer;
-  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .contentHeaderView_header_sub .sub_home {
   margin-left: auto;
+  width: 180px;
 }
 .contentHeaderView_header_sub .sub_home .sub_home_link {
   position: relative;
@@ -1646,11 +1659,12 @@ body {
 }
 .contentHeaderView_content .content_wrap .content_group .content_box .news_th {
   display: block;
-  padding: 18px 0;
+  padding: 12.74px;
   text-align: center;
 }
 .contentHeaderView_content .content_wrap .content_group .content_box .news_th .news_logo {
-  height: 20px;
+  height: 22px;
+  object-fit: cover;
   display: inline-block;
 }
 
@@ -1809,7 +1823,7 @@ body {
 }
 .shopping_section .shopping_section_wrap .iframe_box {
   width: 831px;
-  height: 560px;
+  height: 577px;
 }
 .shopping_section .shopping_section_wrap .iframe_box .in_con {
   width: 830px;
@@ -1903,21 +1917,6 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-}
-.shopping_top_button .shopping_btn_prev .arrow_prev::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  transform: translate(-50%, -50%) rotate(45deg);
-  margin-left: 2px;
-  border-left: 2px solid #80868c;
-  border-bottom: 2px solid #80868c;
-  margin-left: 1px;
 }
 .shopping_top_button .shopping_btn_next {
   width: 30px;
@@ -2093,7 +2092,7 @@ body {
 .shopping_main_content .shopping_left_wrap .QuickLink_area .QuickLink_list .QuickLink_item .QuickLink_a .QuickLink_text {
   color: #404040;
   margin-top: 2px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 20px;
 }
 .shopping_main_content .shopping_left_wrap .null .FocusItem_link_banner {
@@ -2203,7 +2202,7 @@ body {
 
 .todayPick_box {
   display: flex;
-  margin: 0 20px 18px;
+  margin: 15px 20px 18px;
 }
 .todayPick_box .todayPick_frame {
   width: 100%;
@@ -2532,6 +2531,7 @@ body {
   vertical-align: top;
   width: 20px;
   height: 20px;
+  object-fit: cover;
 }
 
 .feed_main_bottom_list {
@@ -2704,6 +2704,9 @@ body {
   line-height: 1.5;
   position: relative;
   text-align: left;
+}
+.ad_box a:hover {
+  text-decoration: none;
 }
 .ad_box .ad_box_wrap {
   box-sizing: border-box;
@@ -2996,6 +2999,9 @@ body {
 
 .weather {
   color: #101010;
+}
+.weather a:hover {
+  text-decoration: none;
 }
 .weather .weather_wrap {
   padding: 0 18px;
@@ -3379,6 +3385,9 @@ body {
 
 .calender {
   background-color: #f4f6fa;
+}
+.calender a:hover {
+  text-decoration: none;
 }
 .calender .calender_header {
   color: #080808;

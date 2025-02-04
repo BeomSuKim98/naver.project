@@ -9,9 +9,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <!-- 스와이퍼 불러오기 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- 테일윈드 불러오기 -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -236,7 +238,7 @@
           <!-- 여기까지 숏컷 아이콘 -->
 
           <div class="topAsideArea topTipBox">
-            <div class="tooltipBox topblind">바로가기</div>
+            <div class="tooltipBox">바로가기</div>
             <button
               class="btn_menu"
               type="button"
@@ -1144,13 +1146,13 @@
             </div>
           </div>
           <div class="topPayArea topTipBox">
-            <div class="tooltipBox topblind">네이버페이</div>
+            <div class="tooltipBox">네이버페이</div>
             <a href="#" class="link_pay">
               <span class="blind">페이 바로가기</span>
             </a>
           </div>
           <div class="topTalkArea topTipBox">
-            <div class="tooltipBox topblind">네이버톡</div>
+            <div class="tooltipBox">네이버톡</div>
             <button
               type="button"
               class="btn_talk"
@@ -1161,7 +1163,7 @@
             </button>
           </div>
           <div class="topNotiArea topTipBox">
-            <div class="tooltipBox topblind">알림</div>
+            <div class="tooltipBox">알림</div>
             <button
               type="button"
               class="btn_notify"
@@ -1172,7 +1174,7 @@
             </button>
           </div>
           <div class="topShoppingArea topTipBox">
-            <div class="tooltipBox topblind">장바구니</div>
+            <div class="tooltipBox">장바구니</div>
             <a href="#" class="link_shopping">
               <span class="blind">장바구니</span>
               <span class="blind">알림</span>
@@ -1210,8 +1212,12 @@
                   <ul class="View_list flex">
                     <li class="View_item">
                       <span>
-                        <a href="#" class="tab_text text-black first_tab">뉴스스탠드</a>
-                        <a href="#" class="tab_text only_before second_tab">언론사편집</a>
+                        <a href="#" class="tab_text text-black first_tab"
+                          >뉴스스탠드</a
+                        >
+                        <a href="#" class="tab_text only_before second_tab"
+                          >언론사편집</a
+                        >
                       </span>
                     </li>
                     <li class="View_item">
@@ -1241,16 +1247,16 @@
                   <i class="media_ikon"></i>
                 </a>
 
-                <div class="news_simple_box">
+                <div class="news_simple_box swiper swiper-con-1">
                   <a href="#" class="subView">연합뉴스</a>
-                  <div class="news_box">
+                  <div class="news_box swiper-wrapper">
                     <!-- 해당 기능은 스와이퍼 비슷한거 같은데 스와이퍼로 추후 구현할 것 -->
-                    <div class="first_arti">
+                    <div class="first_arti swiper-slide">
                       '소매판매 절벽' 21년만에 최악…車·옷·먹거리...
                     </div>
 
                     <!-- 임시 블록 처리 스와이퍼 처리 후 할 것 -->
-                    <div class="second_arti blind">
+                    <div class="second_arti swiper-slide">
                       '더는 못 버틴다'…전국 대학 최소 13곳 등록금 인상 검토
                     </div>
                   </div>
@@ -1456,78 +1462,131 @@
               </div>
 
               <!-- 여기까지 첫 번째 탭 -->
-               <!-- 여기ㅜ터 두 번째 탭 -->
-                
-<div class="contentHeaderView_second topblind">
-	<div class="CHVS_newsBox">
-		<ul class="CHVS_list">
-			<li class="CHVS_item">
-				<a href="" class="CHVS_imgWrap"><span class="CHVS_imgBox"><img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fmimgnews%2Fimage%2Forigin%2F138%2F2025%2F02%2F03%2F2190202.jpg%3Fut%3D20250203155506%22&type=nf312_208&service=navermain" alt="" class="CHVS_img"></span></a>
-				<div class="CHVS_textBox">
-					<div class="CHVS_topBox">
-						<span class="CHVS_topBox_imgBox"><img src="" alt="" class="CHVS_img"></span>
-						<a href="" class="CHVS_newsName">한경비즈니스</a>
-						<button>구독</button>
-					</div>
-					<a href="" class="CHVS_midContent">
-						"재판관 납치" "총 들고 헌재로"…'윤 지지자들' 극단 주장 버젓이
-					</a>
-					<div class="CHVS_dateBox"><span class="CHVS_date">
-						02월 03일 21:17
-					</span></div>
-				</div>
-			</li>
-      <li class="CHVS_item">
-				<a href="" class="CHVS_imgWrap"><span class="CHVS_imgBox"><img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fmimgnews%2Fimage%2Forigin%2F138%2F2025%2F02%2F03%2F2190202.jpg%3Fut%3D20250203155506%22&type=nf312_208&service=navermain" alt="" class="CHVS_img"></span></a>
-				<div class="CHVS_textBox">
-					<div class="CHVS_topBox">
-						<span class="CHVS_topBox_imgBox"><img src="" alt="" class="CHVS_img"></span>
-						<a href="" class="CHVS_newsName">한경비즈니스</a>
-						<button>구독</button>
-					</div>
-					<a href="" class="CHVS_midContent">
-						"재판관 납치" "총 들고 헌재로"…'윤 지지자들' 극단 주장 버젓이
-					</a>
-					<div class="CHVS_dateBox"><span class="CHVS_date">
-						02월 03일 21:17
-					</span></div>
-				</div>
-			</li>
-		</ul>
-	</div>
-	<div class="CHVS_newsBox">
-		<ul class="CHVS_list">
-			<li class="CHVS_item">
-				<a href="" class="CHVS_imgWrap"><span class="CHVS_imgBox"><img src="" alt="" class="CHVS_img"></span></a>
-				<div class="CHVS_textBox">
-					<div class="CHVS_topBox">
-						<span class="CHVS_topBox_imgBox"><img src="" alt="" class="CHVS_img"></span>
-						<a href="" class="CHVS_newsName"></a>
-						<button>구독</button>
-					</div>
-					<a href="" class="CHVS_midContent"></a>
-					<div class="CHVS_dateBox"><span class="CHVS_date"></span></div>
-				</div>
-			</li>
-      <li class="CHVS_item">
-				<a href="" class="CHVS_imgWrap"><span class="CHVS_imgBox"><img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fs.pstatic.net%2Fmimgnews%2Fimage%2Forigin%2F138%2F2025%2F02%2F03%2F2190202.jpg%3Fut%3D20250203155506%22&type=nf312_208&service=navermain" alt="" class="CHVS_img"></span></a>
-				<div class="CHVS_textBox">
-					<div class="CHVS_topBox">
-						<span class="CHVS_topBox_imgBox"><img src="" alt="" class="CHVS_img"></span>
-						<a href="" class="CHVS_newsName">한경비즈니스</a>
-						<button>구독</button>
-					</div>
-					<a href="" class="CHVS_midContent">
-						"재판관 납치" "총 들고 헌재로"…'윤 지지자들' 극단 주장 버젓이
-					</a>
-					<div class="CHVS_dateBox"><span class="CHVS_date">
-						02월 03일 21:17
-					</span></div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
+              <!-- 여기ㅜ터 두 번째 탭 -->
+
+              <div class="contentHeaderView_second topblind">
+                <div class="CHVS_newsBox">
+                  <ul class="CHVS_list">
+                    <li class="CHVS_item">
+                      <a href="" class="CHVS_imgWrap"
+                        ><span class="CHVS_imgBox"
+                          ><img
+                            src="./img/newsTabImg/ad_arrow_naver.png"
+                            alt=""
+                            class="CHVS_img" /></span
+                      ></a>
+                      <div class="CHVS_textBox">
+                        <div class="CHVS_topBox">
+                          <span class="CHVS_topBox_imgBox"
+                            ><img
+                              src="./img/newsTabImg/01.TH.png"
+                              alt=""
+                              class="CHVS_img"
+                          /></span>
+                          <a href="" class="CHVS_newsName">경향신문</a>
+                          <button>구독</button>
+                        </div>
+                        <a href="" class="CHVS_midContent">
+                          ‘부정선거론’ 전한길 영상에 테러 암시글 “선생님 말씀에
+                          울어…사제 폭탄 준비”
+                        </a>
+                        <div class="CHVS_dateBox">
+                          <span class="CHVS_date"> 02월 04일 10:37 </span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="CHVS_item">
+                      <a href="" class="CHVS_imgWrap"
+                        ><span class="CHVS_imgBox"
+                          ><img
+                            src="./img/newsTabImg/02.jfif"
+                            alt=""
+                            class="CHVS_img" /></span
+                      ></a>
+                      <div class="CHVS_textBox">
+                        <div class="CHVS_topBox">
+                          <span class="CHVS_topBox_imgBox"
+                            ><img
+                              src="./img/newsTabImg/02.Th.png"
+                              alt=""
+                              class="CHVS_img"
+                          /></span>
+                          <a
+                            href="./img/newsTabImg/02.Th.png"
+                            class="CHVS_newsName"
+                            >조선일보</a
+                          >
+                          <button>구독</button>
+                        </div>
+                        <a href="" class="CHVS_midContent">
+                          故 오요안나 선배 김가영, 라디오 자진 하차…”본인 의사”
+                        </a>
+                        <div class="CHVS_dateBox">
+                          <span class="CHVS_date">02월 04일 10:43 </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="CHVS_newsBox">
+                  <ul class="CHVS_list">
+                    <li class="CHVS_item">
+                      <a href="" class="CHVS_imgWrap"
+                        ><span class="CHVS_imgBox"
+                          ><img
+                            src="./img/newsTabImg/03img.jfif"
+                            alt=""
+                            class="CHVS_img" /></span
+                      ></a>
+                      <div class="CHVS_textBox">
+                        <div class="CHVS_topBox">
+                          <span class="CHVS_topBox_imgBox"
+                            ><img
+                              src="./img/newsTabImg/03.TH.png"
+                              alt=""
+                              class="CHVS_img"
+                          /></span>
+                          <a href="" class="CHVS_newsName">코리아헤럴드</a>
+                          <button>구독</button>
+                        </div>
+                        <a href="" class="CHVS_midContent">
+                          No surprise, K-pop absent from Grammys
+                        </a>
+                        <div class="CHVS_dateBox">
+                          <span class="CHVS_date">02월 04일 09:01</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="CHVS_item">
+                      <a href="" class="CHVS_imgWrap"
+                        ><span class="CHVS_imgBox"
+                          ><img
+                            src="./img/newsTabImg/04Img.jfif"
+                            alt=""
+                            class="CHVS_img" /></span
+                      ></a>
+                      <div class="CHVS_textBox">
+                        <div class="CHVS_topBox">
+                          <span class="CHVS_topBox_imgBox"
+                            ><img
+                              src="./img/newsTabImg/04Th.png"
+                              alt=""
+                              class="CHVS_img"
+                          /></span>
+                          <a href="" class="CHVS_newsName">한국경제</a>
+                          <button>구독</button>
+                        </div>
+                        <a href="" class="CHVS_midContent">
+                          '헬스 유튜버' 김웅서 사망, 향년 38세…유족 "사고사"
+                        </a>
+                        <div class="CHVS_dateBox">
+                          <span class="CHVS_date"> 02월 04일 10:52 </span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
               <!-- 여기부터 첫 번째 div 하단 버튼 -->
               <div class="contentHeaderView_content_page">
@@ -3223,7 +3282,7 @@
         </div>
       </section>
 
-      <div class="main_padding h-[2400px]"></div>
+      <div class="main_padding h-[2420px]"></div>
 
       <footer class="footerf">
         <div class="footer_wrap">

@@ -25,16 +25,26 @@ feedAdImg();
 // 1.20일 깃허브 업로드 시 js를 불러 오지 못함을 확인
 
 function sideMenuInOut() {
-  $(".topTipBox").mouseenter(function () {
-    $(this).find(".tooltipBox").removeClass("topblind");
+  $(".topTipBox").hover(
+    function () {
+      $(this).find(".tooltipBox").addClass("on");
+    },
+    function () {
+      $(this).find(".tooltipBox").removeClass("on");
+    }
+  );
+
+  $(".topAsideArea").click(function (e) {
+    e.stopPropagation();
+    let $this = $(this);
+
+    $this.addClass("click_on");
+    $this.find(".topAsideArea_ex_menu").addClass("active");
   });
 
-  $(".topTipBox").mouseenter(function (event) {
-    event.stopPropagation();
-  });
-
-  $(".topTipBox").mouseleave(function () {
-    $(this).find(".tooltipBox").addClass("topblind");
+  $("body").click(function () {
+    $(".topAsideArea").removeClass("click_on");
+    $(".topAsideArea_ex_menu").removeClass("active");
   });
 }
 
@@ -79,14 +89,12 @@ function newsHover() {
 
 newsHover();
 
-
-function tabMenu(){
+function tabMenu() {
   $(".first_tab").click(function () {
     $(".contentHeaderView_content").removeClass("topblind");
     $(".contentHeaderView_second").addClass("topblind");
     $(".second_tab").removeClass("text-black");
     $(".first_tab").addClass("text-black");
-    
   });
 
   $(".second_tab").click(function () {
@@ -98,3 +106,28 @@ function tabMenu(){
 }
 
 tabMenu();
+
+function swiper1__init() {
+  const $swiperCon = $(".swiper-con-1");
+
+  const swiper = new Swiper(".swiper-con-1", {
+    direction: "vertical",
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    loop: true,
+    // spaceBetween: 20,
+    speed: 3000,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+
+    // navigation: {
+    //   nextEl: ".swiper-con-1 .swiper-button-next",
+    //   prevEl: ".swiper-con-1 .swiper-button-prev",
+    // },
+  });
+}
+
+swiper1__init();
