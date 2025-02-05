@@ -185,6 +185,16 @@ body {
   display: block;
   padding: 8px;
 }
+.header .topSearchWrap .topAsideArea:hover::before {
+  background-color: rgb(231, 231, 231);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .header .topSearchWrap .topAsideArea.click_on .btn_menu::before {
   background-color: rgb(231, 231, 231);
   width: 48px;
@@ -194,7 +204,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 12;
 }
 .header .topSearchWrap .topAsideArea.click_on .tooltipBox {
   display: none !important;
@@ -209,6 +218,16 @@ body {
   width: 32px;
   height: 32px;
   position: relative;
+}
+.header .topSearchWrap .topAsideArea .btn_menu:hover::before {
+  background-color: rgb(231, 231, 231);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .header .topSearchWrap .topAsideArea .topAsideArea_ex_menu {
   position: absolute;
