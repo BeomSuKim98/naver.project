@@ -4,7 +4,7 @@ function shoppingAdImg() {
   for (let i = 0; i < imageIndex.length; i++) {
     $(imageIndex[i]).attr(
       "src",
-      "../img/shoppingAdImg/adimg_" + (i + 1) + ".jpg"
+      "/img/shoppingAdImg/adimg_" + (i + 1) + ".jpg"
     );
   }
 }
