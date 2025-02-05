@@ -156,6 +156,7 @@ body {
       font-size: 16px;
       background-color: #fff;
       display: none;
+      z-index: 13;
 
       &.on {
         display: block;
@@ -240,6 +241,21 @@ body {
       }
 
       // 여기부터 탑 ex 메뉴 프레임
+      .TAA_ex_menu_arrow {
+        &::before {
+          left: 13px;
+          @include beforeOnlyBackGround(
+            $background_position_x: -246px,
+            $background_position_y: -243px
+          );
+          width: 22px;
+          height: 13px;
+          display: block;
+          position: absolute;
+          bottom: -8px;
+          z-index: 12;
+        }
+      }
       .topAsideArea_ex_menu {
         position: absolute;
         top: 40px;
@@ -250,19 +266,7 @@ body {
         z-index: 11;
         height: 750px;
         overflow-y: auto;
-
-        &::before {
-          left: 22px;
-          @include beforeOnlyBackGround(
-            $background_position_x: -246px,
-            $background_position_y: -243px
-          );
-          width: 22px;
-          height: 13px;
-          display: block;
-          position: absolute;
-          top: -13px;
-        }
+        box-shadow: 0 0 0 1px #eaebec, 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 
         .topAsideArea_ex_menu_wrap {
           height: 100%;
@@ -686,6 +690,10 @@ body {
 .topAsideArea_ex_menu_footer {
   max-width: 1098px;
 
+  a {
+    text-decoration: none;
+  }
+
   .ex_menu_footer_wrap {
     padding: 15px 0 50px;
     text-align: center;
@@ -695,7 +703,7 @@ body {
         color: #929294;
         display: inline-block;
         position: relative;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 16px;
         font-weight: 400;
         letter-spacing: -0.23px;
@@ -2266,7 +2274,7 @@ body {
         position: relative;
         display: inline-block;
         // vertical-align: top;
-        color: #080808;
+        // color: #080808;
 
         em {
           line-height: 10px;
@@ -2327,6 +2335,14 @@ body {
     .feed_main_imgLink {
       display: block;
 
+      &:hover {
+        text-decoration: none;
+
+        .feed_main_textBox > strong {
+          text-decoration: underline;
+        }
+      }
+
       .imgBox {
         position: relative;
 
@@ -2338,16 +2354,16 @@ body {
             // transition: transform .2s; 추후 호버 작업시 사용
           }
 
-          &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: inherit;
-            transform: translate3d(0, 0, 0);
-            perspective: 1px;
-          }
+          // &::after {
+          //   content: "";
+          //   display: block;
+          //   position: absolute;
+          //   @include onlySize($t: 0, $l: 0, $r: 0, $b: 0);
+          //   border: 1px solid rgba(0, 0, 0, 0.06);
+          //   border-radius: inherit;
+          //   transform: translate3d(0, 0, 0);
+          //   perspective: 1px;
+          // }
         }
       }
 
@@ -2426,25 +2442,33 @@ body {
     .feed_main_bottom_Link {
       display: block;
 
+      &:hover {
+        text-decoration: none;
+
+        .feed_main_bottom_text {
+          text-decoration: underline;
+        }
+      }
+
       .feed_main_bottom_Link_box {
         position: relative;
 
         .Link_box_span {
           @include imgFrame($w: 100%, $h: 156px);
 
-          &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: inherit;
-            transform: translate3d(0, 0, 0);
-            perspective: 1px;
-          }
+          // &::after {
+          //   content: "";
+          //   display: block;
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   right: 0;
+          //   bottom: 0;
+          //   border: 1px solid rgba(0, 0, 0, 0.06);
+          //   border-radius: inherit;
+          //   transform: translate3d(0, 0, 0);
+          //   perspective: 1px;
+          // }
 
           .Link_box_img {
             vertical-align: top;
@@ -2938,7 +2962,7 @@ body {
         overflow: hidden;
         max-height: 38px;
         text-overflow: ellipsis;
-        padding-top: 8px;
+        padding-top: 6px;
         font-size: 14px;
         font-weight: 400;
         line-height: 16px;
@@ -3863,6 +3887,13 @@ body {
   display: block;
   overflow: hidden;
   background-color: #f5f6f7;
+  &:hover {
+    text-decoration: none;
+
+    .footer_ad_banner_box_textHeader2 {
+      text-decoration: underline;
+    }
+  }
 
   .footer_ad_banner_box_imgBox {
     overflow: hidden;
@@ -3872,13 +3903,13 @@ body {
     height: 100px;
     border-radius: 6px;
 
-    &::after {
-      position: absolute;
-      @include onlySize($t: 0, $r: 0, $b: 0, $l: 0);
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: inherit;
-      content: "";
-    }
+    // &::after {
+    //   position: absolute;
+    //   @include onlySize($t: 0, $r: 0, $b: 0, $l: 0);
+    //   border: 1px solid rgba(0, 0, 0, 0.06);
+    //   border-radius: inherit;
+    //   content: "";
+    // }
 
     .footer_ad_banner_box_img {
       width: 160px;
@@ -3944,6 +3975,10 @@ body {
       font-size: 14px;
       line-height: 1.43;
       color: #545454;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

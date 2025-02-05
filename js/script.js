@@ -51,10 +51,12 @@ function sideMenuInOut() {
 function sideMenuPopup_1() {
   $(".topAsideArea").click(function () {
     $(".topAsideArea_ex_menu").removeClass("topblind");
+    $(".TAA_ex_menu_arrow").removeClass("topblind");
   });
 
   $("body").click(function () {
     $(".topAsideArea_ex_menu").addClass("topblind");
+    $(".TAA_ex_menu_arrow").addClass("topblind");
   });
 
   $(".topAsideArea").click(function (e) {
@@ -131,3 +133,31 @@ function swiper1__init() {
 }
 
 swiper1__init();
+
+function aLinkDefault() {
+  $("a").click(function (event) {
+    event.preventDefault();
+  });
+}
+
+aLinkDefault();
+
+// 버전2;
+function imageScale() {
+  $("a, li").mouseenter(function () {
+    $(this)
+      .find("img")
+      .each(function () {
+        if (!$(this).hasClass("doNotImageScale")) {
+          $(this).css("transition", "transform 0.3s");
+          $(this).css("transform", "scale(1.1)");
+        }
+      });
+  });
+
+  $("a, li").mouseleave(function () {
+    $(this).find("img").css("transform", "scale(1)");
+  });
+}
+
+imageScale();
